@@ -1,0 +1,27 @@
+{# templates/home.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Home
+{% endblock %}
+
+{% block content %}
+
+	<h2>
+		Här är jag!
+	</h2>
+
+	<p>Jag heter Maria och är 32 år. Jag bor i Indonesien och på Gotland. Min familj består av mig , min man Eng och vår dotter Naomi som är 3 år.</p>
+	<p>Mina intressen är fotboll, sång och musik och surfing.
+	</p>
+	<p>Jag går webbprogrammering 120 distans programmet.</p>
+	<p>
+		<b>Det gillar jag!</b>
+	</p>
+
+
+	<img class="maria" src="{{ asset("img/IMG_20181114_173813_201.jpg") }}" alt="maria surfing">
+
+
+{% endblock %}
