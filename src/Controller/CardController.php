@@ -38,7 +38,7 @@ class CardController extends AbstractController
      */
     public function card(): Response
     {
-        return $this->render('card.html.twig');
+        return $this->render('card/card.html.twig');
     }
 
     /**
@@ -54,7 +54,7 @@ class CardController extends AbstractController
 
 
 
-        return $this->render('deck.html.twig', $data);
+        return $this->render('card/deck.html.twig', $data);
     }
 
     /**
@@ -70,7 +70,7 @@ class CardController extends AbstractController
 
 
 
-        return $this->render('shuffle.html.twig', $data);
+        return $this->render('card/shuffle.html.twig', $data);
     }
 
 
@@ -87,7 +87,7 @@ class CardController extends AbstractController
 
 
 
-        return $this->render('draw.html.twig', $data);
+        return $this->render('card/draw.html.twig', $data);
     }
 
     /**
@@ -146,7 +146,7 @@ class CardController extends AbstractController
 
 
 
-        return $this->render('draw-num.html.twig', $data);
+        return $this->render('card/draw-num.html.twig', $data);
     }
 
     /**
@@ -203,7 +203,7 @@ class CardController extends AbstractController
         $session->clear("manyplayers");
         $session->clear("left");
 
-        return $this->render('deal.html.twig', $data);
+        return $this->render('card/deal.html.twig', $data);
     }
 
 
@@ -276,6 +276,6 @@ class CardController extends AbstractController
 
 
 
-        return $this->render('deck2.html.twig', $data);
+        return $this->render('card/deck2.html.twig', $data);
     }
 }
