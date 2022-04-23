@@ -13,8 +13,6 @@ class ReportController extends AbstractController
      */
     public function home(): Response
     {
-
-
         return $this->render('home.html.twig');
     }
 
@@ -23,18 +21,14 @@ class ReportController extends AbstractController
      */
     public function about(): Response
     {
-
-
         return $this->render('about.html.twig');
     }
 
-       /**
+    /**
      * @Route("/report", name="report")
      */
     public function report(): Response
     {
-
-
         return $this->render('report.html.twig');
     }
 }

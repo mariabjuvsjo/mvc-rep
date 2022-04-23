@@ -2,25 +2,22 @@
 
 namespace App\Cards;
 
-
-class Hand {
-
+class Hand
+{
     protected array $hand;
 
-    public function __construct() {
-
+    public function __construct()
+    {
         $this->hand = [];
     }
 
-    public function getHand(): array {
-
+    public function getHand(): array
+    {
         return $this->hand;
     }
 
-    public function addCardTHand(Array $card): void {
-        
+    public function addCardTHand(array $card): void
+    {
         $this->hand[] = $card;
     }
-
-
 }
