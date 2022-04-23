@@ -1,0 +1,39 @@
+{# templates/card.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Card
+{% endblock %}
+
+{% block content %}
+
+	<h2>
+		Card
+	</h2>
+
+    <div><h4>Länkar</h4>
+
+    		<ul>
+				
+					<li>
+						<a href="{{path("deck")}}">Deck</a>
+					</li>
+					<li>
+						<a href="{{path("shuffle")}}">Shuffle</a>
+					</li>
+					<li>
+						<a href="{{path("draw")}}">Draw</a>
+					</li>
+					<li><a href="{{ path('cards', {'number': 0}) }}">Draw Number of Cards</a></li>
+					<li><a href="{{ path('deal', {'players': 0, 'cards': 0}) }}">Deal</a></li>
+					<li>
+						<a href="{{path("deck2")}}">Deck</a>
+					</li>
+					
+				</ul>
+    
+    
+    </div>
+
+{% endblock %}

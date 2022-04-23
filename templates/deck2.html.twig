@@ -1,0 +1,32 @@
+{# templates/deck2.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Deck
+{% endblock %}
+
+{% block content %}
+
+	<h2>
+		Deck
+	</h2>
+<div class="card-wrapper">
+
+    {% for card in decks %}
+
+
+<div class="outline shadow rounded" style="color:{{card.color}}">
+<div class="top"><span>{{card.value}}</span><span>{{card.suit | raw}}</span></div>
+<h1 style="color: {{card.color}}">{{card.suit | raw}}</h1>
+<div class="bottom"><span>{{card.value}}</span><span >{{card.suit | raw}}</span></div>
+</div>
+
+    
+
+    
+
+{% endfor %}
+    </div>
+
+{% endblock %}

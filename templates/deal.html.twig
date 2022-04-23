@@ -1,0 +1,68 @@
+{# templates/deal.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Deal
+{% endblock %}
+
+{% block content %}
+
+	<h2>
+		Deal
+	</h2>
+
+{# read and display all flash messages #}
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="flash-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+<form method="post"  accept-charset="UTF-8">
+
+     <p>
+      <label for="players">Enter number of players</label><br>
+     <input type="number" name="players" value="1" min="1" ><br>
+     <label for="cards">Enter number of Cards</label><br>
+     <input type="number" name="cards" value="1" min="1"><br>
+        <input type="submit" name="play" value="Play">
+        <input type="submit" name="clear" value="Clear">
+    </p>
+</form>
+
+<div class="player-wrapper">
+
+{% set NbOfPlayer = 0 %}
+
+{% for player in players %}
+{% set NbOfPlayer = NbOfPlayer + 1 %}
+
+    <div class="player">
+    <p>Player: {{ NbOfPlayer }}</p>
+    {% for cards in player.hand %}
+    {% for card in cards %}
+    <div class="outline shadow rounded" style="color:{{card.color}}">
+<div class="top"><span>{{card.value}}</span><span>{{card.suit | raw}}</span></div>
+<h1 style="color: {{card.color}}">{{card.suit | raw}}</h1>
+<div class="bottom"><span>{{card.value}}</span><span >{{card.suit | raw}}</span></div>
+</div>
+{% endfor %}
+{% endfor %}
+
+
+    </div>
+
+{% endfor %}
+
+</div>
+
+<p>Your cards left is {{left ?? 52}}</p>
+
+
+
+
+
+{% endblock %}
