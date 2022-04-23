@@ -13,7 +13,7 @@ class CardController extends AbstractController
 {
     private function createDeck()
     {
-        $suits= ["&hearts;", "&diams;", "&clubs;", "&spades;"];
+        $suits = ["&hearts;", "&diams;", "&clubs;", "&spades;"];
 
         $values = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 
@@ -50,7 +50,7 @@ class CardController extends AbstractController
 
         $data = [
         "decks" => $deck1->getDeck()
-    ];
+        ];
 
 
 
@@ -66,7 +66,7 @@ class CardController extends AbstractController
         $deck1->shuffles();
         $data = [
         "decks" => $deck1->getDeck()
-    ];
+        ];
 
 
 
@@ -272,7 +272,7 @@ class CardController extends AbstractController
 
         $data = [
         "decks" => $deck1->getDeck()
-    ];
+        ];
 
 
 

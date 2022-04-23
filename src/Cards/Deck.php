@@ -29,7 +29,7 @@ class Deck
     {
         $hand = [];
         if (count($this->deck) > 0) {
-            for ($i = 0; $i <= $cards -1; $i++) {
+            for ($i = 0; $i <= $cards - 1; $i++) {
                 $hand[] = $this->deck[0];
                 $newDeck = array_shift($this->deck);
             }
@@ -51,7 +51,7 @@ class Deck
     {
         $arri = array();
         foreach ($this->deck as $card) {
-            $arri[]= $card->getAsString();
+            $arri[] = $card->getAsString();
         }
         return $arri;
     }
