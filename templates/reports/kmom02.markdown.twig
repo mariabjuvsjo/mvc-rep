@@ -1,4 +1,52 @@
-Kmom 01 
--------------------
+### kmom02
 
-This is markdown
+
+#### Arv
+
+Arv handlar om att en klass ärver från en annan klass, med hjälp av nyckelordet extends. 
+Det betyder att den får samma funktionallitet som klassen den ärver från. Man kan sedan skriva över metoder och ge den ärvda klassen mer specifierad funktionallitet.
+
+
+#### Komposition
+
+Koposition handlar istället om att en klass är beroende av en annan klass. Klasser har en kompositions relation. 
+Det betyder att man skapar ett objekt av en klass inuti en annan klass. Det objektet kan alltså bara "leva" i den klassen.
+Till skillnad från aggregation där de två klasserna har en mycket lösare koppling. Båda klasserna kan "leva" fria från varandra men
+Är ändå bra för varandra.
+
+
+#### Trait
+
+Jag måste säga att jag inte haft tid att ägna så mycket tid åt trait och interface detta kursmoment. 
+Men så som jag förstår det är trait lite som en egen klass som vilken annan klass som helst kan använda sig av.
+Detta är bra för att slippa skriva samma typ av kod fler gånger. Med nyckelordet uses så kommer en klass åt all implementation som en trait klass har.
+
+
+#### Interface
+
+Är lite som ett kontrakt mellan klassen och interfacet. Interfacet erbjuder ingen kod men bara metoder som klassen ska använda om klassen använder sig av interfacet.
+Jag tolkar det lite som att det är som interfacen vi bygger i typescript, där man säger att ett en viss variabel måste vara en vis datatyp. 
+Men här är det mer att man säger att en klass måste ha dessa metoder.
+
+
+#### Implementation av uppgiften
+
+Jag är rätt nöjd med uppfiften. Jag tyckte jag fick till snygga kort och allt funkar väldigt smärtfritt.
+Jag är nöjd med att ha skapat ett deck som inte är beroende av kort objekt i sin klass utan att jag skickar in korten som ett argument in i en metod från deck klassen.
+Jag är också nöjd med att hur jag skapat sessioner och post formulär. Post formulär känns som en säkrare väg att gå än att användraren ska kunna välja antal kort och spelare uppe i sökvägen.\
+\
+Jag ser en hel del förbättringspotential med koden. Det blev en hel del kod i controllern och som jag förstod det som ska det vara så lite som möjligt kod i controllern. 
+Det jag dock har lite svårt att svara på är om jag gjort rätt när jag har lagt kortens egenskaper i controller klassen som en egen metod.
+Jag tycker det blir bra för då kan man använda klassen deck till vad som, om man vill ha dubbla kortlekar eller lägga till jokrar. Jag behövde ju inte skapa en ny klass med deckJoker, eftersom jag kunde bara lägga till två kort i deck objektet.\
+\
+Men om det skulle vara så att det var bättre att skapa en klass med arv så skulle jag gärna vilja ha lite feedback på hur jag bäst kan göra mina klasser, och varför det är bättre.
+En annan ska som jag inte är säker på om jag gjort rätt är detta med deck objektet. Jag antar att jag skapar ett nytt deck objekt, i varje ny route.
+Men meningen var kanske att man på något sätt ska använda samma deck objekt i alla routers. I så fall skulle jag vilja ha lite feedback på det med.\
+\
+Som sagt jag är nöjd med att jag har skapat en metod utanför deck klassen som ger mig frihet att skapa ett deck objekt som jag vill att det ska vara. 
+
+Min TIL är nog att jag lärt mig mycket om sessioner och hur man skickar med data mellan routers. Jag skulle dock vilja lära mig mycket mer om sessioner, för det känns som en så viktig del när man jobbar med webbplatser.
+
+Angående Git så har jag inte alls vant mig med att göra små commits, så det ska jag ta med mig till nästa KMOM.\
+\
+Jag har inte gjort problemlösningsdelen, får ta med mig den in i kmom03. Jag har heler inte löst någon av de optionella kraven.
