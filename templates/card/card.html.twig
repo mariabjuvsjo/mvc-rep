@@ -15,30 +15,14 @@
     <div><h4>Länkar</h4>
 
     		<div class="card-links">
-				
-					
-						<a href="{{path("deck")}}">Deck</a>
-				
-					
-						<a href="{{path("shuffle")}}">Shuffle</a>
-				
-					
-						<a href="{{path("draw")}}">Draw</a>
-				
-					<a href="{{ path('cards', {'number': 0}) }}">Draw Number of Cards</a></li>
-					<a href="{{ path('deal', {'players': 0, 'cards': 0}) }}">Deal</a></li>
-					
-						<a href="{{path("deck2")}}">Deck</a>
-				
-					
-						<a href="{{path("apicard")}}">Deck Api</a>
-				
-					
-		
-    
-    </div>
-
-    
+				<a href="{{path("deck")}}">Deck</a>
+				<a href="{{path("shuffle")}}">Shuffle</a>	
+				<a href="{{path("draw")}}">Draw</a>
+				<a href="{{ path('cards', {'number': 0}) }}">Draw Number of Cards</a></li>
+				<a href="{{ path('deal', {'players': 0, 'cards': 0}) }}">Deal</a></li>
+				<a href="{{path("deck2")}}">Deck W Joker</a>
+				<a href="{{path("apicard")}}">Deck Api</a>
+			</div>
     </div>
 
 {% endblock %}

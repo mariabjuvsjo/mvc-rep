@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CardController extends AbstractController
 {
+    /**
+     * method for creating the deck with 52 cards
+     */
     private function createDeck()
     {
         $suits = ["&hearts;", "&diams;", "&clubs;", "&spades;"];
