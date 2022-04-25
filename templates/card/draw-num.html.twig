@@ -11,6 +11,7 @@
 
 <h2>Draw Number of Cards</h2>
 <form method="post" accept-charset="UTF-8">
+<p>Your cards left is {{left ?? 52}}</p>
 
      <p>
      <input type="number" name="numCards" value="1" min="1">
@@ -31,7 +32,7 @@
 {% endfor %}
 {% endfor %}
 </div>
-<p>Your cards left is {{left ?? 52}}</p>
+
 
 
 
