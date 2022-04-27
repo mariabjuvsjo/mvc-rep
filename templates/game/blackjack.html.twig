@@ -1,0 +1,29 @@
+{# templates/blackjack.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Black Jack
+{% endblock %}
+
+{% block content %}
+	<h2>
+		Game On
+	</h2>
+
+ <h4>Dealer: 0</h4>
+        <div class="dealer-cards">
+           
+        </div>
+
+        <h4>You: 0</h4>
+        <div class="your-cards"></div>
+
+        <br>
+        <form method="post">
+        <button type="submit" class="btn hit">Hit</button>
+        <button type="submit" class="btn stay">Stay</button>
+        </form>
+        <p class="results"></p>
+
+{% endblock %}

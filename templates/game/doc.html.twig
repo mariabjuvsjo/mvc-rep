@@ -1,0 +1,30 @@
+{# templates/doc.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Documentation
+{% endblock %}
+
+{% block content %}
+	<h2>
+		Documentation
+	</h2>
+
+    <h4>Flödes Schema: </h4>
+    <img class="flowchart" src="{{ asset("img/flowchart.png") }}" alt="flow chart black jack">
+    <h4>Psudo Kod: </h4>
+
+    {{ include('markdown_folder/psudokod.markdown.twig')|markdown_to_html}}
+
+      <h4>Mina Klasser: </h4>
+      <ul>
+      <li>Card - class for creating a playcard</li>
+      <li>Deck - class for creating a deck of cards (with Card object injected in Deck object)</li>
+      <li>Hand - class that holds the cards player or bank have in their hand</li>
+      <li>Rules - class that decides the diffrent rules for how winning or loosing</li>
+      <li>Game - class that holds the game of black jack</li>
+      </ul>
+    
+
+{% endblock %}

@@ -513,3 +513,32 @@ CARDS
     background-color: #caa838;
 }
 
+.btn {
+    border: 2px solid #caa838;
+    margin-right: 20px;
+    padding: 15px 20px;
+    text-transform: Uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    background-color: #252525;
+    transition: all 300ms ease-in;
+    color: #caa838;
+    cursor:pointer;
+}
+
+.btn:hover {
+    background-color: #caa838;
+    color:#252525
+
+}
+
+.game-btn {
+    display: block;
+    width: 200px;
+    margin: 40px auto;
+}
+
+.md-wrapper {
+    text-align: left;
+    max-width: 50%;
+}

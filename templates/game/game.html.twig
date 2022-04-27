@@ -1,0 +1,24 @@
+{# templates/game.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Game
+{% endblock %}
+
+{% block content %}
+	<h2>
+		Black Jack
+	</h2>
+
+    <a href="{{path("blackjack")}}" class="btn game-btn">Starta Spelet</a>
+
+    <p>Välkommen till vårt spel, Black Jack. Lycka till och må bäste man, kvinna eller bank vinna.</p>
+
+    <h4>Spelets regler:</h4>
+
+    {{ include('markdown_folder/rules.markdown.twig')|markdown_to_html}}
+    
+    <a href="{{path("doc")}}" class="btn game-btn">Documentation</a>
+
+{% endblock %}
