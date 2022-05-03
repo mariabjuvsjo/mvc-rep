@@ -542,3 +542,7 @@ CARDS
     text-align: left;
     max-width: 50%;
 }
+
+.flex {
+    display: flex;
+}

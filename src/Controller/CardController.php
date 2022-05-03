@@ -49,8 +49,8 @@ class CardController extends AbstractController
      */
     public function deck(): Response
     {
-        $deck1 = $this->createDeck();
-
+        //$deck1 = $this->createDeck();
+        $deck1 = new \App\Cards\Deck();
         $data = [
         "decks" => $deck1->getDeck()
         ];
@@ -108,10 +108,12 @@ class CardController extends AbstractController
         $deck1->shuffles();
         $deck1->getDeck();
 
+        $deck = $session->get("deck") ?? $deck1;
+
         $draw  = $request->request->get('drawn');
         $clear = $request->request->get('clear');
 
-        $deck = $session->get("deck") ?? $deck1;
+        
 
         $left = $session->get("left") ?? $deck1->countCards();
 

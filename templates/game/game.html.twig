@@ -10,15 +10,15 @@
 	<h2>
 		Black Jack
 	</h2>
-
-    <a href="{{path("blackjack")}}" class="btn game-btn">Starta Spelet</a>
-
+    <form method="post" action="{{ path('blackjack') }}">
+    <button type="submit" name="play" class="btn game-btn">Starta Spelet</button>
+    </form>
     <p>Välkommen till vårt spel, Black Jack. Lycka till och må bäste man, kvinna eller bank vinna.</p>
 
     <h4>Spelets regler:</h4>
 
     {{ include('markdown_folder/rules.markdown.twig')|markdown_to_html}}
-    
+
     <a href="{{path("doc")}}" class="btn game-btn">Documentation</a>
 
 {% endblock %}

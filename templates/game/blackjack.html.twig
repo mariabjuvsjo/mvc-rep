@@ -11,19 +11,41 @@
 		Game On
 	</h2>
 
- <h4>Dealer: 0</h4>
-        <div class="dealer-cards">
-           
+ <h4>Dealer: {{dealerscore}}</h4>
+        <div class="dealer-cards flex">
+                {% for card in dealer %}
+<div class="outline shadow rounded" style="color:{{card.color}}">
+<div class="top"><span>{{card.value}}</span><span>{{card.suit | raw}}</span></div>
+<h1 style="color: {{card.color}}">{{card.suit | raw}}</h1>
+<div class="bottom"><span>{{card.value}}</span><span >{{card.suit | raw}}</span></div>
+</div>
+
+{% endfor %}
+
         </div>
 
-        <h4>You: 0</h4>
-        <div class="your-cards"></div>
+        <h4>You: {{playerscore}}</h4>
+        <div class="your-cards flex">    
+        {% for card in player %}
+<div class="outline shadow rounded" style="color:{{card.color}}">
+<div class="top"><span>{{card.value}}</span><span>{{card.suit | raw}}</span></div>
+<h1 style="color: {{card.color}}">{{card.suit | raw}}</h1>
+<div class="bottom"><span>{{card.value}}</span><span >{{card.suit | raw}}</span></div>
+</div>
 
-        <br>
+{% endfor %}</div>
+{% if firstgame %}
+<p>{{firstgame}}</p>
+{% else %}
+   <br>
         <form method="post">
         <button type="submit" class="btn hit">Hit</button>
         <button type="submit" class="btn stay">Stay</button>
         </form>
+
+{% endif %}
+
+     
         <p class="results"></p>
 
 {% endblock %}
