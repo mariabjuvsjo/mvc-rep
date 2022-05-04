@@ -1,0 +1,57 @@
+{# templates/blackjackstart.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Black Jack Start
+{% endblock %}
+
+{% block content %}
+	<h2>
+		Game On
+	</h2>
+
+<h4>Dealer: {{dealerscore}}</h4>
+        <div class="dealer-cards flex">
+                {% for card in dealer %}
+<div class="outline shadow rounded" style="color:{{card.color}}">
+<div class="top"><span>{{card.value}}</span><span>{{card.suit | raw}}</span></div>
+<h1 style="color: {{card.color}}">{{card.suit | raw}}</h1>
+<div class="bottom"><span>{{card.value}}</span><span >{{card.suit | raw}}</span></div>
+</div>
+
+{% endfor %}
+
+        </div>
+
+        <h4>You: {{playerscore}}</h4>
+        <div class="your-cards flex">    
+        {% for card in player %}
+<div class="outline shadow rounded" style="color:{{card.color}}">
+<div class="top"><span>{{card.value}}</span><span>{{card.suit | raw}}</span></div>
+<h1 style="color: {{card.color}}">{{card.suit | raw}}</h1>
+<div class="bottom"><span>{{card.value}}</span><span >{{card.suit | raw}}</span></div>
+</div>
+{% endfor %}
+   </div>
+      
+{% if firstdraw %}
+<p>{{firstdraw}}</p>
+
+{% elseif playerscore > 21%}
+<p>You busted, Dealer won!</p>
+
+{% else %}
+   <br>
+       <form method="post" action="{{ path('blackjack-go') }}">
+        <input type="submit" name="hit" class="btn hit" value="Hit">
+                <input type="submit" name="stay" class="btn hit" value="Stay">
+    
+        </form>
+      
+
+{% endif %}
+
+     
+
+{% endblock %}

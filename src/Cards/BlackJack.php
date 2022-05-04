@@ -19,17 +19,20 @@ class BlackJack {
     }
 
     public function firstPlay() {
-        $playerCheck = $this->player->firstDeal();
-        $dealerCheck = $this->dealer->firstDeal(); 
-        
-        if ($playerCheck === 1) {
-            if ($dealerCheck === 1) {
+       $this->player->firstDeal();
+        $this->dealer->firstDeal(); 
+    }
+
+    public function checkFirstDraw() {
+        if ($this->player->scores()  === 21) {
+            if ($this->dealer->scores() === 21) {
                 return "You both got Black Jack, its a tie";
             }
             return "you won you got Black Jack";
-        } else if ($dealerCheck === 1){
+        } else if ($this->dealer->scores() === 21){
             return "Dealer won! he got Black Jack";
         }return "";
+
     }
 
     public function getPlayerCards(): array {

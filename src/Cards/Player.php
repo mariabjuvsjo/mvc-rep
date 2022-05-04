@@ -25,13 +25,7 @@ class Player {
     }
 
     public function firstDeal() {
-        $this->hand = array_merge($this->hand, $this->deck->draw(2));
-        $this->scores();
-        if ($this->score === 21) {
-            return 1;
-        }
-        return 0;
-    
+        $this->hand = array_merge($this->hand, $this->deck->draw(2));    
     }
 
     public function hit() {
