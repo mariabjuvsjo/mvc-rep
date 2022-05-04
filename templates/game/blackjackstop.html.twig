@@ -1,9 +1,9 @@
-{# templates/blackjackstart.html.twig #}
+{# templates/blackjackstop.html.twig #}
 
 {% extends "base.html.twig" %}
 
 {% block title %}
-	Black Jack Start
+	Black Jack Stop
 {% endblock %}
 
 {% block content %}
@@ -34,24 +34,9 @@
 </div>
 {% endfor %}
    </div>
-      
-{% if firstdraw %}
-<p>{{firstdraw}}</p>
-<a href="{{path("blackjack")}}" class="btn game-btn">Nytt Spel</a>
-{% elseif playerscore > 21%}
-<p>You busted, Dealer won!</p>
-<a href="{{path("blackjack")}}" class="btn game-btn">Nytt Spel</a>
-{% else %}
-   <br>
-       <form method="post" action="{{ path('blackjack-go') }}">
-        <input type="submit" name="hit" class="btn hit" value="Hit">
-                <input type="submit" name="stay" class="btn hit" value="Stay">
-    
-        </form>
-      
 
-{% endif %}
-
-     
+   <p>{{gamestop}}</p>
+   <a href="{{path("blackjack")}}" class="btn game-btn">Nytt Spel</a>
+      
 
 {% endblock %}

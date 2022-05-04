@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -117,48 +116,49 @@ class GameController extends AbstractController {
         $hit = $request->request->get("hit");
         $blackJack = $session->get("blackjack");
 
-        $gameStop = $session->get("gamestop") ?? "";
+     
 
         if($hit) {
             $blackJack->playerHit();
             $session->set('blackjack', $blackJack);
+            return $this->redirectToRoute('blackjack-start');
         }
 
         if($stay) {
-            $gameStop = $blackJack->gameStop();
-            $session->set('gamestop', $gameStop);
-            $session->set('blackjack', $blackJack);
+            return $this->redirectToRoute('blackjack-stop');
         }
 
-            $blackJack = $session->get("blackjack");
-            $gameStop = $session->get("gamestop") ;
-
-
-        $data = [
-            'firstdraw' => "",
-            'dealer' => $blackJack ->getDealerCards(),
-            'player' => $blackJack ->getPlayerCards(),
-            'dealerscore' => $blackJack ->getDealerScore(),
-            'playerscore' => $blackJack->getPlayerScore(),
-            'gamestop' => $gameStop
-
-        ];
-
-
-
-        return $this->render('game/blackjackstart.html.twig', $data);
+        
 
      }
 
            /**
-     * @Route("/game/blackjack/hit", name="blackjack-hit", methods={"GET", "HEAD"})
+     * @Route("/game/blackjack/stop", name="blackjack-stop", methods={"GET", "HEAD"})
      */
-    public function blackJackGo(SessionInterface $session) : Response {
+    public function blackJackStop(SessionInterface $session) : Response {
 
 
         $blackJack = $session->get('blackjack');
 
         //$firstdraw = $session->get('firstgame');
+
+        $blackJack = $session->get("blackjack");
+        $gameStop = $session->get("gamestop") ;
+
+
+    $data = [
+        'gamestop' => $blackJack->gameStop(),
+        'dealer' => $blackJack ->getDealerCards(),
+        'player' => $blackJack ->getPlayerCards(),
+        'dealerscore' => $blackJack ->getDealerScore(),
+        'playerscore' => $blackJack->getPlayerScore(),
+        //'gamestop' => $blackJack->gameStop()
+
+    ];
+
+
+
+    return $this->render('game/blackjackstop.html.twig', $data);
 
 
      }

@@ -67,6 +67,12 @@ class BlackJack {
                 return "you both got Black Jack, its a tie!";
             }
             return "you got Black Jack, you won! ";
+
+        } else if ($this->dealer->scores() === 21) {
+            return "dealer got Black Jack, Dealer won!";
+        }
+        else if ($this->player->scores() === $this->dealer->scores()) {
+            return "you both have same score, its a tie!";
         }
         else if ($this->player->scores() > 21) {
             return "You busted, Dealer won!";
