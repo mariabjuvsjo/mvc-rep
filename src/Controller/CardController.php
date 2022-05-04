@@ -65,7 +65,7 @@ class CardController extends AbstractController
      */
     public function shuffle(): Response
     {
-        $deck1 = $this->createDeck();
+        $deck1 = new \App\Cards\Deck();
         $deck1->shuffles();
         $data = [
         "decks" => $deck1->getDeck()
@@ -104,7 +104,7 @@ class CardController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
-        $deck1 = $this->createDeck();
+        $deck1 = new \App\Cards\Deck();
         $deck1->shuffles();
         $deck1->getDeck();
 
@@ -161,7 +161,7 @@ class CardController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
-        $deck1 = $this->createDeck();
+        $deck1 = new \App\Cards\Deck();
         $deck1->shuffles();
         $deck1->getDeck();
         $number = $request->request->get('numCards') ?? 0;
@@ -225,7 +225,7 @@ class CardController extends AbstractController
         $clear  = $request->request->get('clear');
 
 
-        $deck1 = $this->createDeck();
+        $deck1 = new \App\Cards\Deck();
         $deck1->shuffles();
         $deck1->getDeck();
 
@@ -267,13 +267,9 @@ class CardController extends AbstractController
      */
     public function deck2(): Response
     {
-        $deck1 = $this->createDeck();
+        $deck1 = new \App\Cards\DeckWith2Joker();
 
-        $deck1->addCard(new \App\Cards\Card("J", "&#127199;", "black"));
-
-        $deck1->addCard(new \App\Cards\Card("J", "&#127199;", "red"));
-
-
+      
 
         $data = [
         "decks" => $deck1->getDeck()
