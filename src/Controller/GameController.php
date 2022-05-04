@@ -85,7 +85,7 @@ class GameController extends AbstractController {
         //$hit = $request->request->get('hit');
         //$stay  = $request->request->get('stay');
 
-        $blackJack = $session->get('blackjack');
+        $blackJack = $session->get('blackjack') ?? new \App\Cards\BlackJack();
 
         //$firstdraw = $session->get('firstgame');
 
@@ -117,7 +117,7 @@ class GameController extends AbstractController {
             //$hit = $request->request->get('hit');
         $stay  = $request->request->get('stay');
         $hit = $request->request->get("hit");
-        $blackJack = $session->get("blackjack");
+        $blackJack = $session->get("blackjack") ?? new \App\Cards\BlackJack();
 
      
 
@@ -145,7 +145,7 @@ class GameController extends AbstractController {
 
         //$firstdraw = $session->get('firstgame');
 
-        $blackJack = $session->get("blackjack");
+        $blackJack = $session->get("blackjack") ?? new \App\Cards\BlackJack();
         //$gameStop = $session->get("gamestop") ;
 
 
