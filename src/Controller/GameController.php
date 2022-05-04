@@ -56,17 +56,19 @@ class GameController extends AbstractController {
      public function blackJackProcess(Request $request, SessionInterface $session) : Response {
         $play = $request->request->get('play');
 
-        $newGame = new \App\Cards\BlackJack();
-
-        $newGame1 = $session->get("blackjack") ?? $newGame;
+        $blackJack = $session->get("blackjack") ?? new \App\Cards\BlackJack();
 
         //$firstGame = $session->get("firstgame") ?? $newGame->firstPlay();
 
     
-        //$firstGame = 
-        $newGame1->firstPlay();
+        if($play) {
+            $blackJack->firstPlay();
+            $session->set('blackjack', $blackJack);
+
+        }
+        
         //$session->set('firstgame', $firstGame);
-        $session->set('blackjack', $newGame1);
+        
         
          
    
@@ -88,12 +90,13 @@ class GameController extends AbstractController {
         //$firstdraw = $session->get('firstgame');
 
         $data = [
-            'firstdraw' => $blackJack ->checkFirstDraw(),
+            //'game' => var_dump($blackJack),
             'dealer' => $blackJack ->getDealerCards(),
             'player' => $blackJack ->getPlayerCards(),
             'dealerscore' => $blackJack ->getDealerScore(),
-            'playerscore' => $blackJack->getPlayerScore()
-            //'game' => var_dump($blackJack)
+            'playerscore' => $blackJack->getPlayerScore(),
+            'firstdraw' => $blackJack ->checkFirstDraw()
+            
 
 
 
@@ -138,12 +141,12 @@ class GameController extends AbstractController {
     public function blackJackStop(SessionInterface $session) : Response {
 
 
-        $blackJack = $session->get('blackjack');
+        //$blackJack = $session->get('blackjack');
 
         //$firstdraw = $session->get('firstgame');
 
         $blackJack = $session->get("blackjack");
-        $gameStop = $session->get("gamestop") ;
+        //$gameStop = $session->get("gamestop") ;
 
 
     $data = [
