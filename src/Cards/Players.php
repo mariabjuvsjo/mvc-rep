@@ -7,7 +7,7 @@ use App\Cards\Hand;
 class Players
 {
     protected array $players = [];
-    private int $nbPlayers;
+    //private int $nbPlayers;
 
     public function __construct(int $nbPlayers)
     {

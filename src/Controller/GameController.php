@@ -59,8 +59,7 @@ class GameController extends AbstractController {
         $blackJack = $session->get("blackjack") ?? new \App\Cards\BlackJack();
 
         //$firstGame = $session->get("firstgame") ?? $newGame->firstPlay();
-
-    
+        
         if($play) {
             $blackJack->firstPlay();
             $session->set('blackjack', $blackJack);
@@ -68,14 +67,7 @@ class GameController extends AbstractController {
         }
         
         //$session->set('firstgame', $firstGame);
-        
-        
-         
-   
-
         return $this->redirectToRoute('blackjack-start');
-
-
      }
 
       /**
@@ -85,7 +77,7 @@ class GameController extends AbstractController {
         //$hit = $request->request->get('hit');
         //$stay  = $request->request->get('stay');
 
-        $blackJack = $session->get('blackjack') ?? new \App\Cards\BlackJack();
+        $blackJack = $session->get('blackjack');
 
         //$firstdraw = $session->get('firstgame');
 
@@ -96,17 +88,9 @@ class GameController extends AbstractController {
             'dealerscore' => $blackJack ->getDealerScore(),
             'playerscore' => $blackJack->getPlayerScore(),
             'firstdraw' => $blackJack ->checkFirstDraw()
-            
-
-
-
-
         ];
 
-
-
         return $this->render('game/blackjackstart.html.twig', $data);
-
      }
 
        /**
