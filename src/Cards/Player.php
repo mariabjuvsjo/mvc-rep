@@ -3,11 +3,10 @@
 namespace App\Cards;
 
 use App\Cards\Deck;
-
 use App\Cards\Card;
 
-class Player {
-
+class Player
+{
     protected array $hand;
 
     public object $deck;
@@ -15,8 +14,8 @@ class Player {
     public int $score;
 
 
-    public function __construct( Deck $deck) {
-
+    public function __construct(Deck $deck)
+    {
         $this->hand = [];
         $this->deck = $deck;
 
@@ -28,21 +27,23 @@ class Player {
         return $this->hand;
     }
 
-    public function firstDeal(): void {
-        $this->hand = array_merge($this->hand, $this->deck->draw(2));    
+    public function firstDeal(): void
+    {
+        $this->hand = array_merge($this->hand, $this->deck->draw(2));
     }
 
-    public function hit(): void {
+    public function hit(): void
+    {
         $this->hand = array_merge($this->hand, $this->deck->draw(1));
-     
     }
 
-    public function scores(): int{
+    public function scores(): int
+    {
         $assCounter = 0;
 
         $this->score = 0;
 
-        foreach($this->hand as $card) {
+        foreach ($this->hand as $card) {
             if ($card->getPoint() === 11) {
                 $assCounter += 1;
             }
@@ -54,18 +55,4 @@ class Player {
         }
         return $this->score;
     }
-
-    
-
-    
-
-
-
-   
-
-    
-
-
-   
-
 }

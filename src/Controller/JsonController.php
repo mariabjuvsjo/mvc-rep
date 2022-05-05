@@ -10,8 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class JsonController extends AbstractController
 {
-
-
     /**
      * @Route("/card/api/deck", name="apicard")
      */

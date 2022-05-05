@@ -113,7 +113,7 @@ class CardController extends AbstractController
         $draw  = $request->request->get('drawn');
         $clear = $request->request->get('clear');
 
-        
+
 
         $left = $session->get("left") ?? $deck1->countCards();
 
@@ -127,7 +127,6 @@ class CardController extends AbstractController
             $session->set('mycard', $myCards);
         } elseif ($clear) {
             $session->clear();
-      
         }
 
 
@@ -183,7 +182,7 @@ class CardController extends AbstractController
             $session->set('mycard', $myCards);
         } elseif ($clear) {
             $session->clear();
-       
+
             $number = 0;
         }
 
@@ -203,7 +202,7 @@ class CardController extends AbstractController
         ];
 
         $session->clear();
-    
+
         return $this->render('card/deal.html.twig', $data);
     }
 
@@ -211,7 +210,7 @@ class CardController extends AbstractController
     /**
      * @Route("/card/deck/deal/{players}/{cards}", name="deal-process", methods={"POST"})
      */
-    public function dealProcess  (
+    public function dealProcess(
         Request $request,
         SessionInterface $session
     ): Response {
@@ -251,7 +250,6 @@ class CardController extends AbstractController
             }
         } elseif ($clear) {
             $session->clear();
-     
         }
 
         return $this->redirectToRoute('deal', ["players" => $players, "cards" => $cards]);
@@ -264,7 +262,7 @@ class CardController extends AbstractController
     {
         $deck1 = new \App\Cards\DeckWith2Joker();
 
-      
+
 
         $data = [
         "decks" => $deck1->getDeck()

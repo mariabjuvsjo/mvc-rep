@@ -3,7 +3,7 @@
 namespace App\Cards;
 
 class Card
-{   
+{
     public mixed $value;
     public string $suit;
     public string $color;
@@ -17,11 +17,12 @@ class Card
         $this->point = $point;
     }
 
-    public function getPoint() {
+    public function getPoint()
+    {
         return $this->point;
     }
 
-   
+
 
     public function getAsString(): string
     {

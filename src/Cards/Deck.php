@@ -5,11 +5,11 @@ namespace App\Cards;
 use App\Cards\Card;
 
 class Deck
-{   
-
+{
     protected array $suits = ["&hearts;", "&diams;", "&clubs;", "&spades;"];
 
-    protected $values = array(2=>2, 3=>3, 4=>4, 5=>5, 6=>6, 7=>7, 8=>8, 9=>9, 10=>10, "J"=>10, "Q"=>10, "K"=>10, "A"=>11);
+    protected $values = array(2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10, "J"
+    => 10, "Q" => 10, "K" => 10, "A" => 11);
 
     //protected array $points = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
 
@@ -20,27 +20,25 @@ class Deck
     public int $point = 0;
 
 
-    public function __construct() {
-
+    public function __construct()
+    {
         foreach ($this->suits as $suit) {
             if ($suit == "&hearts;" || $suit == "&diams;") {
                 $color = "red";
             } else {
                 $color = "black";
             }
-            foreach ($this->values as $value => $point)  {
-                       
+            foreach ($this->values as $value => $point) {
                 array_push($this->deck, new \App\Cards\Card($value, $suit, $color, $point));
             }
         }
-
     }
 
     public function addCard(Card $card): void
     {
         $this->deck[] = $card;
     }
- 
+
     public function getDeck(): array
     {
         return $this->deck;
