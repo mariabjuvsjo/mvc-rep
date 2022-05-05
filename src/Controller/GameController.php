@@ -99,7 +99,7 @@ class GameController extends AbstractController
     public function blackJackStop(SessionInterface $session): Response
     {
         $blackJack = $session->get("blackjack") ?? new \App\Cards\BlackJack();
-        
+
         $data = [
         'gamestop' => $blackJack->gameStop(),
         'dealer' => $blackJack ->getDealerCards(),
