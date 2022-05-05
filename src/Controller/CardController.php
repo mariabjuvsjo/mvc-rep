@@ -126,9 +126,8 @@ class CardController extends AbstractController
             $session->set('left', $left);
             $session->set('mycard', $myCards);
         } elseif ($clear) {
-            $session->clear("deck");
-            $session->clear("mycard");
-            $session->clear("left");
+            $session->clear();
+      
         }
 
 
@@ -183,9 +182,8 @@ class CardController extends AbstractController
             $session->set('left', $left);
             $session->set('mycard', $myCards);
         } elseif ($clear) {
-            $session->clear("deck");
-            $session->clear("mycard");
-            $session->clear("left");
+            $session->clear();
+       
             $number = 0;
         }
 
@@ -204,10 +202,8 @@ class CardController extends AbstractController
 
         ];
 
-        $session->clear("deck");
-        $session->clear("manyplayers");
-        $session->clear("left");
-
+        $session->clear();
+    
         return $this->render('card/deal.html.twig', $data);
     }
 
@@ -215,7 +211,7 @@ class CardController extends AbstractController
     /**
      * @Route("/card/deck/deal/{players}/{cards}", name="deal-process", methods={"POST"})
      */
-    public function dealProcess(
+    public function dealProcess  (
         Request $request,
         SessionInterface $session
     ): Response {
@@ -254,9 +250,8 @@ class CardController extends AbstractController
                 $session->set('manyplayers', $manyPlayers);
             }
         } elseif ($clear) {
-            $session->clear("deck");
-            $session->clear("manyplayers");
-            $session->clear("left");
+            $session->clear();
+     
         }
 
         return $this->redirectToRoute('deal', ["players" => $players, "cards" => $cards]);

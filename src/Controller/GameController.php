@@ -35,7 +35,7 @@ class GameController extends AbstractController {
     public function blackJack(SessionInterface $session): Response
     {
         //$blackJack = new \App\Cards\BlackJack();
-        $session->clear("blackjack");
+        $session->clear();
         //$blackJack->firstPlay();
 
         //if (!$session->get("blackjack")) {
@@ -53,7 +53,7 @@ class GameController extends AbstractController {
      * @Route("/game/blackjack/start", name="blackjack_process", methods={"POST"})
      */
 
-     public function blackJackProcess(Request $request, SessionInterface $session) : Response {
+     public function blackJackProcess(Request $request, SessionInterface $session)  {
         $play = $request->request->get('play');
 
         $blackJack = $session->get("blackjack") ?? new \App\Cards\BlackJack();
@@ -97,7 +97,7 @@ class GameController extends AbstractController {
      * @Route("/game/blackjack/go", name="blackjack-go", methods={"POST"})
      */
 
-     public function blackJackGoProcess(Request $request, SessionInterface $session): Response {
+     public function blackJackGoProcess(Request $request, SessionInterface $session) {
             //$hit = $request->request->get('hit');
         $stay  = $request->request->get('stay');
         $hit = $request->request->get("hit");

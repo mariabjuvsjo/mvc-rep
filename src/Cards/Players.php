@@ -7,9 +7,9 @@ use App\Cards\Hand;
 class Players
 {
     protected array $players = [];
-    //private int $nbPlayers;
+    protected int $nbPlayers;
 
-    public function __construct(int $nbPlayers)
+    public function __construct(int $nbPlayers = 1)
     {
         $this->nbPlayers = $nbPlayers;
 

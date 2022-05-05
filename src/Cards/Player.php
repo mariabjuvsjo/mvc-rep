@@ -10,10 +10,14 @@ class Player {
 
     protected array $hand;
 
-    public function __construct( bool $dealer, Deck $deck) {
+    public object $deck;
+
+    public int $score;
+
+
+    public function __construct( Deck $deck) {
 
         $this->hand = [];
-        $this->dealer = $dealer;
         $this->deck = $deck;
 
         $this->score = 0;
@@ -24,16 +28,16 @@ class Player {
         return $this->hand;
     }
 
-    public function firstDeal() {
+    public function firstDeal(): void {
         $this->hand = array_merge($this->hand, $this->deck->draw(2));    
     }
 
-    public function hit() {
+    public function hit(): void {
         $this->hand = array_merge($this->hand, $this->deck->draw(1));
      
     }
 
-    public function scores() {
+    public function scores(): int{
         $assCounter = 0;
 
         $this->score = 0;

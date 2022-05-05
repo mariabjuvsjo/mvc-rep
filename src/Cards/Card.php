@@ -3,11 +3,13 @@
 namespace App\Cards;
 
 class Card
-{
-    //private $aCard = array();
+{   
+    public mixed $value;
+    public string $suit;
+    public string $color;
+    public int $point;
 
-
-    public function __construct(int | string $value = null, string $suit = null, string $color = null, int $point = null)
+    public function __construct(int | string $value, string $suit, string $color, int $point = 0)
     {
         $this->value = $value;
         $this->suit = $suit;

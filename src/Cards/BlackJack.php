@@ -10,20 +10,28 @@ use App\Cards\Player;
 
 class BlackJack {
 
+    public object $deck;
+
+    public object $player;
+
+    public object $dealer;
+
+
+
     public function __construct() {
         $this->deck = new Deck();
         $this->deck->shuffles();
         $this->deck->getDeck();
-        $this->player = new Player(True, $this->deck);
-        $this->dealer = new Player(False, $this->deck);
+        $this->player = new Player( $this->deck);
+        $this->dealer = new Player($this->deck);
     }
 
-    public function firstPlay() {
+    public function firstPlay(): void {
        $this->player->firstDeal();
         $this->dealer->firstDeal(); 
     }
 
-    public function checkFirstDraw() {
+    public function checkFirstDraw(): string {
         if ($this->player->scores()  === 21) {
             if ($this->dealer->scores() === 21) {
                 return "You both got Black Jack, its a tie";
@@ -52,11 +60,11 @@ class BlackJack {
         return $this->dealer->scores();
     }
 
-    public function playerHit() {
+    public function playerHit(): void {
         $this->player->hit();
     }
 
-    public function gameStop() {
+    public function gameStop(): string {
 
         while ($this->dealer->scores() < 17) {
             $this->dealer->hit();
