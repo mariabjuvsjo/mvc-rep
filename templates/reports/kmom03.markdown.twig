@@ -1,6 +1,38 @@
 ### KMOM 03
 
+
+#### Flödesdiagram och psudokod
 Jag tyckte det kändes jätte bra att börja med att skapa ett flödesdiagram först och sedan skriva psudokoden. 
-I denna uppgift var det definitivt flödesdiagrammet som senare hjälpte mig i min problemlösning. 
+I denna uppgift var det definitivt flödesdiagrammet som senare hjälpte mig i min kodning. 
 Det var perfekt att gå tillbaka och titta vart man var i flödesdiagrammet när jag skrev de olika metoderna för Black Jack spelet.
-Speciellt bra när man ska hålla koll på alla if och else if satser man fakjtiskt måste skriva för att få reglerna för black jack att stämma.
+Speciellt bra när man ska hålla koll på alla if och else if satser man faktiskt måste skriva för att få reglerna för black jack att stämma.\
+\
+#### Klasser
+Det var även bra att gå igenom klasserna jag använde, dock blev klasserna lite annorlunda än jag tänkt. Tillexempel skapade jag korten i deck klassen denna gång. Istället för hand klassen gjorde jag en klass som heter Player som har som uppgift att "vara" som en spelare, funkar för både dator och user.
+Sedan skapade jag en klass istället för rules och game som hetter blackjack. Det är denna klass som har all funktionallitet som ett black jack spel har. Här skapas dåde deck, dealer och player och metoderna utför själva spelets gång.\
+\
+#### Implementation
+Om jag i förra kursmomentet skapade kortleken genom injection så valde jag denna gång att skapa så mycket som möjligt i klasserna, för att få så lite kod som möjligt i controllen.
+Jag är faktiskt jätte nöjd med mina klasser. Jag känner att jag har en bra uppdelning av vad varje klass har för uppgift. Och eftersom Black Jack bara har en livsuppgift, att finnas för att man ska spela så tycker jag inte att det gör något att man skapar allt inuti den klassen.
+Men det klart, om man hade velat ha fler spelare till exempel så hade man behövt gå in i black jack klassen och ändra i konstruktorn. Men allternativet hade varit att lägga till spelare i controllen och då hade det genast blivit mer kod där.
+Så om man räknar antal rader med faktisk kod i min kontroller så är det inte mer än ca 35 rader vilket jag får känna mig nöjd med.\
+\
+Med det sagt måste jag säga att det fortfarande är en svår avvägning om man ska göra injection och få mer kod i controllen eller om man ska implementera så mhycket som möjligt i klasserna och då också skapa objekt i konstruktorn.
+Det kanske finns ett mellan ting som jag inte är så bekant med.
+
+En fördel med att ha all kod i klasser är att jag skulle bara behöva skriva om någon rad i black jack klassen och hela spelet hade funkat i en CLI.
+
+I alla fall jag är mycket nöjd med min implementation av Black Jack klassen.
+
+Sessioner är min stora akilleshäl som jag kämpar med att greppa. Jag är nöjd med att ha satt en session clear i början av spelet så att varje gång man trycker nytt spel clearas sessionen innan nästa spel.
+Jag hade dock kanske kunnat gjort på ett smidigare sätt med routsen och med att ha flera sessioner istället för hela objektet som session. Men som sagt känner mig lite ny med sessioner så vart lite svårt att ändra min strategi mitt i.
+Sen hade jag jättte prblem med att få det att funka på alla webbläsare på studentservern, men hoppas att det är löst nu.
+
+Hojta till om mitt spel inte funkar så får jag ta en titt på det igen.\
+\
+#### Tankar om Symfony
+Jag måste säga att jag inte gillar symfony ännu. Jag tycker att vi kanske skulle haft en bättre mer grundlig genomgång av symfony. Man har ju rätt bra koll på PhP, men eftersom det var rätt länge sen vi skrev php kod så är det svårt att hålla isär vad man som är pure php och vad som är symfony.
+Desstuom känner jag att om man ska lära sig ett ramverkt så vill man göra det mycket mer grundligt än vi gjort. Varför hade vi inte symfony i design kursen. Varför hade vi pico? det var så kort och lite vi lärde oss om pico så jag känner att jag knappt kommer ihåg va det var.
+Jag hoppas inte jag kommer känna samma sak för symfony när denna kursen är över.
+#### TIL
+Min TIL detta kurs moment är att jag fått bättre förståelse för hur klasser hänger ihop. Och efter feedbacken jag fick från kmom02 har jag också kunnat ändra mina klasser så det blev arv och komposition istället för aggregation. Och det var enkelt att ändra, vilket jag tycker tyder på att jag förstår klasser bättre.
