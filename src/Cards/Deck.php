@@ -4,12 +4,14 @@ namespace App\Cards;
 
 use App\Cards\Card;
 
+use App\Cards\DrawException;
+
 class Deck
 {
     protected array $suits = ["&hearts;", "&diams;", "&clubs;", "&spades;"];
 
-    protected $values = array(2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10, "J"
-    => 10, "Q" => 10, "K" => 10, "A" => 11);
+    protected $values = array("A" => 11, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10, "J"
+    => 10, "Q" => 10, "K" => 10);
 
     //protected array $points = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
 
@@ -34,9 +36,15 @@ class Deck
         }
     }
 
-    public function addCard(Card $card): void
-    {
-        $this->deck[] = $card;
+
+    // Not using this method. This can be used when I do dependecy injection
+    //public function addCard(Card $card): void
+    //{
+    //    $this->deck[] = $card;
+    //}
+
+    public function createDeck() {
+
     }
 
     public function getDeck(): array
@@ -52,12 +60,20 @@ class Deck
     public function draw($cards = 1): array
     {
         $hand = [];
-        if (count($this->deck) > 0) {
-            for ($i = 0; $i <= $cards - 1; $i++) {
-                $hand[] = $this->deck[0];
-                $newDeck = array_shift($this->deck);
-            }
+
+        if ($cards < 1 || $cards > 52) {
+            throw new DrawException("The card amount is out of bounds");
         }
+
+        if (count($this->deck) <= 0) {
+            throw new DrawException("The Deck is empty");
+        }
+
+        for ($i = 0; $i <= $cards - 1; $i++) {
+            $hand[] = $this->deck[0];
+            $newDeck = array_shift($this->deck);
+        }
+        
 
         return $hand;
     }
@@ -69,13 +85,4 @@ class Deck
         return $numCards;
     }
 
-
-    public function getAsArray(): array
-    {
-        $arri = array();
-        foreach ($this->deck as $card) {
-            $arri[] = $card->getAsString();
-        }
-        return $arri;
-    }
 }

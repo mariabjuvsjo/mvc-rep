@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class CardController extends AbstractController
 {
     /**
-     * method for creating the deck with 52 cards
+     * method for creating the deck with 52 cards with dependecy injection
      *
       *  private function createDeck()
        * {

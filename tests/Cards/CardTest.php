@@ -18,7 +18,7 @@ class CardTest extends TestCase
 
     public function testCreate()
     {
-        $card = new Card("Q", "@hearts;", "red", 10);
+        $card = new Card("Q", "&hearts;", "red", 10);
         $this->assertInstanceOf("\App\Cards\Card", $card);
     }
 
