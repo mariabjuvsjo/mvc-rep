@@ -24,6 +24,9 @@ class DeckWJokerTest extends TestCase
         $this->assertInstanceOf("\App\Cards\DeckWith2Joker", $deck);
     }
 
+    /**
+     * Test to see if deck with joker creates 54 cards. full deck (52) plus 2 joker 
+     */
     public function testCountCardsWithJoker()
     {
         $deck = new DeckWith2Joker();
@@ -33,6 +36,9 @@ class DeckWJokerTest extends TestCase
         $this->assertEquals($res, 54);
     }
 
+    /**
+     * Test to see if the getDeck method also work on the inherige class deckWith2Joker
+     */
     public function testGetDeck() 
     {
         $deck = new DeckWith2Joker();
@@ -50,6 +56,10 @@ class DeckWJokerTest extends TestCase
         $this->assertIsObject($res[53]);
 
     }
+
+    /**
+     * Test to see if shuffles method also works in inheritge class deckWith2Joker
+     */
 
     public function testShuffleDeck() 
     {

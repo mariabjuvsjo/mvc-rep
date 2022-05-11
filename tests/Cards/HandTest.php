@@ -26,6 +26,10 @@ class HandTest extends TestCase
         $this->assertInstanceOf("\App\Cards\Hand", $hand);
     }
 
+    /**
+     * Test to see get hand method return an empty array when called with no other method being called before
+     */
+
     public function testGetHandWEmptyHand() 
     {
         $hand = new Hand();
@@ -36,6 +40,9 @@ class HandTest extends TestCase
 
     }
 
+    /**
+     * Test to see if assCardtoHand works accordingly 
+     */
 
     public function testGetHand1Card() 
     {

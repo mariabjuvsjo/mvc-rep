@@ -23,6 +23,9 @@ class DeckTest extends TestCase
         $deck = new Deck();
         $this->assertInstanceOf("\App\Cards\Deck", $deck);
     }
+    /**
+     * Test if a deck object contains of an array of 52 card objects
+     */
 
     public function testCountCards()
     {
@@ -33,6 +36,9 @@ class DeckTest extends TestCase
         $this->assertEquals($res, 52);
     }
 
+      /**
+     * Test if the getDeck method returns cardobject checking the second card objekt in array
+     */
     public function testGetDeck() 
     {
         $deck = new Deck();
@@ -46,6 +52,10 @@ class DeckTest extends TestCase
         $this->assertIsObject($res[1]);
 
     }
+
+    /**
+     * Test if the shuffle method is mixing the cards
+     */
 
     public function testShuffleDeck() 
     {
@@ -65,6 +75,10 @@ class DeckTest extends TestCase
 
     }
 
+    /**
+     * Testing to see if draw method working accordingly
+     */
+
     public function testDrawCardWithNoArgs()
     {
         $deck1 = new Deck();
@@ -78,6 +92,10 @@ class DeckTest extends TestCase
 
     }
 
+    /**
+     * Testing if draw method works accordingly with many cards draw as args
+     */
+
     public function testDrawCardWithArgs()
     {
         $deck1 = new Deck();
@@ -90,6 +108,10 @@ class DeckTest extends TestCase
         
     }
 
+    /**
+     * testing if an exception is thrown then try to draw more then cards in deck
+     */
+
     public function testDrawExceptionOutofBounds()
     {
         $deck1 = new Deck();
@@ -100,6 +122,11 @@ class DeckTest extends TestCase
 
     }
 
+    /**
+     * 
+     * testing if exception is thrown when try to draw on a empty deck
+     */
+    
     public function testDrawExceptionEmpyDeck()
     {
         $deck1 = new Deck();

@@ -30,6 +30,10 @@ class BlackJackTest extends TestCase
         $this->assertIsObject($game);
     }
 
+    /**
+     * Test to see if firstplay gives the player object 2 cards
+     */
+
     public function testFirstGivePlayer()
     {
         $game = new BlackJack();
@@ -41,6 +45,10 @@ class BlackJackTest extends TestCase
         $this->assertEquals(count($playerCards), 2);
 
     }
+
+       /**
+     * Test to see if firstplay gives the dealer object 2 cards
+     */
 
     public function testFirstGiveDealer()
     {
@@ -54,6 +62,10 @@ class BlackJackTest extends TestCase
 
     }
 
+    /**
+     * Test to see if the playerHit method gives the player object 1 card
+     */
+
     public function testHitPlayer()
     {
         $game = new BlackJack();
@@ -66,6 +78,10 @@ class BlackJackTest extends TestCase
 
     }
 
+    /**
+     * Test to see that an empty string is returned if no cards is drawn
+     */
+
     public function testFirstDrawW0Point()
     {
         $game = new BlackJack();
@@ -76,11 +92,16 @@ class BlackJackTest extends TestCase
         $this->assertStringContainsString($res, "");
     }
 
+    /**
+     * Test to see that string with you busted is return if player gets over 21
+     */
+
     public function testPlayerHaveMorethen21()
     {
         $game = new BlackJack();
-
-        $game->firstPlay();
+        $game->playerHit();
+        $game->playerHit();
+        $game->playerHit();
         $game->playerHit();
         $game->playerHit();
         $game->playerHit();
@@ -117,6 +138,10 @@ class BlackJackTest extends TestCase
         $this->assertStringContainsString($res1, "You busted, Dealer won!");
 
     }
+
+    /**
+     * Test to see if a int is return when method getDelarscore is called
+     */
 
     public function testGetDealerScoreReturnsInt()
     {

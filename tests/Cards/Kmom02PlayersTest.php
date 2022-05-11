@@ -9,7 +9,7 @@ use App\Cards\Hand;
 use App\Cards\Players;
 
 /**
- * Test Cases for class Player
+ * Test Cases for class Players from kmom02
  */
 
 class Kmom02PlayersTest extends TestCase
@@ -25,6 +25,10 @@ class Kmom02PlayersTest extends TestCase
         $this->assertInstanceOf("\App\Cards\Players", $players);
     }
 
+    /**
+     * Test to see if default 1 player works when no args is given
+     */
+
     public function testPlayersWithNoArgs()
     {
         $players = new Players();
@@ -34,6 +38,10 @@ class Kmom02PlayersTest extends TestCase
         $this->assertEquals(count($res), 1);
 
     }
+
+    /**
+     * Test to see if five player is added when args is given
+     */
 
     public function testPlayersWithArgs()
     {

@@ -3,7 +3,6 @@
 namespace App\Cards;
 
 use App\Cards\Card;
-
 use App\Cards\DrawException;
 
 class Deck
@@ -43,8 +42,8 @@ class Deck
     //    $this->deck[] = $card;
     //}
 
-    public function createDeck() {
-
+    public function createDeck()
+    {
     }
 
     public function getDeck(): array
@@ -73,7 +72,7 @@ class Deck
             $hand[] = $this->deck[0];
             $newDeck = array_shift($this->deck);
         }
-        
+
 
         return $hand;
     }
@@ -84,5 +83,4 @@ class Deck
 
         return $numCards;
     }
-
 }
