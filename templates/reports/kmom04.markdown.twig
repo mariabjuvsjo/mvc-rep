@@ -1,17 +1,17 @@
 ### KMOM04
 
-#### PUPUnit
+#### PHPUnit
 Jag tyckte det var väldigt roligt att skriva enhetstester med PHPUnit. När man skriver whitebox tester som vi gör får man inte bara chans att 
 testa sin kod man får också tillfälle att reflektera över funktionen av varje liten del i sin kod.
 Jag tycker det är kul att försöka skriva så många tester som möjligt.
 
 Just i kursmoment 03 när vi skapade Black Jack spelet så kände jag mig väldigt trygg och säker på min kod, det var därför väldigt lätt att testa den.
-Det blir ju lättare att testa kod när man känner sig trygg i att den fungerar, då skriver man också kanske tester mer som en extra försäklrign att man inte missat något eller råkat gjort något slarvfel.
+Det blir ju lättare att testa kod när man känner sig trygg i att den fungerar, då skriver man också kanske tester mer som en extra försäkring att man inte missat något eller råkat gjort något slarvfel.
 
 #### Kodtäckning
 Jag lyckades med 100 % kodtäckning I alla klasser utom Black Jack Klassen och detta är anledningen:\
 Eftersom jag i BlackJack klassen skapar flera olika objekt som Deck objekt och Player objekt var jag tvungen att i så fall mocka dessa. Men jag kände mig osäker på mockning och ett annat problem att jag i BlackJack konstruktorn
-Kallar på deck objektets metod Shuffle, så jag kunde inte i blackJack klassen få en deck som hade förut bestämda kort. Därför kunde jag heller inte test vissa utfall som att rätt sträng skrivs ut när player får 21 osv.\
+Kallar på deck objektets metod Shuffle, så jag kunde inte i blackJack klassen få en deck som hade förut bestämda kort (eller jag visst inte hur jag skulle få det iaf). Därför kunde jag heller inte testa vissa utfall som att rätt sträng skrivs ut när player får 21 osv.\
 \
 Därför måste jag väl då säga att jag tycker att min kod inte är testbar när det kommer till just det. Jag är annars mycket nöjd med min kod och de delar som inte är beroende av en annan klass var mycket lätta att testa.
 Men eftersom jag byggt min kod så att objekt skapas i andra klasser, så blev den genast svårare att testa.\
@@ -24,7 +24,7 @@ När jag först frågade om inte injection gör så att man får mer kod i contr
 Detta var i kmom02 och ett svar skulle ju då kunna varit att i kmom04 kommer enhetstest och att det blir svårare att testa klasser om man skapar objekt i konstrukton.\
 \
 I kmom02 gjorde jag en metod i controllen som hette createDeck och i den gjorde jag injection genom att skicka in ett card object med dess argument i en metod från deck klassen.
-Men då fick jag som feedback att citarerar "kortleken bör skapas i konstruktorn för Deck." Så därför så skapade jag kortleken i konstruktorn för nästa kursmoment och jag skapde även ett deck objekt och player objekt i blackjack klassen.
+Men då fick jag som svar citerar "kortleken bör skapas i konstruktorn för Deck." Så därför så skapade jag kortleken i konstruktorn för nästa kursmoment och jag skapde även ett deck objekt och player objekt i blackjack klassen.
 Jag tyckte det funkade jätte bra tills detta kmom04 när jag inte lyckades skapa tester för vissa saker pga detta.
 Så nu är jag lite förvirad till hur jag ska reflektera över min kod om den är testbar eller inte.\
 \
@@ -32,12 +32,12 @@ Jag valde dock inte att skriva om min kod, för jag tycker spelet fungerar så p
 Men jag visste inte hur jag skulle få till det med att argumenten till cardobjektet skapas genom 2 olika foreach loopar.
 
 #### Testbar kod
-Jag tycker verkligen att testbar kod och snygg kod hör ihop. Därmed inte sagt att man inte kan skriva snygg kod som inte är testbar. Och man kan säkert skriva testbar kod som inte är snygg.
+Jag tycker verkligen att testbar kod och snygg kod hör ihop. Därmed inte sagt att man inte kan skriva snygg kod som inte är testbar. Och man kan säkert skriva testbar kod som inte är snygg också.
 Men om man skriver snygg och testbar kod tror jag att det är mycket bättre.
 
 #### TIL
 Jag tror min TIL i detta kursmoment faktiskt får gå till docblocks. Jag lärde mig skriva det genom phpdocumentor dokumentation och lärde mig uppskatta det. 
-En annan TIL är attnästa gång jag skriver kod kommer jag försöka skriva enhetstester samtidigt som jag skriver kod för klasserna.
+En annan TIL är att nästa gång jag skriver kod kommer jag försöka skriva enhetstester samtidigt som jag skriver kod för klasserna.
 
 
 
