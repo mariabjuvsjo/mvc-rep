@@ -20,9 +20,6 @@ class Player
 
     /**
      * Constructor. Creates the player with an empty array as a hand. And a start score set to 0.
-     *
-     * @param object $deck  Takes a deck object as a parameter.
-     *
      */
     public function __construct(Deck $deck)
     {

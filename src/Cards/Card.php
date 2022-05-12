@@ -26,12 +26,11 @@ class Card
     /**
      * Constructor to create the card object.
      *
-     * @param mixed $value    The value of the card example A for Ass and Q for Queen.
+     * @param int|string  $value    The value of the card example A for Ass and Q for Queen.
      * @param string $suit    The suit from UTF-charset example "&hearts;" for heart.
      * @param string $color   The color of the cards
      * @param int $point      The point of the card default 0. example 11 for Ass.
      */
-
     public function __construct(int | string $value, string $suit, string $color, int $point = 0)
     {
         $this->value = $value;

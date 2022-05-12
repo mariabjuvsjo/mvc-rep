@@ -126,7 +126,8 @@ class BlackJack
      *
      * The more cards will be drawn if dealer has less the 17 score.
      *
-     * After that alot of if statements will check the diffrent conditions to see whos won the game or if there is a tie.
+     * After that alot of if statements will check the diffrent conditions
+     * to see whos won the game or if there is a tie.
      *
      */
     public function gameStop(): string
