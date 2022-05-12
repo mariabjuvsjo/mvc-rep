@@ -16,7 +16,7 @@ use App\Cards\Card;
 
 class HandTest extends TestCase
 {
-        /**
+    /**
      * Construct object and verify that the object is of expected instance.
     */
 
@@ -30,21 +30,20 @@ class HandTest extends TestCase
      * Test to see get hand method return an empty array when called with no other method being called before
      */
 
-    public function testGetHandWEmptyHand() 
+    public function testGetHandWEmptyHand()
     {
         $hand = new Hand();
 
         $res = $hand->getHand();
 
         $this->assertEquals([], $res);
-
     }
 
     /**
-     * Test to see if assCardtoHand works accordingly 
+     * Test to see if assCardtoHand works accordingly
      */
 
-    public function testGetHand1Card() 
+    public function testGetHand1Card()
     {
         $hand = new Hand();
 
@@ -59,10 +58,5 @@ class HandTest extends TestCase
         $res = $hand->getHand();
 
         $this->assertEquals($res[0][0], $card2);
-
     }
-
-
-
-
 }

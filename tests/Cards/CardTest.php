@@ -26,7 +26,8 @@ class CardTest extends TestCase
      * Construct object and check if a point is returned
      */
 
-    public function testPointMethodWhenPointIsGiven() {
+    public function testPointMethodWhenPointIsGiven()
+    {
         $card = new Card("Q", "@hearts;", "red", 10);
         $res = $card->getPoint();
         $this->assertEquals(10, $res);
@@ -36,7 +37,8 @@ class CardTest extends TestCase
      * Construct object and check if a default point is returned when non is given
      */
 
-    public function testPointIsDefaultZero() {
+    public function testPointIsDefaultZero()
+    {
         $card = new Card("Q", "@hearts;", "red");
         $res = $card->getPoint();
         $this->assertEquals(0, $res);
@@ -46,14 +48,11 @@ class CardTest extends TestCase
      * Construct object and check if string method returns string with properties in
      */
 
-    public function testGetStringBack() 
+    public function testGetStringBack()
     {
         $card = new Card("Q", "@hearts;", "red", 10);
         $res = $card->getAsString();
 
         $this->assertStringContainsString("@hearts;", $res);
-
-
     }
-      
 }

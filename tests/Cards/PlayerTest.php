@@ -16,14 +16,14 @@ use App\Cards\Player;
 
 class PlayerTest extends TestCase
 {
-        /**
+    /**
      * Construct object and verify that the object is of expected instance.
     */
 
     public function testCreatePlayer()
-    {   
+    {
         $deck1 = new Deck();
-        $player = New Player($deck1);
+        $player = new Player($deck1);
 
         $this->assertInstanceOf("\App\Cards\Player", $player);
     }
@@ -35,11 +35,10 @@ class PlayerTest extends TestCase
     public function testGetHandPlayer()
     {
         $deck1 = new Deck();
-        $player = New Player($deck1);
+        $player = new Player($deck1);
         $res = $player->getHand();
 
         $this->assertEquals($res, []);
-
     }
 
     /**
@@ -50,7 +49,7 @@ class PlayerTest extends TestCase
     public function testTheFirstDeal()
     {
         $deck1 = new Deck();
-        $player = New Player($deck1);
+        $player = new Player($deck1);
         $card = new Card(2, "&hearts;", "red", 2);
         $player->firstDeal();
 
@@ -68,7 +67,7 @@ class PlayerTest extends TestCase
     public function testTheHitFunction()
     {
         $deck1 = new Deck();
-        $player = New Player($deck1);
+        $player = new Player($deck1);
         $card = new Card("A", "&hearts;", "red", 11);
         $player->hit();
 
@@ -83,11 +82,10 @@ class PlayerTest extends TestCase
      * Testing to see that the score method sums the points from all cards
      */
 
-    public function testScore() 
+    public function testScore()
     {
-
         $deck1 = new Deck();
-        $player = New Player($deck1);
+        $player = new Player($deck1);
 
         $player->firstDeal();
         $player->hit();
@@ -105,7 +103,7 @@ class PlayerTest extends TestCase
     public function testScoreW1AssOver21()
     {
         $deck1 = new Deck();
-        $player = New Player($deck1);
+        $player = new Player($deck1);
 
         $player->firstDeal();
         $player->hit();
@@ -114,7 +112,7 @@ class PlayerTest extends TestCase
 
         $res = $player->scores();
 
-        $this->assertEquals($res, 15);    
+        $this->assertEquals($res, 15);
     }
 
     /**
@@ -124,7 +122,7 @@ class PlayerTest extends TestCase
     public function testScoreW2AssOver21()
     {
         $deck1 = new Deck();
-        $player = New Player($deck1);
+        $player = new Player($deck1);
 
         $player->firstDeal();
         $player->firstDeal();
@@ -134,11 +132,10 @@ class PlayerTest extends TestCase
         $player->firstDeal();
         $player->firstDeal();
         $player->hit();
-      
+
 
         $res = $player->scores();
 
         $this->assertEquals($res, 88);
-
     }
 }

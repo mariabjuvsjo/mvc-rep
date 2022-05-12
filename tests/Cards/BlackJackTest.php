@@ -43,10 +43,9 @@ class BlackJackTest extends TestCase
         $playerCards = $game->getPlayerCards();
 
         $this->assertEquals(count($playerCards), 2);
-
     }
 
-       /**
+    /**
      * Test to see if firstplay gives the dealer object 2 cards
      */
 
@@ -59,7 +58,6 @@ class BlackJackTest extends TestCase
         $dealerCards = $game->getDealerCards();
 
         $this->assertEquals(count($dealerCards), 2);
-
     }
 
     /**
@@ -75,7 +73,6 @@ class BlackJackTest extends TestCase
         $playerCards = $game->getPlayerCards();
 
         $this->assertEquals(count($playerCards), 1);
-
     }
 
     /**
@@ -88,7 +85,7 @@ class BlackJackTest extends TestCase
 
         $res = $game->checkFirstDraw();
 
-     
+
         $this->assertStringContainsString($res, "");
     }
 
@@ -115,7 +112,6 @@ class BlackJackTest extends TestCase
         $this->assertLessThan($res, 21);
 
         $this->assertStringContainsString($res1, "You busted, Dealer won!");
-
     }
 
     public function testPlayerHaveMorethenDealer()
@@ -136,7 +132,6 @@ class BlackJackTest extends TestCase
         $this->assertLessThan($res, 21);
 
         $this->assertStringContainsString($res1, "You busted, Dealer won!");
-
     }
 
     /**
@@ -152,8 +147,5 @@ class BlackJackTest extends TestCase
         $res = $game->getDealerScore();
 
         $this->assertIsInt($res);
-
-
-
     }
 }

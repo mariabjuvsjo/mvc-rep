@@ -36,28 +36,27 @@ class DeckTest extends TestCase
         $this->assertEquals($res, 52);
     }
 
-      /**
+    /**
      * Test if the getDeck method returns cardobject checking the second card objekt in array
      */
-    public function testGetDeck() 
+    public function testGetDeck()
     {
         $deck = new Deck();
 
         $card = new Card(2, "&hearts;", "red", 2);
 
         $res = $deck->getDeck();
-    
+
         $this->assertEquals($res[1], $card);
 
         $this->assertIsObject($res[1]);
-
     }
 
     /**
      * Test if the shuffle method is mixing the cards
      */
 
-    public function testShuffleDeck() 
+    public function testShuffleDeck()
     {
         $deck1 = new Deck();
 
@@ -69,10 +68,9 @@ class DeckTest extends TestCase
 
         $res2 = $deck2->getDeck();
 
-        
+
 
         $this->assertNotEquals($res1, $res2);
-
     }
 
     /**
@@ -82,14 +80,13 @@ class DeckTest extends TestCase
     public function testDrawCardWithNoArgs()
     {
         $deck1 = new Deck();
-        
+
         $card = new Card("A", "&hearts;", "red", 11);
 
         $res = $deck1->draw();
 
-      
-        $this->assertEquals($res[0], $card);
 
+        $this->assertEquals($res[0], $card);
     }
 
     /**
@@ -99,13 +96,12 @@ class DeckTest extends TestCase
     public function testDrawCardWithArgs()
     {
         $deck1 = new Deck();
-        
+
         $card = new Card(4, "&hearts;", "red", 4);
 
         $res = $deck1->draw(4);
 
         $this->assertEquals($res[3], $card);
-        
     }
 
     /**
@@ -119,14 +115,13 @@ class DeckTest extends TestCase
         $this->expectException(DrawException::class);
 
         $res = $deck1->draw(54);
-
     }
 
     /**
-     * 
+     *
      * testing if exception is thrown when try to draw on a empty deck
      */
-    
+
     public function testDrawExceptionEmpyDeck()
     {
         $deck1 = new Deck();
@@ -136,6 +131,5 @@ class DeckTest extends TestCase
         $this->expectException(DrawException::class);
 
         $res = $deck1->draw();
-
     }
 }

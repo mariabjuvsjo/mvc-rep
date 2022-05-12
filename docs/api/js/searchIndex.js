@@ -3,52 +3,52 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Cards\\BlackJack",
             "name": "BlackJack",
-            "summary": "",
+            "summary": "Class\u0020Black\u0020Jack.\u0020Represent\u0020the\u0020blackJack\u0020game.\u0020Holds\u0020the\u0020whole\u0020game.",
             "url": "classes/App-Cards-BlackJack.html"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020to\u0020create\u0020the\u0020black\u0020jack\u0020object.",
             "url": "classes/App-Cards-BlackJack.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AfirstPlay\u0028\u0029",
             "name": "firstPlay",
-            "summary": "",
+            "summary": "Method\u0020to\u0020give\u0020both\u0020player\u0020and\u0020dealer\u0020their\u0020frist\u00202\u0020cards.",
             "url": "classes/App-Cards-BlackJack.html#method_firstPlay"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AcheckFirstDraw\u0028\u0029",
             "name": "checkFirstDraw",
-            "summary": "",
+            "summary": "Method\u0020to\u0020check\u0020if\u0020both\u0020or\u00201\u0020player\u0020object\u0020as\u0020black\u0020jack",
             "url": "classes/App-Cards-BlackJack.html#method_checkFirstDraw"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AgetPlayerCards\u0028\u0029",
             "name": "getPlayerCards",
-            "summary": "",
+            "summary": "Get\u0020method\u0020to\u0020get\u0020players\u0020cards.",
             "url": "classes/App-Cards-BlackJack.html#method_getPlayerCards"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AgetPlayerScore\u0028\u0029",
             "name": "getPlayerScore",
-            "summary": "",
+            "summary": "Get\u0020method\u0020to\u0020get\u0020players\u0020score.",
             "url": "classes/App-Cards-BlackJack.html#method_getPlayerScore"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AgetDealerCards\u0028\u0029",
             "name": "getDealerCards",
-            "summary": "",
+            "summary": "Get\u0020method\u0020to\u0020get\u0020dealers\u0020cards.",
             "url": "classes/App-Cards-BlackJack.html#method_getDealerCards"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AgetDealerScore\u0028\u0029",
             "name": "getDealerScore",
-            "summary": "",
+            "summary": "Get\u0020method\u0020to\u0020get\u0020dealers\u0020score.",
             "url": "classes/App-Cards-BlackJack.html#method_getDealerScore"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AplayerHit\u0028\u0029",
             "name": "playerHit",
-            "summary": "",
+            "summary": "Method\u0020to\u0020give\u0020player\u00201\u0020card.",
             "url": "classes/App-Cards-BlackJack.html#method_playerHit"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003AgameStop\u0028\u0029",
             "name": "gameStop",
-            "summary": "",
+            "summary": "Method\u0020to\u0020see\u0020hows\u0020won\u0020the\u0020game.",
             "url": "classes/App-Cards-BlackJack.html#method_gameStop"
         },                {
             "fqsen": "\\App\\Cards\\BlackJack\u003A\u003A\u0024deck",
@@ -68,22 +68,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Card",
             "name": "Card",
-            "summary": "",
+            "summary": "Class\u0020Card.\u0020Class\u0020that\u0020represent\u0020a\u0020card\u0020from\u0020a\u0020eck\u0020of\u0020cards.",
             "url": "classes/App-Cards-Card.html"
         },                {
             "fqsen": "\\App\\Cards\\Card\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020to\u0020create\u0020the\u0020card\u0020object.",
             "url": "classes/App-Cards-Card.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\Card\u003A\u003AgetPoint\u0028\u0029",
             "name": "getPoint",
-            "summary": "",
+            "summary": "Method\u0020returning\u0020the\u0020point\u0020of\u0020the\u0020card.",
             "url": "classes/App-Cards-Card.html#method_getPoint"
         },                {
             "fqsen": "\\App\\Cards\\Card\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Method\u0020to\u0020return\u0020the\u0020properties\u0020of\u0020the\u0020constructor\u0020as\u0020string\u0020value.",
             "url": "classes/App-Cards-Card.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Cards\\Card\u003A\u003A\u0024value",
@@ -108,18 +108,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Deck",
             "name": "Deck",
-            "summary": "",
+            "summary": "Class\u0020Deck.\u0020Represent\u0020a\u0020deck\u0020of\u002052\u0020cards.",
             "url": "classes/App-Cards-Deck.html"
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020which\u0020creates\u0020the\u0020deck\u0020object\u0020with\u002052\u0020card\u0020objects\u0020in\u0020an\u0020array.",
             "url": "classes/App-Cards-Deck.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Cards\\Deck\u003A\u003AcreateDeck\u0028\u0029",
-            "name": "createDeck",
-            "summary": "",
-            "url": "classes/App-Cards-Deck.html#method_createDeck"
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003AgetDeck\u0028\u0029",
             "name": "getDeck",
@@ -128,17 +123,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003Ashuffles\u0028\u0029",
             "name": "shuffles",
-            "summary": "",
+            "summary": "Shuffle\u0020the\u0020deck.",
             "url": "classes/App-Cards-Deck.html#method_shuffles"
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003Adraw\u0028\u0029",
             "name": "draw",
-            "summary": "",
+            "summary": "Draw\u0020the\u0020first\u0020card\u0020object\u0020and\u0020push\u0020in\u0020new\u0020array,\u0020and\u0020remove\u0020from\u0020deck\u0020array.",
             "url": "classes/App-Cards-Deck.html#method_draw"
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003AcountCards\u0028\u0029",
             "name": "countCards",
-            "summary": "",
+            "summary": "Counting\u0020the\u0020cards\u0020with\u0020the\u0020built\u0020in\u0020function\u0020count.",
             "url": "classes/App-Cards-Deck.html#method_countCards"
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003A\u0024suits",
@@ -168,12 +163,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\DeckWith2Joker",
             "name": "DeckWith2Joker",
-            "summary": "",
+            "summary": "Class\u0020Deck.\u0020Represent\u0020a\u0020deck\u0020of\u002052\u0020cards.",
             "url": "classes/App-Cards-DeckWith2Joker.html"
         },                {
             "fqsen": "\\App\\Cards\\DeckWith2Joker\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020which\u0020creates\u0020the\u0020deck\u0020object\u0020with\u002052\u0020card\u0020objects\u0020in\u0020an\u0020array.",
             "url": "classes/App-Cards-DeckWith2Joker.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\DrawException",
@@ -208,32 +203,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Player",
             "name": "Player",
-            "summary": "",
+            "summary": "Class\u0020Player.\u0020Represent\u0020a\u0020player\u0020of\u0020black\u0020jack\u0020either\u0020bank\u0020or\u0020player.",
             "url": "classes/App-Cards-Player.html"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor.\u0020Creates\u0020the\u0020player\u0020with\u0020an\u0020empty\u0020array\u0020as\u0020a\u0020hand.\u0020And\u0020a\u0020start\u0020score\u0020set\u0020to\u00200.",
             "url": "classes/App-Cards-Player.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003AgetHand\u0028\u0029",
             "name": "getHand",
-            "summary": "",
+            "summary": "Method\u0020to\u0020return\u0020the\u0020players\u0020card.",
             "url": "classes/App-Cards-Player.html#method_getHand"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003AfirstDeal\u0028\u0029",
             "name": "firstDeal",
-            "summary": "",
+            "summary": "Method\u0020to\u0020merge\u0020the\u0020empty\u0020hand\u0020array\u0020with\u0020the\u0020array\u0020from\u0020deck\u0020method\u0020draw.\u0020hardcoded\u0020with\u00202\u0020cards.",
             "url": "classes/App-Cards-Player.html#method_firstDeal"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003Ahit\u0028\u0029",
             "name": "hit",
-            "summary": "",
+            "summary": "Method\u0020to\u0020merge\u0020players\u0020hand\u0020with\u0020deck\u0020method\u0020draw\u0020with\u0020only\u00201\u0020card\u0020from\u0020draw\u0020method.",
             "url": "classes/App-Cards-Player.html#method_hit"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003Ascores\u0028\u0029",
             "name": "scores",
-            "summary": "",
+            "summary": "Method\u0020to\u0020count\u0020the\u0020points\u0020of\u0020a\u0020Player\u0020objects\u0020hand.",
             "url": "classes/App-Cards-Player.html#method_scores"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003A\u0024hand",

@@ -4,13 +4,13 @@ namespace App\Cards;
 
 /**
  * Class Card. Class that represent a card from a eck of cards.
- * 
+ *
  */
 
 class Card
-{   
+{
     /**
-     * 
+     *
      * @var mixed $value    The value of the card example A for Ass and Q for Queen.
      * @var string $suit    The suit from UTF-charset example "&hearts;" for heart.
      * @var string $color   The color of the cards
@@ -25,7 +25,7 @@ class Card
 
     /**
      * Constructor to create the card object.
-     * 
+     *
      * @param mixed $value    The value of the card example A for Ass and Q for Queen.
      * @param string $suit    The suit from UTF-charset example "&hearts;" for heart.
      * @param string $color   The color of the cards
@@ -42,11 +42,11 @@ class Card
 
     /**
      * Method returning the point of the card.
-     * 
+     *
      * @return int the point of a card.
      */
 
-    public function getPoint(): int 
+    public function getPoint(): int
     {
         return $this->point;
     }
@@ -54,8 +54,8 @@ class Card
 
     /**
      * Method to return the properties of the constructor as string value.
-     * 
-     * @return string 
+     *
+     * @return string
      */
     public function getAsString(): string
     {

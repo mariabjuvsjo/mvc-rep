@@ -14,14 +14,14 @@ use App\Cards\Players;
 
 class Kmom02PlayersTest extends TestCase
 {
-        /**
+    /**
      * Construct object and verify that the object is of expected instance.
     */
 
     public function testCreatePlayer()
-    {   
+    {
         $players = new Players();
-      
+
         $this->assertInstanceOf("\App\Cards\Players", $players);
     }
 
@@ -36,7 +36,6 @@ class Kmom02PlayersTest extends TestCase
         $res = $players->getPlayers();
 
         $this->assertEquals(count($res), 1);
-
     }
 
     /**
@@ -50,7 +49,5 @@ class Kmom02PlayersTest extends TestCase
         $res = $players->getPlayers();
 
         $this->assertEquals(count($res), 5);
-
     }
-
 }
