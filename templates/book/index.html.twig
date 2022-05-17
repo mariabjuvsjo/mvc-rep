@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Books
+{% endblock %}
+{% block content %}
+
+	<div class="book">
+
+		<a href="{{path("create_book")}}" class="btn">Skapa Bok</a>
+		<a href="{{path("show_book")}}" class="btn">Visa böcker</a>
+	</div>
+{% endblock %}

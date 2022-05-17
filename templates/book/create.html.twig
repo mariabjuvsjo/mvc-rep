@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Book
+{% endblock %}
+
+{% block content %}
+
+	<div class="book-wrapper">
+		<h2>
+			Create Book!
+		</h2>
+		<form class="create-book" method="POST">
+
+			<input name="title" type="text" placeholder="Bok titel" required>
+			<input name="isbn" type="number" placeholder="ISBN Nummer" required>
+			<input name="author" type="text" placeholder="Författare" required>
+			<input name="img" type="text" placeholder="Namn på bilfil">
+			<input name="add" type="submit" class="btn" value="Lägg Till">
+
+
+		</form>
+
+	</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}Show Books
+{% endblock %}
+{% block content %}
+	<div class="btn-wrapper">
+		<a class="btn" href="{{ path("app_book") }}">Tillbaka</a>
+	</div>
+
+
+	<div class="book-shelf flex">
+		{% for book in books %}
+			<div class="book-cover">
+				<a href="{{path("book_by_id", {"id": book.id})}}">
+					<div class="book-img" style=" background-size: cover; background-image: url('/img/{{ book.img }}.jpg'); width: 200px; height:280px;"></div>
+					<h5>{{book.title}}</h5>
+					<p>{{book.author}}</p>
+				</a>
+				<a href="{{path("book_delete_by_id", {"id": book.id})}}">Delete?</a>
+				<a href="{{path("book_update_by_id", {"id": book.id})}}">Update?</a>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

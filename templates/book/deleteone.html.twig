@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}Delete One Book
+{% endblock %}
+
+{% block content %}
+	<div class="btn-wrapper">
+		<a class="btn" href="{{ path("show_book") }}">Tillbaka</a>
+	</div>
+	<div class="book-one-wrapper">
+		<form method="post" accept-charset="UTF-8">
+
+			<p>
+
+				<input type="number" name="id" value="{{bookone.id}}" readonly><br>
+				<input type="submit" class="btn" name="delete" value="Delete">
+			</p>
+		</form>
+		<div class="book-img" style=" background-size: cover; background-image: url('/img/{{ bookone.img }}.jpg'); width: 200px; height:280px;">
+			<h5>BOK TITEL:
+				{{bookone.title}}</h5>
+			<p>FÖRFATTARE:
+				{{bookone.author}}</p>
+			<p>ISBN NUMMER:
+				{{bookone.isbn}}</p>
+
+		</div>
+
+
+	{% endblock %}

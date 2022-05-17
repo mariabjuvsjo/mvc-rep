@@ -130,7 +130,7 @@ li {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 150px;
+    margin-bottom: 10px;
     position: relative;
 }
 
@@ -251,6 +251,7 @@ li {
 @media only screen and (max-width: 768px) {
     .nav-bar {
         position: relative;
+        z-index: 999;
     }
 
     .nav-bar ul {
@@ -345,8 +346,8 @@ li {
 
 .wrapper {
     min-height: 100vh;
-    max-width: 90%;
-    margin: 0 auto;
+    max-width: 100%;
+
 }
 
 .block {
@@ -422,10 +423,6 @@ li {
     MAIN
   -------------------*/
 
-.wrapper {
-    margin-bottom: 50px;
-}
-
 
 
 /*------------
@@ -451,6 +448,26 @@ img styling
     color: #0884a5;
 }
 
+.book {
+    background-image: url(./../img/library.jpg);
+    min-width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #252525;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    opacity: 0.8;
+    border-radius: 5px;
+
+}
+
+.book a {
+    margin-top: 100px;
+}
 
 /*
 CARDS
@@ -462,34 +479,57 @@ CARDS
     flex-wrap: wrap;
     width: 100%;
     min-height: 900px;
-    padding:20px;
+    padding: 20px;
 }
 
 
-.outline{ width: 110px; text-align: center; padding: 10px; margin: 10px; background: #FFF;  }
-.top{ text-align: left; }
-.bottom{ text-align: left; transform: rotate(180deg); }
+.outline {
+    width: 110px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background: #FFF;
+}
 
-.shadow{ box-shadow: 1px 1px 3px #000; -moz-box-shadow: 1px 1px 3px #000; -webkit-box-shadow: 1px 1px 3px #000; }
-.rounded{ border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px; }
+.top {
+    text-align: left;
+}
+
+.bottom {
+    text-align: left;
+    transform: rotate(180deg);
+}
+
+.shadow {
+    box-shadow: 1px 1px 3px #000;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+}
+
+.rounded {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
 
 
 .card-wrapper-two {
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
     background-color: green;
 }
 
 
 .player-wrapper {
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
     background-color: green;
 
 }
+
 .player {
- margin: 10px;
- border: 3px solid black;
+    margin: 10px;
+    border: 3px solid black;
 }
 
 .card-links {
@@ -523,13 +563,12 @@ CARDS
     background-color: #252525;
     transition: all 300ms ease-in;
     color: #caa838;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #caa838;
-    color:#252525
-
+    color: #252525
 }
 
 .game-btn {
@@ -545,4 +584,43 @@ CARDS
 
 .flex {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.create-book {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-book input {
+    border: none;
+    padding: 20px 10px;
+    background-color: #252525;
+    color: #a27017;
+    font-size: 20px;
+    border: 2px dotted #a27017;
+}
+
+.btn-wrapper {
+    margin: 20px;
+}
+
+
+.book-cover {
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.book-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.book-one-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
 }
