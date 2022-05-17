@@ -623,9 +623,8 @@ CARDS
 }
 
 .book-img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 200px;
+    height: 280px;
     border-radius: 5px 0 0 5px;
     box-shadow: 5px -5px 5px 5px #888888;
 }

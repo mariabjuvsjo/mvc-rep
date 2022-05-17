@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="book-one-wrapper">
-		<div class="book-img" style=" background-size: cover; background-image: url('/img/{{ bookone.img }}.jpg'); width: 200px; height:280px;"></div>
+		<img class="book-img" src="{{ asset("img/" ~ bookone.img ~ ".jpg" ) }}" alt="books">
 		<h5>BOK TITEL:
 			{{bookone.title}}</h5>
 		<p>FÖRFATTARE:
