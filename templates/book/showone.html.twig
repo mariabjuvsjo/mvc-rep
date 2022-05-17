@@ -16,6 +16,9 @@
 		<p>ISBN NUMMER:
 			{{bookone.isbn}}</p>
 
+		<a class="btn" href="{{path("book_delete_by_id", {"id": bookone.id})}}">Radera?</a>
+		<a class="btn" href="{{path("book_update_by_id", {"id": bookone.id})}}">Updatera?</a>
+
 	</div>
 
 {% endblock %}

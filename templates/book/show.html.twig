@@ -15,8 +15,8 @@
 					<h5>{{book.title}}</h5>
 					<p>{{book.author}}</p>
 				</a>
-				<a href="{{path("book_delete_by_id", {"id": book.id})}}">Delete?</a>
-				<a href="{{path("book_update_by_id", {"id": book.id})}}">Update?</a>
+				<a style="margin-right: 20px; text-decoration: underline;" href="{{path("book_delete_by_id", {"id": book.id})}}">Radera?</a>
+				<a style="text-decoration: underline;" href="{{path("book_update_by_id", {"id": book.id})}}">Updatera?</a>
 			</div>
 		{% endfor %}
 	</div>

@@ -9,10 +9,10 @@
 	<div class="book-one-wrapper">
 		<form method="post" accept-charset="UTF-8">
 
+			<p>Är du säker på att du vill Radera?</p>
 			<p>
-
-				<input type="number" name="id" value="{{bookone.id}}" readonly><br>
-				<input type="submit" class="btn" name="delete" value="Delete">
+				<input type="number" name="id" value="{{bookone.id}}" hidden><br>
+				<input type="submit" class="btn" name="delete" value="Radera">
 			</p>
 		</form>
 		<div class="book-img" style=" background-size: cover; background-image: url('/img/{{ bookone.img }}.jpg'); width: 200px; height:280px;">

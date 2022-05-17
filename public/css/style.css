@@ -530,6 +530,7 @@ CARDS
 .player {
     margin: 10px;
     border: 3px solid black;
+
 }
 
 .card-links {
@@ -607,14 +608,26 @@ CARDS
 
 
 .book-cover {
-    border: 2px solid black;
     margin: 10px;
+    padding: 20px;
+    border: 1px solid #252525;
+
+}
+
+.book-cover h5 {
+    color: #0884a5;
+}
+
+.book-cover p {
+    color: #252525;
 }
 
 .book-img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 5px -5px 5px 5px #888888;
 }
 
 .book-one-wrapper {

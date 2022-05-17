@@ -151,4 +151,37 @@ public function updateBookById(
 
 return $this->render('book/updateone.html.twig', $data);
 }
+
+/**
+ * @Route("/book/update/{id}", name="book_update_by_id_process", methods={"POST"})
+ */
+public function updateBookProcess(
+    ManagerRegistry $doctrine,
+    Request $request,
+    int $id
+): Response {
+    $entityManager = $doctrine->getManager();
+    $book = $entityManager->getRepository(Book::class)->find($id);
+
+    $title  = $request->request->get('title');
+    $isbn  = $request->request->get('isbn');
+    $author  = $request->request->get('author');
+    $img  = $request->request->get('img');
+
+    if (!$book) {
+        throw $this->createNotFoundException(
+            "No book found for id " . $id
+        );
+    }
+
+    $book->setTitle($title);
+    $book->setIsbn($isbn);
+    $book->setAuthor($author);
+    $book->setImg($img);
+
+    
+    $entityManager->flush();
+
+    return $this->redirectToRoute('show_book');
+}
 }
