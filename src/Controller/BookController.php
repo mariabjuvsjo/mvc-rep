@@ -14,8 +14,8 @@ class BookController extends AbstractController
 {
     #[Route('/book', name: 'app_book')]
     public function index(): Response
-    {   
-     
+    {
+
         return $this->render('book/index.html.twig');
     }
 
@@ -23,8 +23,8 @@ class BookController extends AbstractController
      * @Route("/book/create", name="create_book", methods={"GET"})
     */
     public function createBook(BookRepository $bookRepository): Response
-    {   
-        
+    {
+
         return $this->render('book/create.html.twig');
     }
 
@@ -36,8 +36,8 @@ class BookController extends AbstractController
      */
     public function createBookProcess(
         ManagerRegistry $doctrine,
-        Request $request): Response
-    {
+        Request $request
+    ): Response {
         $entityManager = $doctrine->getManager();
 
         $title  = $request->request->get('title');
@@ -51,7 +51,7 @@ class BookController extends AbstractController
         $book->setAuthor($author);
         $book->setImg($img);
 
-       
+
 
         $entityManager->persist($book);
 
@@ -64,7 +64,7 @@ class BookController extends AbstractController
      * @Route("/book/show", name="show_book", methods={"GET"})
     */
     public function showBook(BookRepository $bookRepository): Response
-    {   
+    {
         $books = $bookRepository->findAll();
 
         //if ($books->getImg() === null | $books->getImg() === "" ) {
@@ -75,113 +75,113 @@ class BookController extends AbstractController
             "books" => $books
         ];
 
-        
+
         return $this->render('book/show.html.twig', $data);
     }
 
     /**
  * @Route("/book/show/{id}", name="book_by_id")
  */
-public function showBookById(
-    BookRepository $bookRepository,
-    int $id
-): Response {
-    $book = $bookRepository
+    public function showBookById(
+        BookRepository $bookRepository,
+        int $id
+    ): Response {
+        $book = $bookRepository
         ->find($id);
-    
+
         $data = [
             "bookone" => $book
         ];
 
-    return $this->render('book/showone.html.twig', $data);
-}
+        return $this->render('book/showone.html.twig', $data);
+    }
 
 /**
  * @Route("/book/delete/{id}", name="book_delete_by_id", methods={"GET"})
  */
-public function deleteBookById(
-    BookRepository $bookRepository,
-    int $id
-): Response {
-    $book = $bookRepository
-    ->find($id);
+    public function deleteBookById(
+        BookRepository $bookRepository,
+        int $id
+    ): Response {
+        $book = $bookRepository
+        ->find($id);
 
-    $data = [
+        $data = [
         "bookone" => $book
-    ];
+        ];
 
-return $this->render('book/deleteone.html.twig', $data);
-}
+        return $this->render('book/deleteone.html.twig', $data);
+    }
 
 /**
  * @Route("/book/delete/{id}", name="book_delete_by_id_process", methods={"POST"})
  */
-public function deleteBookProcess(
-    ManagerRegistry $doctrine,
-    int $id
-): Response {
-    $entityManager = $doctrine->getManager();
-    $book = $entityManager->getRepository(Book::class)->find($id);
+    public function deleteBookProcess(
+        ManagerRegistry $doctrine,
+        int $id
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $book = $entityManager->getRepository(Book::class)->find($id);
 
-    if (!$book) {
-        throw $this->createNotFoundException(
-            "No book found for id " . $id
-        );
+        if (!$book) {
+            throw $this->createNotFoundException(
+                "No book found for id " . $id
+            );
+        }
+
+        $entityManager->remove($book);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('show_book');
     }
-
-    $entityManager->remove($book);
-    $entityManager->flush();
-
-    return $this->redirectToRoute('show_book');
-}
 
 /**
  * @Route("/book/update/{id}", name="book_update_by_id", methods={"GET"})
  */
-public function updateBookById(
-    BookRepository $bookRepository,
-    int $id
-): Response {
-    $book = $bookRepository
-    ->find($id);
+    public function updateBookById(
+        BookRepository $bookRepository,
+        int $id
+    ): Response {
+        $book = $bookRepository
+        ->find($id);
 
-    $data = [
+        $data = [
         "bookone" => $book
-    ];
+        ];
 
-return $this->render('book/updateone.html.twig', $data);
-}
+        return $this->render('book/updateone.html.twig', $data);
+    }
 
 /**
  * @Route("/book/update/{id}", name="book_update_by_id_process", methods={"POST"})
  */
-public function updateBookProcess(
-    ManagerRegistry $doctrine,
-    Request $request,
-    int $id
-): Response {
-    $entityManager = $doctrine->getManager();
-    $book = $entityManager->getRepository(Book::class)->find($id);
+    public function updateBookProcess(
+        ManagerRegistry $doctrine,
+        Request $request,
+        int $id
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $book = $entityManager->getRepository(Book::class)->find($id);
 
-    $title  = $request->request->get('title');
-    $isbn  = $request->request->get('isbn');
-    $author  = $request->request->get('author');
-    $img  = $request->request->get('img');
+        $title  = $request->request->get('title');
+        $isbn  = $request->request->get('isbn');
+        $author  = $request->request->get('author');
+        $img  = $request->request->get('img');
 
-    if (!$book) {
-        throw $this->createNotFoundException(
-            "No book found for id " . $id
-        );
+        if (!$book) {
+            throw $this->createNotFoundException(
+                "No book found for id " . $id
+            );
+        }
+
+        $book->setTitle($title);
+        $book->setIsbn($isbn);
+        $book->setAuthor($author);
+        $book->setImg($img);
+
+
+        $entityManager->flush();
+
+        return $this->redirectToRoute('show_book');
     }
-
-    $book->setTitle($title);
-    $book->setIsbn($isbn);
-    $book->setAuthor($author);
-    $book->setImg($img);
-
-    
-    $entityManager->flush();
-
-    return $this->redirectToRoute('show_book');
-}
 }
