@@ -636,3 +636,41 @@ CARDS
     align-items: center;
 
 }
+
+
+/*
+-----------------------
+PROJECT STYLE SHEET
+-----------------------
+*/
+
+
+.proj-wrapper {
+    mIN-height: 100vh;
+    background-color: #252525;
+}
+
+.nav-proj {
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 3px 0 5px 5px white;
+
+}
+
+.nav-proj a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    color: hotpink;
+}
+
+.nav-proj a:hover {
+    color: #0884a5;
+}
+
+.footer-proj {
+    height: 60px;
+    box-shadow: -3px 0 5px 5px white;
+}

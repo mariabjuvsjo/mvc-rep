@@ -1,0 +1,248 @@
+/*
+-----------------------
+PROJECT STYLE SHEET
+-----------------------
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul {
+    padding-left: 1.5em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.4;
+}
+
+
+.proj-wrapper {
+    mIN-height: 100vh;
+    min-width: 100vw;
+    background-color: #252525;
+    color: whitesmoke;
+
+}
+
+.proj-wrapper h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 35px;
+}
+
+.nav-proj {
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    box-shadow: 3px 0 5px 5px white;
+
+}
+
+.nav-proj a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    color: hotpink;
+}
+
+.nav-proj a:hover {
+    color: #0884a5;
+}
+
+.footer-proj {
+    height: 60px;
+    box-shadow: -3px 0 5px 5px white;
+    background-color: #252525;
+    color: hotpink;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ----------------
+INDEX SIDA
+-------------------
+*/
+
+.proj-title {
+    font-size: 30px;
+    position: relative;
+    color: hotpink;
+    animation: title 5s linear infinite alternate;
+    ;
+    height: 100px;
+
+
+}
+
+@keyframes title {
+    0% {
+        color: hotpink;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        color: rgb(223, 105, 255);
+        left: 20%;
+        top: 0px;
+    }
+
+    50% {
+        color: rgb(115, 105, 255);
+        left: 50%;
+        top: 50px;
+    }
+
+    75% {
+        color: rgb(105, 138, 255);
+        left: 20%;
+        top: 200px;
+    }
+
+    100% {
+        color: rgb(105, 220, 255);
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.btn {
+    border: 2px solid hotpink;
+    padding: 15px 30px;
+    text-transform: Uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    background-color: #252525;
+    transition: all 300ms ease-in;
+    color: hotpink;
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    margin-top: 300px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    background-color: hotpink;
+    color: #0884a5;
+    padding: 20px 40px;
+}
+
+.proj-wrapper form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----------------
+ABOUT SIDA
+-------------------
+*/
+
+
+.about-wrapp {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* ----------------
+PLAY SIDA
+-------------------
+*/
+
+.dealer {
+    border: 3px solid hotpink;
+    width: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.player-bet {
+    border: 3px solid rgb(105, 255, 240);
+    width: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 50px;
+    text-align: center;
+
+}
+
+.poker-table {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50%;
+    border: 10px solid black;
+    margin: 0 auto;
+    padding: 30px;
+    background: linear-gradient(indigo, #9198e5);
+}
+
+.dealer-cards {
+    display: flex;
+}
+
+.your-cards {
+    display: flex;
+}
+
+
+.outline {
+    width: 70px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    background: #FFF;
+}
+
+.top {
+    text-align: left;
+}
+
+.bottom {
+    text-align: left;
+    transform: rotate(180deg);
+}
+
+.shadow {
+    box-shadow: 1px 1px 3px #000;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+}
+
+.rounded {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}

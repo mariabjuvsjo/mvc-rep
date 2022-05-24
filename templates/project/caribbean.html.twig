@@ -1,0 +1,20 @@
+{# templates/project/caribbean.html.twig #}
+
+{% extends "project/basepro.html.twig" %}
+{% block title %}
+	Poker | Intro
+{% endblock %}
+
+{% block content %}
+
+	<h2>
+		Welcome to Caribbean Poker
+	</h2>
+	<p>Minimum bet is 50 kr</p>
+	<form method="post" action="{{ path('caribbean-start') }}">
+		<input type="number" name="bet" min="50">
+		<input type="submit" name="playpoker" class="btn" value="Play">
+	</form>
+
+
+{% endblock %}

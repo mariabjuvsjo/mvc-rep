@@ -1,0 +1,19 @@
+{# templates/project/index.html.twig #}
+
+{% extends "project/basepro.html.twig" %}
+{% block title %}
+	Home | Project
+{% endblock %}
+
+{% block content %}
+
+	<div class="proj-title">
+		<h1>MARIAS CASINO</h1>
+	</div>
+	<div class="flex">
+		<a class="btn start" href="{{path("caribbean-poker")}}">Caribbean Poker</a>
+		<a href="{{path("blackjack")}}" class="btn">Black Jack</a>
+	</div>
+
+
+{% endblock %}
