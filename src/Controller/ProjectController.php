@@ -54,15 +54,18 @@ class ProjectController extends AbstractController
         /**
      * @Route("/proj/caribbean-poker/start", name="caribbean-start", methods={"GET", "HEAD"})
      */
-    public function blackJackStart(SessionInterface $session): Response
+    public function caribbeanStart(SessionInterface $session): Response
     {    
         $game = new \App\Project\Cgame();
 
         $game->firstPlay();
 
+        $rules = new \App\Project\Crules($game);
+
         $data = [
             "player" => $game->getPlayerCards(),
-            "dealer" => $game->getDealerCards()
+            "dealer" => $game->getDealerCards(),
+            "cards" => var_dump($rules)
         ];
    
         return $this->render('project/caribbeanstart.html.twig', $data);

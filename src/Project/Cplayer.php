@@ -2,7 +2,7 @@
 
 namespace App\Project;
 
-use App\Project\CDeck;
+use App\Project\Cdeck;
 use App\Project\Ccards;
 
 /**
@@ -38,6 +38,7 @@ class Cplayer
     {
         return $this->hand;
     }
+
 
     public function playerHand(): void
     {
