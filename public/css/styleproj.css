@@ -217,13 +217,23 @@ PLAY SIDA
     display: flex;
 }
 
+.community-cards {
+    display: flex;
+}
+
+
 
 .outline {
     width: 70px;
+    height: 90px;
     text-align: center;
     padding: 5px;
     margin: 10px;
     background: #FFF;
+}
+
+.cover {
+    background-color: #000;
 }
 
 .top {
@@ -245,4 +255,26 @@ PLAY SIDA
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
+}
+
+.texas-form {
+    margin-top: 40px;
+}
+
+.texas-field {
+    padding: 20px;
+    border: 3px solid hotpink;
+    font-family: 'Courier New', Courier, monospace;
+    color: hotpink;
+}
+
+.line-one {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small {
+    padding: 5px 15px;
 }

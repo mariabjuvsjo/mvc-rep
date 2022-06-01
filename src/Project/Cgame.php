@@ -7,7 +7,7 @@ use App\Project\Ccards;
 use App\Project\Cplayer;
 
 /**
- * Class Cgame. Represent the Caribiean poker game. Holds the whole game.
+ * Class Cgame. Represent the Texas poker game. Holds the whole game.
  */
 class Cgame
 {
@@ -17,6 +17,10 @@ class Cgame
 
     public object $dealer;
 
+    private array $community;
+
+    private int $thePot;
+
     /**
      * Constructor to create the Cgame object.
      */
@@ -25,13 +29,16 @@ class Cgame
         $this->deck = new Cdeck();
         $this->deck->shuffles();
         $this->deck->getDeck();
-        $this->player = new Cplayer($this->deck);
-        $this->dealer = new Cplayer($this->deck);
+        $this->player = new Chand($this->deck);
+        $this->dealer = new Chand($this->deck);
+        $this->community = [];
+        $this->playerHand = [];
+        $this->dealerHand = [];
+        $this->thePot = 0;
     }
 
-
     /**
-     * Method to give player his 5 cards and dealer first card
+     * Method to give both player and dealer their frist 2 cards.
      *
      * @return void
      *
@@ -39,60 +46,61 @@ class Cgame
     public function firstPlay(): void
     {
         $this->player->playerHand();
-        $this->dealer->dealerFirstDeal();
+        $this->dealer->playerHand();
     }
 
-    public function lastPlay(): void {
-        $this->dealer->dealerSecondDeal();
-
-    }
-
-    /**
-     *
-     * Get method to get players cards.
-     *
-     * @return array with the players cards.
-     *
-     */
-    public function getPlayerCards(): array
-    {
+    public function getPlayerCard(): array {
         return $this->player->getHand();
     }
-
-    /**
-     *
-     * Get method to get players score.
-     *
-     * @return int with the players score.
-     *
-     */
-    public function getPlayerScore(): int
-    {
-        return $this->player->scores();
-    }
-
-    /**
-     *
-     * Get method to get dealers cards.
-     *
-     * @return array with the dealers cards.
-     *
-     */
-    public function getDealerCards(): array
-    {
+  
+    public function getDealerCard(): array {
         return $this->dealer->getHand();
     }
 
-    /**
-     *
-     * Get method to get dealers score.
-     *
-     * @return int with the dealers score.
-     *
-     */
-    public function getDealerScore(): int
-    {
-        return $this->dealer->scores();
+    public function getCommunityCards(): array {
+        return $this->community;
+    }
+
+    public function theFlop(): void {
+
+        $this->community = array_merge($this->community, $this->deck->draw(3));
+
+    }
+
+    public function turn(): void {
+
+        $this->community = array_merge($this->community, $this->deck->draw(1));
+    }
+
+    public function river(): void {
+
+        $this->community = array_merge($this->community, $this->deck->draw(1));
+
+    }
+
+    public function playerFullHand(): array {
+
+        $this->playerHand = array_merge($this->community, $this->getPlayerCard());
+
+        return $this->playerHand;
+
+    }
+
+    public function dealerFullHand(): array {
+
+        $this->dealerHand = array_merge($this->community, $this->getDealerCard());
+
+        return $this->dealerHand;
+
+    }
+
+    public function setPot(int $money): void {
+        $this->thePot += $money;
+
+    }
+
+    public function getPot(): int {
+        return $this->thePot;
     }
 
   

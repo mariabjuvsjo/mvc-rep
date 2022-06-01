@@ -26,6 +26,14 @@ class Crules
         $this->handSuit = $handSuit;
     }
 
+    public function highCard() {
+        $cards = $this->handPoints;
+
+        rsort($cards);
+
+        return $cards[0];
+    }
+
     public function onePair() {
 
         $countArr = array_count_values($this->handPoints);
@@ -70,13 +78,52 @@ class Crules
         
     }
 
-    public function fourOfAKind(){
+    public function straight() {
+    
+        $cards = array_unique($this->handPoints);
 
-        $countArr = array_count_values($this->handPoints);
+        sort($cards);
+
+        if ($cards[0] == 2 && $cards[1] == 3 && $cards[2] == 4) {
+       
+                foreach($cards as $key => $value) {
+                    if( $value === 14) {
+                        $cards[$key] = 1;
+                    }
+        }}
+
+        rsort($cards);
+
+        $set = array(array_shift($cards)); // start with the first card
+        foreach ($cards as $card) {
+        $lastCard = $set[count($set)-1];
+        if ($lastCard - 1 != $card) {
+            // not a chain anymore, "restart" from here
+            $set = array($card);
+        } else {
+            $set[] = $card;
+        }
+        if (count($set) == 5) {
+            break;}}
+
+
+       
+
+        if (count($set) == 5) {
+            echo "Found a straight with ".implode(',', $set)."\n";
+            return true;
+        } 
+    }
+
+    public function flush() {
+
+        $cardsSuit = $this->handSuit;
+
+        $countArr = array_count_values($cardsSuit);
 
         foreach($countArr as $val) {
-            if ($val == 4) {
-                echo("fourof a kind");
+            if ($val >= 5) {
+                echo("flush");
                 return true;
             }
         }   
@@ -95,43 +142,16 @@ class Crules
       
     }
 
-    public function straight() {
-        $cards = array_unique($this->handPoints);
-        $lenCard = count($cards);
+    public function fourOfAKind(){
 
-        if($lenCard != 5) {
-            return false;
-        }
+        $countArr = array_count_values($this->handPoints);
 
-        sort($cards);
-
-        if ($cards[0] == 2 && $cards[4] == 14) {
-            $replacements = array(4 => 1);
-            $cards = array_replace($cards, $replacements);
-        }
-
-        sort($cards);
-
-        for ($i = 0; $i < $lenCard -1; $i++) {
-            if($cards[$i] +1 != $cards[$i +1]){
-                return false;
+        foreach($countArr as $val) {
+            if ($val == 4) {
+                echo("fourof a kind");
+                return true;
             }
-        }
-       
-        return true;
-    }
-
-    public function flush() {
-
-        $cardsSuit = array_unique($this->handSuit);
-
-        $cardSuitLen = count($cardsSuit);
-
-        if ($cardSuitLen == 1) {
-            //echo("flush");
-            return true;
-        }
-
+        }   
     }
 
     public function straightFlush () {
@@ -149,18 +169,15 @@ class Crules
         print_r($cards);
         if ($this->straightFlush()) 
         {
-            if($cards[4] == 14) {
+            if($cards[6] == 14) {
                 echo("royalFlush");
                 return true;
             }
             
         }
     }
-
-    
-
 }
 
-$rule = new Crules(array(9, 12, 13, 11, 10), array("&hearts;", "&hearts;", "&hearts;", "&hearts;"));
+$rule = new Crules(array(8, 5, 9, 7, 6, 4, 3), array("&hearts;", "&hearts;", "&hearts;", "&hearts;", "&hearts;", "&diamond;", "&diamond;"));
 
-$rule->royalFlush();
+$rule->straight();

@@ -7,19 +7,19 @@ use App\Project\Ccards;
 
 /**
  *
- *  Class Cplayer. Represent a player or dealer
+ *  Class Chand. Represent a hand in texas holdem
  */
 
-class Cplayer
+class Chand
 {
     protected array $hand;
 
     public object $deck;
 
-    public int $score;
+  
 
     /**
-     * Constructor. Creates the player with an empty array as a hand. And a start score set to 0.
+     * Constructor. Creates the player with an empty array as a hand.and finally yhe 5 card hand
      */
     public function __construct(Cdeck $deck)
     {
@@ -42,17 +42,7 @@ class Cplayer
 
     public function playerHand(): void
     {
-        $this->hand = array_merge($this->hand, $this->deck->draw(5));
-    }
-
-    public function dealerFirstDeal(): void
-    {
-        $this->hand = array_merge($this->hand, $this->deck->draw(1));
-    }
-
-    public function dealerSecondDeal(): void
-    {
-        $this->hand = array_merge($this->hand, $this->deck->draw(4));
+        $this->hand = array_merge($this->hand, $this->deck->draw(2));
     }
 
 

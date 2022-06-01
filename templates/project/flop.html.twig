@@ -1,0 +1,80 @@
+{# templates/project/flop.html.twig #}
+
+{% extends "project/basepro.html.twig" %}
+{% block title %}
+	Poker | Flop
+{% endblock %}
+
+{% block content %}
+
+	<div class="dealer">
+		<p>Dealer Cards</p>
+	</div>
+
+
+	<div class="poker-table">
+
+		<div class="dealer-cards">
+			{% for card in dealer %}
+				<div class="outline shadow rounded cover"></div>
+			{% endfor %}
+		</div>
+		<div class="line-one">
+			<div>
+				<p>Total Pot:{{thePot}}</p>
+			</div>
+			<div class="community-cards">
+				{% for card in community %}
+					<div class="outline shadow rounded" style="color:{{card.color}}">
+						<div class="top">
+							<span>{{card.value}}</span>
+							<span>{{card.suit | raw}}</span>
+						</div>
+						<h1 style="color: {{card.color}}">{{card.suit | raw}}</h1>
+						<div class="bottom">
+							<span>{{card.value}}</span>
+							<span>{{card.suit | raw}}</span>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<form class="texas-form" method="post" action="{{ path('texas-turn') }}">
+
+				<fieldset class="texas-field">
+					<legend>Choose your option:</legend>
+					<input type="submit" class="btn small" name="fold" value="Fold">
+					<div style="display: flex; flex-direction:column; width: 50%;">
+						<input type="number" name="amount" class="btn small" min="50" max="{{playermoney}}">
+						<input type="submit" class="btn small" name="raise" value="Raise">
+						<input type="submit" class="btn small" name="check" value="Check">
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+		<div class="your-cards">
+			{% for card in player %}
+				<div class="outline shadow rounded" style="color:{{card.color}}">
+					<div class="top">
+						<span>{{card.value}}</span>
+						<span>{{card.suit | raw}}</span>
+					</div>
+					<h1 style="color: {{card.color}}">{{card.suit | raw}}</h1>
+					<div class="bottom">
+						<span>{{card.value}}</span>
+						<span>{{card.suit | raw}}</span>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="player-bet">
+		<p>User Cards</p>
+		<p>User Pot:
+			{{playermoney}}
+			SEK
+		</p>
+	</div>
+
+
+{% endblock %}
