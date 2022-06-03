@@ -50,6 +50,11 @@ class Card
         return $this->point;
     }
 
+    public function getSuit(): string
+    {
+        return $this->suit;
+    }
+
 
     /**
      * Method to return the properties of the constructor as string value.

@@ -309,7 +309,7 @@ class ProjectController extends AbstractController
 
         $playerBal = $session->get('balance');
 
-        // AVGÖR VEM SOM VINNER
+        $compare = new \App\Project\CcompareHands($texas);
 
         $data = [
             'player' => $texas ->getPlayerCard(),
@@ -317,7 +317,9 @@ class ProjectController extends AbstractController
             //'playerBlind' => $texas ->getPot() / 2,
             'thePot' => $texas->getPot(),
             'playermoney'=>$playerBal->getBalance(),
-            'community' => $texas->getCommunityCards()
+            'community' => $texas->getCommunityCards(),
+            'blabla' => var_dump($compare->checkPlayer()),
+            'bla'=> var_dump($compare->checkDealer())
     
             ];
         

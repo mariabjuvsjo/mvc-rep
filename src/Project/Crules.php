@@ -14,17 +14,57 @@ use App\Project\Cgame;
 
 class Crules
 {
-    protected array $handPoints;
+    protected array $handPoints = [];
 
-    protected array $handSuit;
+    protected array $handSuits = [];
+
+    protected array $hand;
+
+    protected array $ruleList;
     /**
      * Constructor.
      */
-    public function __construct(array $handPoints, array $handSuit)
+    public function __construct(array $hand)
     {
-        $this->handPoints = $handPoints;
-        $this->handSuit = $handSuit;
+        $this->hand = $hand;
+
+        $this->handPoints = $this->getPointArr();
+
+        $this->handSuits = $this->getSuitArr();
+
+    
+
+        $this->ruleList = [
+            $this->royalFlush(),
+            $this->straightFlush(),
+            $this->fourOfAKind(),
+            $this->fullHouse(),
+            $this->flush(),
+            $this->straight(),
+            $this->threeOfAKind(),
+            $this->twoPair(),
+            $this->onePair()
+        ];
     }
+
+    public function getPointArr() {
+        foreach($this->hand as $card) {
+           array_push($this->handPoints, $card->getPoint());
+        }
+
+        return $this->handPoints;
+       
+    }
+
+    public function getSuitArr() {
+        foreach($this->hand as $card) {
+           array_push($this->handSuits, $card->getSuit());
+        }
+
+        return $this->handSuits;
+       
+    }
+
 
     public function highCard() {
         $cards = $this->handPoints;
@@ -34,13 +74,15 @@ class Crules
         return $cards[0];
     }
 
+    
+
     public function onePair() {
 
         $countArr = array_count_values($this->handPoints);
 
         foreach($countArr as $val) {
             if ($val == 2) {
-                echo("onepair");
+            
                 return true;
             }
         }
@@ -58,7 +100,7 @@ class Crules
         }
 
         if ($counter == 2) {
-            echo("twopair");
+        
             return true;
         }
     }
@@ -69,7 +111,7 @@ class Crules
 
         foreach($countArr as $val) {
             if ($val == 3) {
-                echo("threeof a kind");
+              
                 return true;
             }
         }
@@ -110,20 +152,20 @@ class Crules
        
 
         if (count($set) == 5) {
-            echo "Found a straight with ".implode(',', $set)."\n";
+
             return true;
         } 
     }
 
     public function flush() {
 
-        $cardsSuit = $this->handSuit;
+        $cardsSuit = $this->handSuits;
 
         $countArr = array_count_values($cardsSuit);
 
         foreach($countArr as $val) {
             if ($val >= 5) {
-                echo("flush");
+       
                 return true;
             }
         }   
@@ -135,7 +177,7 @@ class Crules
 
         foreach($countArr as $val) {
             if ($val == 3 && 2) {
-                echo("full house");
+          
                 return true;
             }
         } 
@@ -148,7 +190,7 @@ class Crules
 
         foreach($countArr as $val) {
             if ($val == 4) {
-                echo("fourof a kind");
+          
                 return true;
             }
         }   
@@ -156,7 +198,7 @@ class Crules
 
     public function straightFlush () {
         if ($this->straight() && $this->flush()) {
-            echo("hello");
+  
             return true;
         }
     }
@@ -170,7 +212,7 @@ class Crules
         if ($this->straightFlush()) 
         {
             if($cards[6] == 14) {
-                echo("royalFlush");
+           
                 return true;
             }
             
@@ -178,6 +220,3 @@ class Crules
     }
 }
 
-$rule = new Crules(array(8, 5, 9, 7, 6, 4, 3), array("&hearts;", "&hearts;", "&hearts;", "&hearts;", "&hearts;", "&diamond;", "&diamond;"));
-
-$rule->straight();
