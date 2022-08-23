@@ -49,14 +49,12 @@
 					</div>
 				{% endfor %}
 			</div>
-			<form class="texas-form" method="post" action="{{ path('texas-last-bet') }}">
-
-				<fieldset class="texas-field">
-					<legend>Choose your option:</legend>
-
-
-				</fieldset>
+			<h3>{{hihi}}</h3>
+			<form method="post" action="{{ path('texas-newgame-process') }}">
+				<input type="submit" class="btn small" name="exit" value="Exit">
+				<input type="submit" class="btn small" name="continue" value="Continue">
 			</form>
+
 		</div>
 
 		<div class="your-cards">

@@ -42,11 +42,14 @@
 
 				<fieldset class="texas-field">
 					<legend>Choose your option:</legend>
-					<input type="submit" class="btn small" name="fold" value="Fold">
-					<div style="display: flex; flex-direction:column; width: 50%;">
-						<input type="number" name="amount" class="btn small" min="50" max="{{playermoney}}">
-						<input type="submit" class="btn small" name="raise" value="Raise">
+					<div class="flexi">
+						<input type="submit" class="btn small" name="fold" value="Fold">
 						<input type="submit" class="btn small" name="check" value="Check">
+						<div style="display: flex; flex-direction:column; width: 50%;">
+							<input type="number" name="amount" class="btn small" min="50" value="50" max="{{playermoney}}">
+							<input type="submit" class="btn small" name="raise" value="Raise">
+
+						</div>
 					</div>
 				</fieldset>
 			</form>

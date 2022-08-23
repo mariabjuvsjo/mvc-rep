@@ -224,7 +224,7 @@ PLAY SIDA
 
 
 .outline {
-    width: 70px;
+    width: 65px;
     height: 90px;
     text-align: center;
     padding: 5px;
@@ -277,4 +277,18 @@ PLAY SIDA
 
 .small {
     padding: 5px 15px;
+    margin: 10px;
+}
+
+.small:hover {
+    padding: 7px 17px;
+}
+
+.flexi {
+    display: flex;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
 }

@@ -296,7 +296,7 @@ class ProjectController extends AbstractController
             $session->set("texas", $texas);
             return $this->redirectToRoute('texas-last-bet');
         }
-
+        return $this->redirectToRoute('texas-go');
      }
 
               /**
@@ -307,9 +307,30 @@ class ProjectController extends AbstractController
 
         $texas = $session->get('texas');
 
+        $totalPot = $texas->getPot();
         $playerBal = $session->get('balance');
 
         $compare = new \App\Project\CcompareHands($texas);
+
+        $winner = $compare->compareHand();
+
+        if (str_contains($winner, "You won")) {
+            $playerBal->setPositiveRes($totalPot);
+            $session->set("balance", $playerBal);
+
+        }
+        if (str_contains($winner, "Draw")) {
+            $newPot = $totalPot / 2;
+            $playerBal->setPositiveRes($newPot);
+            $session->set("balance", $playerBal);
+
+        }
+
+        $texas->resetPot();
+
+
+        //GÖR NGT SÅ ATT IF str_contains YOU WON SKA ALLA PENGAR IN PÅ KONTOT OM str_contains YOU LOST SKA PENGARNA INTE IN:
+        //OM str_contains DRAW SKA HÄLFTEN AV PENGARNA TILLBAKA
 
         $data = [
             'player' => $texas ->getPlayerCard(),
@@ -318,14 +339,45 @@ class ProjectController extends AbstractController
             'thePot' => $texas->getPot(),
             'playermoney'=>$playerBal->getBalance(),
             'community' => $texas->getCommunityCards(),
-            'blabla' => var_dump($compare->checkPlayer()),
-            'bla'=> var_dump($compare->checkDealer())
+            //'blabla' => var_dump($compare->checkPlayer()),
+            //'bla'=> var_dump($compare->checkDealer()),
+            'hihi' => $winner
     
             ];
         
        
             return $this->render('project/gameover.html.twig', $data);
      }
+
+
+
+
+             /**
+     * @Route("/proj/texas/newgame", name="texas-newgame-process", methods={"POST"})
+     */
+
+    public function newgameProcess(Request $request, SessionInterface $session) {
+
+        $exit = $request->request->get('exit');
+        $continue = $request->request->get('continue');
+  
+
+        $texas = $session->get('texas');
+
+        $playerBal = $session->get('balance');
+
+        if($exit){
+            return $this->redirectToRoute('project');
+        }
+        if($continue){
+            $session->clear("texas");
+            return $this->redirectToRoute('texas-poker');
+
+        }
+  
+        return $this->redirectToRoute('project');
+     }
+
 
 
 

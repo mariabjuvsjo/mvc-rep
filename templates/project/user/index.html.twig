@@ -1,0 +1,31 @@
+{% extends "project/basepro.html.twig" %}
+
+
+{% block title %}Hello UserController!
+{% endblock %}
+
+{% block content %}
+
+	<div class="example-wrapper">
+		<h1>Hello! ✅</h1>
+		<div class="book-wrapper">
+			<h2>
+				Create User!
+			</h2>
+			<form class="register" method="POST">
+
+				<input name="akro" type="text" placeholder="Choose your Username" required>
+				<input name="password" type="password" placeholder="Choose Password" required>
+				<input name="firstname" type="text" placeholder="Your Fistname" required>
+				<input name="lastname" type="text" placeholder="Your Lastname">
+				<input name="amount" type="number" placeholder="Enter how much money you like to add" required>
+				<input name="email" type="email" placeholder="Enter your email address">
+				<input name="add" type="submit" class="btn" value="Lägg Till">
+
+
+			</form>
+
+		</div>
+
+	</div>
+{% endblock %}

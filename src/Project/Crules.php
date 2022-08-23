@@ -33,18 +33,6 @@ class Crules
         $this->handSuits = $this->getSuitArr();
 
     
-
-        $this->ruleList = [
-            $this->royalFlush(),
-            $this->straightFlush(),
-            $this->fourOfAKind(),
-            $this->fullHouse(),
-            $this->flush(),
-            $this->straight(),
-            $this->threeOfAKind(),
-            $this->twoPair(),
-            $this->onePair()
-        ];
     }
 
     public function getPointArr() {

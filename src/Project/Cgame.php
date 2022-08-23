@@ -103,5 +103,10 @@ class Cgame
         return $this->thePot;
     }
 
+    public function resetPot(): void {
+        $this->thePot = 0;
+
+    }
+
   
 }
