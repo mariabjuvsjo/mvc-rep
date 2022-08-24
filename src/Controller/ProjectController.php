@@ -15,7 +15,7 @@ class ProjectController extends AbstractController
      */
     public function projectStart(): Response
     {
-        return $this->render('project/index.html.twig');
+        return $this->render('project/index.html.twig', ['user' => $this->getUser()]);
     }
 
      /**
@@ -34,12 +34,14 @@ class ProjectController extends AbstractController
     
         $session->clear("texas");
 
+
+
         return $this->render('project/texas.html.twig');
     }
 
 
     /**
-    * @Route("/proj/texas/preflop", name="texas-poker_process", methods={"POST"})
+    * @Route("/proj/texas/preflop", name="texas-poker_process", methods={"POST"}) 
     */
     public function texasPokerProcess(Request $request, SessionInterface $session)
     {

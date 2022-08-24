@@ -6,11 +6,23 @@
 {% endblock %}
 
 {% block content %}
-
+	<div
+		class="flash">
+		{# read and display all flash messages #}
+		{% for label, messages in app.flashes %}
+			{% for message in messages %}
+				<div class="flash-{{ label }}">
+					{{ message }}
+				</div>
+			{% endfor %}
+		{% endfor %}
+	</div>
 	<div class="proj-title">
 		<h1>MARIAS CASINO</h1>
+
 	</div>
 	<div class="flex">
+
 		<a class="btn start" href="{{path("texas-poker")}}">Texas Holdem Poker</a>
 		<a href="{{path("blackjack")}}" class="btn">Black Jack</a>
 	</div>

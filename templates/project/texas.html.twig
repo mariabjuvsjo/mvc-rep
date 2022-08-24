@@ -6,14 +6,15 @@
 {% endblock %}
 
 {% block content %}
+	<h1>Welcome
+		<h1>{{app.user.username}}</h1>
+		<h2>
+			Welcome to Texas Poker
+		</h2>
+		<form method="post" action="{{ path('texas-start') }}">
 
-	<h2>
-		Welcome to Texas Poker
-	</h2>
-	<form method="post" action="{{ path('texas-start') }}">
-
-		<input type="submit" name="playpoker" class="btn" value="Play">
-	</form>
+			<input type="submit" name="playpoker" class="btn" value="Play">
+		</form>
 
 
-{% endblock %}
+	{% endblock %}

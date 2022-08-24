@@ -292,3 +292,10 @@ PLAY SIDA
     display: flex;
     flex-direction: column;
 }
+
+.flash {
+    background-color: #0884a5;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+}
