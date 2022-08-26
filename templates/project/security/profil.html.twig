@@ -1,0 +1,31 @@
+{# templates/project/security/profil.html.twig #}
+
+{% extends "project/basepro.html.twig" %}
+
+
+{% block title %}
+	Profil | Project
+{% endblock %}
+
+{% block content %}
+
+	<h2>
+		Profil of
+		{{profil.firstname}}
+	</h2>
+	<div class="about-wrapp">
+		<img class="profil" src="{{ user.image ?? asset("img/avatar-g6a9fb116d_1280.png")}}">
+		<p>Here is your profil:</p>
+		<p>User Name:{{profil.username}}
+		</p>
+		<p>First Name:{{profil.firstname}}
+		</p>
+		<p>Last Name:{{profil.lastname}}
+		</p>
+		<p>Balance:{{profil.balance}}
+		</p>
+		<p style="margin: 30px;">Add more money to your account or update bio?</p>
+		<a class="btn" href="{{path("profil_update_by_id", {"id": profil.id})}}">Update</a>
+
+	</div>
+{% endblock %}

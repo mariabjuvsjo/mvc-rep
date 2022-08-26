@@ -1,0 +1,29 @@
+{% extends "project/basepro.html.twig" %}
+
+{% block title %}Admin
+{% endblock %}
+{% block content %}
+
+	<table class="admin_table">
+		<tr>
+			<th>Username</th>
+			<th>Firstname</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		{% for user in users %}
+			<tr>
+				<td>{{user.username}}</td>
+				<td>{{user.firstname}}
+				</td>
+
+				<td>
+					<a style="text-decoration: underline;" href="{{path("profil_update_by_id", {"id": user.id})}}">Updatera?</a>
+				</td>
+				<td>
+					<a style="text-decoration: underline;" href="{{path("profil_delete_by_id", {"id": user.id})}}">Delete</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

@@ -299,3 +299,38 @@ PLAY SIDA
     font-size: 24px;
     font-family: 'Courier New', Courier, monospace;
 }
+
+.profil {
+    width: 200px;
+    height: 300px;
+}
+
+.admin_table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 100px auto;
+}
+
+.admin_table td,
+.admin_table th {
+    border: 1px solid #252525;
+    padding: 8px;
+}
+
+.admin_table tr {
+    background-color: #f2f2f2;
+    color: #252525;
+}
+
+.admin_table tr:hover {
+    background-color: #ddd;
+}
+
+.admin_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: hotpink;
+    color: white;
+}

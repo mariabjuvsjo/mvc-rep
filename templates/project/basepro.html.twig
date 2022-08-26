@@ -20,12 +20,18 @@
 
 				<a class="test" href="{{path("home")}}">Back</a>
 				<a class="test" href="{{path("project")}}">Home</a>
-				<a class="test" href="/{{app.user ? 'logout' : 'login'}}">
+				<a class="test" href="{{app.user ? path('app_logout') : path('app_login')}}">
 					{{ app.user ? 'Logout' : 'Login' }}</a>
 				<a class="test" href="{{path("about_proj")}}">About</a>
+				<a class="test" href="{{app.user ? path('app_profil', {"id": app.user.id}) : path('app_login')}}">
+					{{ app.user ? 'Profil' : '' }}</a>
 
-				<a class="test" href="/{{app.user ? '' : 'app_register'}}">
+				<a class="test" href="{{app.user ? path('project') : path('app_register')}}">
 					{{ app.user ? '' : 'Register' }}</a>
+				{% if is_granted('ROLE_ADMIN')%}
+					<a class="test" href="{{path("app_admin")}}">Admin</a>
+
+				{% endif %}
 
 
 			</nav>

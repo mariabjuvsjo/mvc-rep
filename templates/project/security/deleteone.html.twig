@@ -1,0 +1,19 @@
+{# templates/project/security/deleteone.html.twig #}
+
+{% extends "project/basepro.html.twig" %}
+
+
+{% block title %}
+	Delete | Project
+{% endblock %}
+
+{% block content %}
+	<form method="post" accept-charset="UTF-8">
+
+		<p>Är du säker på att du vill Radera?</p>
+		<p>
+			<input type="number" name="id" value="{{deleteone.id}}" hidden><br>
+			<input type="submit" class="btn" name="delete" value="Radera">
+		</p>
+	</form>
+{% endblock %}

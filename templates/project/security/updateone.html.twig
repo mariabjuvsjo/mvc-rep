@@ -1,0 +1,27 @@
+{% extends 'project/basepro.html.twig' %}
+{% block title %}Update User
+{% endblock %}
+
+{% block content %}
+	<div class="book-wrapper">
+		<h2>
+			Update User!
+		</h2>
+		<form class="create-book" method="POST">
+			<label for="firstname">Firstname:
+			</label><br>
+			<input name="firstname" type="text" value="{{userupdate.firstname}}">
+			<label for="lastname">Lastname:
+			</label><br>
+			<input name="lastname" type="text" value="{{userupdate.lastname}}">
+			<label for="image">Image Link:
+			</label><br>
+			<input name="image" type="text" value="{{userupdate.image}}">
+			<label for="balance">Add more money:
+			</label><br>
+			<input name="balance" type="number" value="{{userupdate.balance}}">
+			<input name="add" type="submit" class="btn" value="Updatera">
+		</form>
+
+	</div>
+{% endblock %}
