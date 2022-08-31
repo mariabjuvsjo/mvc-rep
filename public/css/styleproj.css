@@ -334,3 +334,21 @@ PLAY SIDA
     background-color: hotpink;
     color: white;
 }
+
+.about-links {
+    color: #0884a5;
+    font-size: 20px;
+    margin: 20px auto;
+    border: #9198e5 dotted 3px;
+    padding: 40px;
+}
+
+.links {
+    color: hotpink;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+.links:hover {
+    color: #0884a5;
+}

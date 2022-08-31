@@ -13,11 +13,32 @@
 		About
 	</h2>
 	<div class="about-wrapp">
-		<p>Det projekt jag valt att arbeta med är casino.</p>
-		<a class="test" href="{{path("reset_database")}}">Reset</a>
-		<a class="links" href="#">Länk till dokumentationen som är genererad via phpdoc.</a>
-		<a class="links" href="#">Länk till rapporten från phpmetrics.</a>
-		<a class="links" href="https://github.com/dbwebb-se/mvc">Länk till ditt GitHub repo.</a>
-		<a class="links" href="#">Länk till Scrutinizer för ditt repo.</a>
+		<p>Det projekt jag valt att arbeta med är att skapa ett Texas Holdem. Det handlar om att en användare får två kort tilldelat och datorn får två, för användaren dolda kort. 
+																																Sedan dras 3 kort i mitten och användaren kan välja att höja insatsen eller checka eller lägga sig. Detta mönster fortsätter tills 5 kort totalt är dragna i mitten. 
+																																Då jämförs användarens kort med datorns kort och den med bäst "hand" vinner.
+			<br><br>Två saker skiljer sig från vanlig Texas. Det ena är att datorn bara följer vad användaren gör. 
+																																Så om användaren checkar så checkar datorn och om användaren höjer så "callar datorn" samma belopp. Det andra är att om användaren och datorn har samma hand, så delas pengarna lika, oavsett om användaren par är bättre än datorns osv.
+		</p><br><br>
+		<p>Projektet går ut på att skapa texas holdem med hjälp av php, symfony och twig. 
+																													Jag använder mig av klasser(Models), Views och Controller, MVC.
+									
+									Det finns också en databas där användarens uppgifter sparas med hjälp av ORM.</p><br><br>
+		<ul class="about-links">
+			<li>
+				<a class="links" href="{{path("reset_database")}}">Reset</a>
+			</li>
+			<li>
+				<a class="links" href="#">Länk till dokumentationen som är genererad via phpdoc.</a>
+			</li>
+			<li>
+				<a class="links" href="#">Länk till rapporten från phpmetrics.</a>
+			</li>
+			<li>
+				<a class="links" href="https://github.com/mariabjuvsjo/mvc-rep">Länk till ditt GitHub repo.</a>
+			</li>
+			<li>
+				<a class="links" href="#">Länk till Scrutinizer för ditt repo.</a>
+			</li>
+		</ul>
 	</div>
 {% endblock %}
