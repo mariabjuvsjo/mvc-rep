@@ -36,20 +36,25 @@ class Crules
     }
 
     public function getPointArr() {
+
+        $pointHand = [];
         foreach($this->hand as $card) {
-           array_push($this->handPoints, $card->getPoint());
+           array_push($pointHand, $card->getPoint());
         }
 
-        return $this->handPoints;
+        return $pointHand;
        
     }
 
     public function getSuitArr() {
+
+        
+        $suitHand = [];
         foreach($this->hand as $card) {
-           array_push($this->handSuits, $card->getSuit());
+           array_push($suitHand, $card->getSuit());
         }
 
-        return $this->handSuits;
+        return $suitHand;
        
     }
 
@@ -75,6 +80,8 @@ class Crules
             }
         }
 
+        return false;
+
     }
 
     public function twoPair() {
@@ -91,6 +98,8 @@ class Crules
         
             return true;
         }
+
+        return false;
     }
 
     public function threeOfAKind(){
@@ -103,6 +112,8 @@ class Crules
                 return true;
             }
         }
+
+        return false;
 
 
         
@@ -142,7 +153,9 @@ class Crules
         if (count($set) == 5) {
 
             return true;
-        } 
+        }
+
+        return false;
     }
 
     public function flush() {
@@ -156,7 +169,9 @@ class Crules
        
                 return true;
             }
-        }   
+        } 
+        
+        return false;
     }
 
     public function fullHouse() {
@@ -169,6 +184,8 @@ class Crules
                 return true;
             }
         } 
+
+        return false;
       
     }
 
@@ -182,6 +199,8 @@ class Crules
                 return true;
             }
         }   
+
+        return false;
     }
 
     public function straightFlush () {
@@ -189,22 +208,26 @@ class Crules
   
             return true;
         }
+
+        return false;
     }
 
     public function royalFlush() {
 
         $cards = $this->handPoints;
 
-        sort($cards);
-        print_r($cards);
+        rsort($cards);
+        //print_r($cards);
         if ($this->straightFlush()) 
         {
-            if($cards[6] == 14) {
+            if($cards[0] == 14) {
            
                 return true;
             }
             
         }
+
+        return false;
     }
 }
 

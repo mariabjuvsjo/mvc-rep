@@ -93,7 +93,7 @@ class BlackJackTest extends TestCase
      * Test to see that string with you busted is return if player gets over 21
      */
 
-    public function testPlayerHaveMorethen21()
+    /*public function testPlayerHaveMorethen21()
     {
         $game = new BlackJack();
         $game->playerHit();
@@ -111,28 +111,34 @@ class BlackJackTest extends TestCase
 
         $this->assertLessThan($res, 21);
 
-        $this->assertStringContainsString($res1, "You busted, Dealer won!");
-    }
+        $this->assertStringContainsString($res1, "dealer got Black Jack, Dealer won!");
+    }*/
 
-    public function testPlayerHaveMorethenDealer()
+     /**
+     * Stub the Player class to assure that BlackJack can be asserted.
+     */
+    public function testcheckFirstDraw21All()
     {
-        $game = new BlackJack();
+        // Create a stub for the Player class.
+        $player = $this->createMock(Player::class);
+        $dealer = $this->createMock(Player::class);
 
-        $game->firstPlay();
-        $game->playerHit();
-        $game->playerHit();
-        $game->playerHit();
-        $game->playerHit();
+        // Configure the stub.
+        $player->method('scores')
+            ->willReturn(21);
+        $dealer->method('scores')
+            ->willReturn(21);
 
+        $game21 = new BlackJack();
+        $game21->player = (clone $player);
+        $game21->dealer = clone $dealer;
 
-        $res = $game->getPlayerScore();
-
-        $res1 = $game->gameStop();
-
-        $this->assertLessThan($res, 21);
-
-        //$this->assertStringContainsString($res1, "You busted, Dealer won!");
+        $res = $game21->checkFirstDraw();
+        $this->assertEquals("You both got Black Jack, its a tie", $res);
     }
+
+
+
 
     /**
      * Test to see if a int is return when method getDelarscore is called

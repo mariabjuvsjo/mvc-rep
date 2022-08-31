@@ -95,6 +95,7 @@ class CcompareHands {
             return "You won with " . $player[1] . " Dealer have " . $dealer[1];
         }
 
+        //if both dealer and player haver high card. See whos high card is highest
         if ($dealer[0] == 1 && $player[0] == 1){
             if($dealer[2] > $player[2]){
                 return "You lost. Dealer have" . $dealer[1];
@@ -105,6 +106,9 @@ class CcompareHands {
 
         }
 
+        //if dealer and player have same hand. 
+        //TODO: Would like implement to compare same hands.
+        //who have the hisghet 1 pair for exampel. Until next time
         if ($dealer[0] == $player[0]){
             return "No one win its a Draw";
 

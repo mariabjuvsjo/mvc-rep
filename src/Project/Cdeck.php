@@ -3,7 +3,7 @@
 namespace App\Project;
 
 use App\Project\Ccards;
-use App\Cards\DrawException;
+use App\Project\DrawException;
 
 /**
  * Class Cdeck. Represent a deck of 52 cards.
@@ -39,7 +39,7 @@ class Cdeck
                 $color = "black";
             }
             foreach ($this->values as $value => $point) {
-                array_push($this->deck, new \App\Cards\Card($value, $suit, $color, $point));
+                array_push($this->deck, new \App\Project\Ccards($value, $suit, $color, $point));
             }
         }
     }

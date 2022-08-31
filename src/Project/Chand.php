@@ -45,5 +45,12 @@ class Chand
         $this->hand = array_merge($this->hand, $this->deck->draw(2));
     }
 
+    /**
+     * method for drawing  card use only for making a hand for test case
+    *public function drawOneCard(): void
+    *{
+    *    $this->hand = array_merge($this->hand, $this->deck->draw(1));
+    *}*/
+
 
 }
