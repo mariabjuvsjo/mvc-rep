@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Controller;
-use Symfony\Bundle\FramworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -31,40 +30,39 @@ class AdminController extends AbstractController
         /**
  * @Route("/proj/profil/delete/{id}", name="profil_delete_by_id", methods={"GET"})
  */
-public function deleteUserById(
-    UserRepository $userRepository,
-    int $id
-): Response {
-    $user = $userRepository
-    ->find($id);
+    public function deleteUserById(
+        UserRepository $userRepository,
+        int $id
+    ): Response {
+        $user = $userRepository
+        ->find($id);
 
-    $data = [
-    "deleteone" => $user
-    ];
+        $data = [
+        "deleteone" => $user
+        ];
 
-    return $this->render('project/security/deleteone.html.twig', $data);
-}
+        return $this->render('project/security/deleteone.html.twig', $data);
+    }
 
 /**
  * @Route("/proj/profil/delete/{id}", name="profil_delete_by_id_process", methods={"POST"})
  */
-public function deleteUserProcess(
-    ManagerRegistry $doctrine,
-    int $id
-): Response {
-    $entityManager = $doctrine->getManager();
-    $user = $entityManager->getRepository(User::class)->find($id);
+    public function deleteUserProcess(
+        ManagerRegistry $doctrine,
+        int $id
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $user = $entityManager->getRepository(User::class)->find($id);
 
-    if (!$user) {
-        throw $this->createNotFoundException(
-            "No user found for id " . $id
-        );
+        if (!$user) {
+            throw $this->createNotFoundException(
+                "No user found for id " . $id
+            );
+        }
+
+        $entityManager->remove($user);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_admin');
     }
-
-    $entityManager->remove($user);
-    $entityManager->flush();
-
-    return $this->redirectToRoute('app_admin');
-}
-
 }

@@ -39,7 +39,7 @@ class Cdeck
                 $color = "black";
             }
             foreach ($this->values as $value => $point) {
-                array_push($this->deck, new \App\Project\Ccards($value, $suit, $color, $point));
+                array_push($this->deck, new Ccards($value, $suit, $color, $point));
             }
         }
     }

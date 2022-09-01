@@ -49,7 +49,6 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        $token;
         return new RedirectResponse($this->urlGenerator->generate('texas-poker'));
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }

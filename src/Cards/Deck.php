@@ -38,8 +38,10 @@ class Deck
             } else {
                 $color = "black";
             }
+
+
             foreach ($this->values as $value => $point) {
-                array_push($this->deck, new \App\Cards\Card($value, $suit, $color, $point));
+                array_push($this->deck, new Card($value, $suit, $color, $point));
             }
         }
     }

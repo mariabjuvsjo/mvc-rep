@@ -22,7 +22,7 @@ class BookController extends AbstractController
       /**
      * @Route("/book/create", name="create_book", methods={"GET"})
     */
-    public function createBook(BookRepository $bookRepository): Response
+    public function createBook(): Response
     {
 
         return $this->render('book/create.html.twig');

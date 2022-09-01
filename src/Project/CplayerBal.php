@@ -7,26 +7,29 @@ namespace App\Project;
  *  Class CplayerBal. Holds the players money in casino
  */
 
-class CplayerBal {
 
-    
-    public function __construct(int $balance = 1000){
+
+class CplayerBal
+{
+    public int $balance;
+
+    public function __construct(int $balance = 1000)
+    {
         $this->balance = $balance;
     }
-    public function getBalance():int {
+    public function getBalance(): int
+    {
         return $this->balance;
     }
 
-    public function setnegativeRes(int $amount): void {
+    public function setnegativeRes(int $amount): void
+    {
 
         $this->balance -= $amount;
-
     }
 
-    public function setPositiveRes(int $amount): void {
+    public function setPositiveRes(int $amount): void
+    {
         $this->balance += $amount;
-
     }
 }
-
-

@@ -11,7 +11,6 @@
 		{% for book in books %}
 			<div class="book-cover">
 				<a href="{{path("book_by_id", {"id": book.id})}}">
-
 					<img class="book-img" src="{{ asset("img/" ~ book.img ~ ".jpg" ) }}" alt="books">
 					<h5>{{book.title}}</h5>
 					<p>{{book.author}}</p>

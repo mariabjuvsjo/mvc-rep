@@ -8,6 +8,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use App\Cards\Card;
+use App\Cards\Deck;
+use App\Cards\Players;
+use App\Cards\DeckWith2Joker;
 
 class CardController extends AbstractController
 {
@@ -50,7 +54,7 @@ class CardController extends AbstractController
     public function deck(): Response
     {
         //$deck1 = $this->createDeck();
-        $deck1 = new \App\Cards\Deck();
+        $deck1 = new Deck();
         $data = [
         "decks" => $deck1->getDeck()
         ];
@@ -65,7 +69,7 @@ class CardController extends AbstractController
      */
     public function shuffle(): Response
     {
-        $deck1 = new \App\Cards\Deck();
+        $deck1 = new Deck();
         $deck1->shuffles();
         $data = [
         "decks" => $deck1->getDeck()
@@ -104,7 +108,7 @@ class CardController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
-        $deck1 = new \App\Cards\Deck();
+        $deck1 = new Deck();
         $deck1->shuffles();
         $deck1->getDeck();
 
@@ -159,7 +163,7 @@ class CardController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
-        $deck1 = new \App\Cards\Deck();
+        $deck1 = new Deck();
         $deck1->shuffles();
         $deck1->getDeck();
         $number = $request->request->get('numCards') ?? 0;
@@ -220,11 +224,11 @@ class CardController extends AbstractController
         $clear  = $request->request->get('clear');
 
 
-        $deck1 = new \App\Cards\Deck();
+        $deck1 = new Deck();
         $deck1->shuffles();
         $deck1->getDeck();
 
-        $startPlayers = new \App\Cards\Players($players);
+        $startPlayers = new Players($players);
 
 
         $manyPlayers = $session->get("manyplayers") ?? $startPlayers->getPlayers();
@@ -260,7 +264,7 @@ class CardController extends AbstractController
      */
     public function deck2(): Response
     {
-        $deck1 = new \App\Cards\DeckWith2Joker();
+        $deck1 = new DeckWith2Joker();
 
 
 

@@ -10,7 +10,7 @@ class DeckWith2Joker extends Deck
     {
         parent::__construct();
 
-        array_push($this->deck, new \App\Cards\Card("J", "&#127199;", "black"));
-        array_push($this->deck, new \App\Cards\Card("J", "&#127199;", "red"));
+        array_push($this->deck, new Card("J", "&#127199;", "black"));
+        array_push($this->deck, new Card("J", "&#127199;", "red"));
     }
 }

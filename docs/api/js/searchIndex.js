@@ -868,22 +868,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CcompareHands\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020to\u0020create\u0020the\u0020game\u0020object",
             "url": "classes/App-Project-CcompareHands.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\CcompareHands\u003A\u003AcheckPlayer\u0028\u0029",
             "name": "checkPlayer",
-            "summary": "",
+            "summary": "method\u0020to\u0020check\u0020what\u0020kind\u0020of\u0020hand\u0020the\u0020player\u0020has",
             "url": "classes/App-Project-CcompareHands.html#method_checkPlayer"
         },                {
             "fqsen": "\\App\\Project\\CcompareHands\u003A\u003AcheckDealer\u0028\u0029",
             "name": "checkDealer",
-            "summary": "",
+            "summary": "method\u0020to\u0020check\u0020what\u0020kind\u0020of\u0020hand\u0020the\u0020dealer\u0020has",
             "url": "classes/App-Project-CcompareHands.html#method_checkDealer"
         },                {
             "fqsen": "\\App\\Project\\CcompareHands\u003A\u003AcompareHand\u0028\u0029",
             "name": "compareHand",
-            "summary": "",
+            "summary": "method\u0020to\u0020campare\u0020the\u00202\u0020diffrent\u0020arrays\u0020from\u0020check\u0020player\u0020and\u0020check\u0020dealer",
             "url": "classes/App-Project-CcompareHands.html#method_compareHand"
         },                {
             "fqsen": "\\App\\Project\\CcompareHands\u003A\u003A\u0024playerHand",
@@ -968,57 +968,57 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003AgetPlayerCard\u0028\u0029",
             "name": "getPlayerCard",
-            "summary": "",
+            "summary": "method\u0020to\u0020show\u0020the\u0020players\u0020card",
             "url": "classes/App-Project-Cgame.html#method_getPlayerCard"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003AgetDealerCard\u0028\u0029",
             "name": "getDealerCard",
-            "summary": "",
+            "summary": "method\u0020to\u0020show\u0020the\u0020dealers\u0020card",
             "url": "classes/App-Project-Cgame.html#method_getDealerCard"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003AgetCommunityCards\u0028\u0029",
             "name": "getCommunityCards",
-            "summary": "",
+            "summary": "mthod\u0020to\u0020show\u0020the\u0020community\u0020cards",
             "url": "classes/App-Project-Cgame.html#method_getCommunityCards"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003AtheFlop\u0028\u0029",
             "name": "theFlop",
-            "summary": "",
+            "summary": "Method\u0020to\u0020draw\u00203\u0020cards\u0020from\u0020deck\u0020and\u0020merge\u0020it\u0020with\u0020the\u0020community\u0020array",
             "url": "classes/App-Project-Cgame.html#method_theFlop"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003Aturn\u0028\u0029",
             "name": "turn",
-            "summary": "",
+            "summary": "method\u0020to\u0020draw\u0020the\u0020fourth\u0020card\u0020and\u0020merge\u0020it\u0020with\u0020community\u0020array",
             "url": "classes/App-Project-Cgame.html#method_turn"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003Ariver\u0028\u0029",
             "name": "river",
-            "summary": "",
+            "summary": "method\u0020to\u0020draw\u0020the\u0020fifth\u0020card\u0020and\u0020merge\u0020it\u0020with\u0020community\u0020array",
             "url": "classes/App-Project-Cgame.html#method_river"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003AplayerFullHand\u0028\u0029",
             "name": "playerFullHand",
-            "summary": "",
+            "summary": "method\u0020to\u0020merge\u0020the\u0020community\u0020cards\u0020with\u0020the\u0020players\u0020card",
             "url": "classes/App-Project-Cgame.html#method_playerFullHand"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003AdealerFullHand\u0028\u0029",
             "name": "dealerFullHand",
-            "summary": "",
+            "summary": "method\u0020to\u0020merge\u0020the\u0020community\u0020cards\u0020with\u0020the\u0020dealers\u0020card",
             "url": "classes/App-Project-Cgame.html#method_dealerFullHand"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003AsetPot\u0028\u0029",
             "name": "setPot",
-            "summary": "",
+            "summary": "Set\u0020method\u0020to\u0020set\u0020the\u0020table\u0020pot",
             "url": "classes/App-Project-Cgame.html#method_setPot"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003AgetPot\u0028\u0029",
             "name": "getPot",
-            "summary": "",
+            "summary": "get\u0020method\u0020to\u0020get\u0020the\u0020pot",
             "url": "classes/App-Project-Cgame.html#method_getPot"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003AresetPot\u0028\u0029",
             "name": "resetPot",
-            "summary": "",
+            "summary": "Method\u0020to\u0020reset\u0020the\u0020pot\u0020to\u0020zero",
             "url": "classes/App-Project-Cgame.html#method_resetPot"
         },                {
             "fqsen": "\\App\\Project\\Cgame\u003A\u003A\u0024deck",
@@ -1063,7 +1063,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\Chand\u003A\u003AplayerHand\u0028\u0029",
             "name": "playerHand",
-            "summary": "",
+            "summary": "method\u0020to\u0020create\u0020a\u0020hand\u0020with\u00202\u0020cards",
             "url": "classes/App-Project-Chand.html#method_playerHand"
         },                {
             "fqsen": "\\App\\Project\\Chand\u003A\u003A\u0024hand",
@@ -1113,62 +1113,62 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AgetPointArr\u0028\u0029",
             "name": "getPointArr",
-            "summary": "",
+            "summary": "method\u0020to\u0020get\u0020the\u0020points\u0020each\u0020card\u0020is\u0020worth\u0020in\u0020to\u0020its\u0020own\u0020array",
             "url": "classes/App-Project-Crules.html#method_getPointArr"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AgetSuitArr\u0028\u0029",
             "name": "getSuitArr",
-            "summary": "",
+            "summary": "method\u0020to\u0020get\u0020the\u0020suit\u0020each\u0020card\u0020has\u0020into\u0020its\u0020own\u0020array",
             "url": "classes/App-Project-Crules.html#method_getSuitArr"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AhighCard\u0028\u0029",
             "name": "highCard",
-            "summary": "",
+            "summary": "mnethod\u0020to\u0020get\u0020the\u0020highest\u0020card\u0020from\u0020an\u0020array\u0020of\u0020points",
             "url": "classes/App-Project-Crules.html#method_highCard"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AonePair\u0028\u0029",
             "name": "onePair",
-            "summary": "",
+            "summary": "method\u0020to\u0020see\u0020if\u0020hand\u0020have\u0020one\u0020pair",
             "url": "classes/App-Project-Crules.html#method_onePair"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AtwoPair\u0028\u0029",
             "name": "twoPair",
-            "summary": "",
+            "summary": "method\u0020to\u0020see\u0020if\u0020hand\u0020have\u0020two\u0020pair",
             "url": "classes/App-Project-Crules.html#method_twoPair"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AthreeOfAKind\u0028\u0029",
             "name": "threeOfAKind",
-            "summary": "",
+            "summary": "method\u0020to\u0020see\u0020if\u0020hand\u0020have\u0020three\u0020of\u0020a\u0020kind",
             "url": "classes/App-Project-Crules.html#method_threeOfAKind"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003Astraight\u0028\u0029",
             "name": "straight",
-            "summary": "",
+            "summary": "method\u0020to\u0020see\u0020if\u0020hand\u0020have\u0020stright",
             "url": "classes/App-Project-Crules.html#method_straight"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003Aflush\u0028\u0029",
             "name": "flush",
-            "summary": "",
+            "summary": "method\u0020to\u0020see\u0020if\u0020hand\u0020have\u0020flush",
             "url": "classes/App-Project-Crules.html#method_flush"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AfullHouse\u0028\u0029",
             "name": "fullHouse",
-            "summary": "",
+            "summary": "method\u0020to\u0020see\u0020if\u0020hand\u0020have\u0020full\u0020house",
             "url": "classes/App-Project-Crules.html#method_fullHouse"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AfourOfAKind\u0028\u0029",
             "name": "fourOfAKind",
-            "summary": "",
+            "summary": "method\u0020to\u0020see\u0020if\u0020hand\u0020have\u0020four\u0020of\u0020a\u0020kind",
             "url": "classes/App-Project-Crules.html#method_fourOfAKind"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AstraightFlush\u0028\u0029",
             "name": "straightFlush",
-            "summary": "",
+            "summary": "method\u0020to\u0020see\u0020if\u0020hand\u0020have\u0020straight\u0020flush",
             "url": "classes/App-Project-Crules.html#method_straightFlush"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003AroyalFlush\u0028\u0029",
             "name": "royalFlush",
-            "summary": "",
+            "summary": "method\u0020to\u0020see\u0020if\u0020hand\u0020have\u0020royal\u0020flush",
             "url": "classes/App-Project-Crules.html#method_royalFlush"
         },                {
             "fqsen": "\\App\\Project\\Crules\u003A\u003A\u0024handPoints",

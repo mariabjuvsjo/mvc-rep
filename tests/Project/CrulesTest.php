@@ -451,11 +451,11 @@ class CrulesTest extends TestCase
     public function testFullHouseOnFalse()
     {
       
-        $card1 = new Ccards(2, "&hearts;", "red", 2);  
+        $card1 = new Ccards(3, "&spades;", "black", 3);  
         $card2= new Ccards(3, "&hearts;", "red", 3);
         $card3 = new Ccards(4, "&hearts;", "red", 4);
         $card4 = new Ccards(6, "&hearts;", "red", 6);
-        $card5 = new Ccards(10, "&diams;", "red", 10);
+        $card5 = new Ccards(3, "&diams;", "red", 3);
 
         $newRule = new Crules(array($card1, $card2, $card3, $card4, $card5));
 

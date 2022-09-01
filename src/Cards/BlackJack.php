@@ -153,8 +153,7 @@ class BlackJack
             return "Dealer have higher score, Dealer won!";
         } elseif ((21 - $this->dealer->scores()) > (21 - $this->player->scores())) {
             return "You have the higher score, You won!";
-        } else {
-            return "something went wrong!";
         }
+        return "something went wrong!";
     }
 }

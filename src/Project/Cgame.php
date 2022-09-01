@@ -21,8 +21,16 @@ class Cgame
 
     private int $thePot;
 
+    public array $playerHand;
+
+    public array $dealarHand;
+
     /**
      * Constructor to create the Cgame object.
+     *
+     * this constuctor will generate a deck, shuffle the deck. also create a player and a dealer hand.
+     *
+     *
      */
     public function __construct()
     {
@@ -49,64 +57,119 @@ class Cgame
         $this->dealer->playerHand();
     }
 
-    public function getPlayerCard(): array {
+    /**
+     * method to show the players card
+     *
+     * @return array with the players cards object
+     */
+
+    public function getPlayerCard(): array
+    {
         return $this->player->getHand();
     }
-  
-    public function getDealerCard(): array {
+
+     /**
+     * method to show the dealers card
+     *
+     * @return array with the dealers cards object
+     */
+
+    public function getDealerCard(): array
+    {
         return $this->dealer->getHand();
     }
 
-    public function getCommunityCards(): array {
+    /**
+     * mthod to show the community cards
+     *
+     * @returns array of the community cards objects
+     */
+    public function getCommunityCards(): array
+    {
         return $this->community;
     }
 
-    public function theFlop(): void {
+    /**
+     * Method to draw 3 cards from deck and merge it with the community array
+     *
+     * @return void
+     */
+    public function theFlop(): void
+    {
 
         $this->community = array_merge($this->community, $this->deck->draw(3));
-
     }
 
-    public function turn(): void {
+    /**
+     * method to draw the fourth card and merge it with community array
+     */
+    public function turn(): void
+    {
 
         $this->community = array_merge($this->community, $this->deck->draw(1));
     }
 
-    public function river(): void {
+      /**
+     * method to draw the fifth card and merge it with community array
+     */
+    public function river(): void
+    {
 
         $this->community = array_merge($this->community, $this->deck->draw(1));
-
     }
 
-    public function playerFullHand(): array {
+    /**
+     * method to merge the community cards with the players card
+     *
+     * @return array of 7 cards
+     */
+
+    public function playerFullHand(): array
+    {
 
         $this->playerHand = array_merge($this->community, $this->getPlayerCard());
 
         return $this->playerHand;
-
     }
 
-    public function dealerFullHand(): array {
+      /**
+     * method to merge the community cards with the dealers card
+     *
+     * @return array of 7 cards
+     */
+    public function dealerFullHand(): array
+    {
 
         $this->dealerHand = array_merge($this->community, $this->getDealerCard());
 
         return $this->dealerHand;
-
     }
 
-    public function setPot(int $money): void {
+    /**
+     * Set method to set the table pot
+     */
+
+    public function setPot(int $money): void
+    {
         $this->thePot += $money;
-
     }
 
-    public function getPot(): int {
+    /**
+     * get method to get the pot
+     *
+     * @return int of the pot
+     */
+
+    public function getPot(): int
+    {
         return $this->thePot;
     }
 
-    public function resetPot(): void {
+    /**
+     * Method to reset the pot to zero
+     */
+    public function resetPot(): void
+    {
         $this->thePot = 0;
-
     }
-
-  
 }

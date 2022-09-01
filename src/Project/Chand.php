@@ -16,7 +16,7 @@ class Chand
 
     public object $deck;
 
-  
+
 
     /**
      * Constructor. Creates the player with an empty array as a hand.and finally yhe 5 card hand
@@ -40,6 +40,9 @@ class Chand
     }
 
 
+    /**
+     * method to create a hand with 2 cards
+     */
     public function playerHand(): void
     {
         $this->hand = array_merge($this->hand, $this->deck->draw(2));
@@ -51,6 +54,4 @@ class Chand
     *{
     *    $this->hand = array_merge($this->hand, $this->deck->draw(1));
     *}*/
-
-
 }

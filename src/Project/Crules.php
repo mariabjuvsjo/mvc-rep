@@ -9,7 +9,7 @@ use App\Project\Cgame;
 
 /**
  *
- *  Class CRules. 
+ *  Class CRules.
  */
 
 class Crules
@@ -23,6 +23,8 @@ class Crules
     protected array $ruleList;
     /**
      * Constructor.
+     *
+     * @param array $hand
      */
     public function __construct(array $hand)
     {
@@ -31,35 +33,50 @@ class Crules
         $this->handPoints = $this->getPointArr();
 
         $this->handSuits = $this->getSuitArr();
-
-    
     }
 
-    public function getPointArr() {
+    /**
+     * method to get the points each card is worth in to its own array
+     *
+     * @return array with the point ints
+     */
+
+    public function getPointArr()
+    {
 
         $pointHand = [];
-        foreach($this->hand as $card) {
-           array_push($pointHand, $card->getPoint());
+        foreach ($this->hand as $card) {
+            array_push($pointHand, $card->getPoint());
         }
 
         return $pointHand;
-       
     }
 
-    public function getSuitArr() {
+      /**
+     * method to get the suit each card has into its own array
+     *
+     * @return array with the strings from suits
+     */
 
-        
+    public function getSuitArr()
+    {
+
+
         $suitHand = [];
-        foreach($this->hand as $card) {
-           array_push($suitHand, $card->getSuit());
+        foreach ($this->hand as $card) {
+            array_push($suitHand, $card->getSuit());
         }
 
         return $suitHand;
-       
     }
 
-
-    public function highCard() {
+    /**
+     * mnethod to get the highest card from an array of points
+     *
+     * @return int from the first key of array of hand points
+     */
+    public function highCard()
+    {
         $cards = $this->handPoints;
 
         rsort($cards);
@@ -67,167 +84,211 @@ class Crules
         return $cards[0];
     }
 
-    
 
-    public function onePair() {
+    /**
+     * method to see if hand have one pair
+     *
+     * @return bool
+     */
+    public function onePair()
+    {
 
         $countArr = array_count_values($this->handPoints);
 
-        foreach($countArr as $val) {
+        foreach ($countArr as $val) {
             if ($val == 2) {
-            
                 return true;
             }
         }
 
         return false;
-
     }
 
-    public function twoPair() {
+       /**
+     * method to see if hand have two pair
+     *
+     * @return bool
+     */
+
+    public function twoPair()
+    {
         $countArr = array_count_values($this->handPoints);
         $counter = 0;
 
-        foreach($countArr as $val) {
+        foreach ($countArr as $val) {
             if ($val == 2) {
                 $counter += 1;
             }
         }
 
         if ($counter == 2) {
-        
             return true;
         }
 
         return false;
     }
 
-    public function threeOfAKind(){
+       /**
+     * method to see if hand have three of a kind
+     *
+     * @return bool
+     */
+
+    public function threeOfAKind()
+    {
 
         $countArr = array_count_values($this->handPoints);
 
-        foreach($countArr as $val) {
+        foreach ($countArr as $val) {
             if ($val == 3) {
-              
                 return true;
             }
         }
 
         return false;
-
-
-        
     }
 
-    public function straight() {
-    
+       /**
+     * method to see if hand have stright
+     *
+     * @return bool
+     */
+
+    public function straight()
+    {
+
         $cards = array_unique($this->handPoints);
 
         sort($cards);
 
         if ($cards[0] == 2 && $cards[1] == 3 && $cards[2] == 4) {
-       
-                foreach($cards as $key => $value) {
-                    if( $value === 14) {
-                        $cards[$key] = 1;
-                    }
-        }}
+            foreach ($cards as $key => $value) {
+                if ($value === 14) {
+                    $cards[$key] = 1;
+                }
+            }
+        }
 
         rsort($cards);
 
         $set = array(array_shift($cards)); // start with the first card
         foreach ($cards as $card) {
-        $lastCard = $set[count($set)-1];
-        if ($lastCard - 1 != $card) {
-            // not a chain anymore, "restart" from here
-            $set = array($card);
-        } else {
-            $set[] = $card;
+            $lastCard = $set[count($set) - 1];
+            if ($lastCard - 1 != $card) {
+                // not a chain anymore, "restart" from here
+                $set = array($card);
+            } else {
+                $set[] = $card;
+            }
+            if (count($set) == 5) {
+                break;
+            }
         }
-        if (count($set) == 5) {
-            break;}}
 
 
-       
+
 
         if (count($set) == 5) {
-
             return true;
         }
 
         return false;
     }
 
-    public function flush() {
+       /**
+     * method to see if hand have flush
+     *
+     * @return bool
+     */
+
+    public function flush()
+    {
 
         $cardsSuit = $this->handSuits;
 
         $countArr = array_count_values($cardsSuit);
 
-        foreach($countArr as $val) {
+        foreach ($countArr as $val) {
             if ($val >= 5) {
-       
                 return true;
             }
-        } 
-        
+        }
+
         return false;
     }
 
-    public function fullHouse() {
+       /**
+     * method to see if hand have full house
+     *
+     * @return bool
+     */
 
-        $countArr = array_count_values($this->handPoints);
+    public function fullHouse()
+    {
 
-        foreach($countArr as $val) {
-            if ($val == 3 && 2) {
-          
-                return true;
-            }
-        } 
+        if ($this->threeOfAKind() && $this->onePair()) {
+            return true;
+        }
+
+
 
         return false;
-      
     }
 
-    public function fourOfAKind(){
+       /**
+     * method to see if hand have four of a kind
+     *
+     * @return bool
+     */
+
+    public function fourOfAKind()
+    {
 
         $countArr = array_count_values($this->handPoints);
 
-        foreach($countArr as $val) {
+        foreach ($countArr as $val) {
             if ($val == 4) {
-          
                 return true;
             }
-        }   
+        }
 
         return false;
     }
 
-    public function straightFlush () {
+       /**
+     * method to see if hand have straight flush
+     *
+     * @return bool
+     */
+
+    public function straightFlush()
+    {
         if ($this->straight() && $this->flush()) {
-  
             return true;
         }
 
         return false;
     }
 
-    public function royalFlush() {
+       /**
+     * method to see if hand have royal flush
+     *
+     * @return bool
+     */
+
+    public function royalFlush()
+    {
 
         $cards = $this->handPoints;
 
         rsort($cards);
         //print_r($cards);
-        if ($this->straightFlush()) 
-        {
-            if($cards[0] == 14) {
-           
+        if ($this->straightFlush()) {
+            if ($cards[0] == 14) {
                 return true;
             }
-            
         }
 
         return false;
     }
 }
-
