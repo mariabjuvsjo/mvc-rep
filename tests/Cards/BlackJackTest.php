@@ -89,31 +89,6 @@ class BlackJackTest extends TestCase
         $this->assertStringContainsString($res, "");
     }
 
-    /**
-     * Test to see that string with you busted is return if player gets over 21
-     */
-
-    /*public function testPlayerHaveMorethen21()
-    {
-        $game = new BlackJack();
-        $game->playerHit();
-        $game->playerHit();
-        $game->playerHit();
-        $game->playerHit();
-        $game->playerHit();
-        $game->playerHit();
-        $game->playerHit();
-
-
-        $res = $game->getPlayerScore();
-
-        $res1 = $game->gameStop();
-
-        $this->assertLessThan($res, 21);
-
-        $this->assertStringContainsString($res1, "dealer got Black Jack, Dealer won!");
-    }*/
-
      /**
      * Stub the Player class to assure that BlackJack can be asserted.
      */
@@ -138,6 +113,90 @@ class BlackJackTest extends TestCase
     }
 
 
+     /**
+     * test to see if player winns on fisrt draw
+     */
+    public function testcheckFirstDraw21Player()
+    {
+        // Create a stub for the Player class.
+        $player = $this->createMock(Player::class);
+        $dealer = $this->createMock(Player::class);
+
+        // Configure the stub.
+        $player->method('scores')
+            ->willReturn(21);
+        $dealer->method('scores')
+            ->willReturn(20);
+
+        $game21 = new BlackJack();
+        $game21->player = (clone $player);
+        $game21->dealer = clone $dealer;
+
+        $res = $game21->checkFirstDraw();
+        $this->assertEquals("you won you got Black Jack", $res);
+    }
+
+         /**
+     * test to see if dealer winns on fisrt draw
+     */
+    public function testcheckFirstDraw21Dealer()
+    {
+        // Create a stub for the Player class.
+        $player = $this->createMock(Player::class);
+        $dealer = $this->createMock(Player::class);
+
+        // Configure the stub.
+        $player->method('scores')
+            ->willReturn(5);
+        $dealer->method('scores')
+            ->willReturn(21);
+
+        $game21 = new BlackJack();
+        $game21->player = clone $player;
+        $game21->dealer = clone $dealer;
+
+        $res = $game21->checkFirstDraw();
+        $this->assertEquals('Dealer won! he got Black Jack', $res);
+    }
+
+         /**
+     * test to check when player gets 21 and dealer less then 21 on second draw
+     */
+    public function testCheckPlayerwins()
+    {
+        // Create a stub for the Player class.
+        $player = $this->createMock(Player::class);
+        $dealer = $this->createMock(Player::class);
+
+        // Configure the stub.
+        $player->method('scores')
+            ->willReturn(21);
+        $dealer->method('scores')
+            ->willReturn(20);
+
+        $game21 = new BlackJack();
+        $game21->player = (clone $player);
+        $game21->dealer = (clone $dealer);
+
+        $res = $game21->gameStop();
+
+        $this->assertEquals("you got Black Jack, you won!", $res);
+    }
+
+      /**
+     * Test to see if a int is return when method getPlayerscore is called
+     */
+
+    public function testGetPlayerScoreReturnsInt()
+    {
+        $game = new BlackJack();
+
+        $game->firstPlay();
+
+        $res = $game->getPlayerScore();
+
+        $this->assertIsInt($res);
+    }
 
 
     /**
@@ -154,4 +213,51 @@ class BlackJackTest extends TestCase
 
         $this->assertIsInt($res);
     }
+
+         /**
+     * test to see when both get 21 on the second draw
+     */
+    public function testGameStopBoth21()
+    {
+        // Create a stub for the Player class.
+        $player = $this->createMock(Player::class);
+        $dealer = $this->createMock(Player::class);
+
+        // Configure the stub.
+        $player->method('scores')
+            ->willReturn(21);
+        $dealer->method('scores')
+            ->willReturn(21);
+
+        $game21 = new BlackJack();
+        $game21->player = (clone $player);
+        $game21->dealer = clone $dealer;
+
+        $res = $game21->gameStop();
+        $this->assertEquals("you both got Black Jack, its a tie!", $res);
+    }
+
+     /**
+     * test to see if dealer winns on game stop
+     */
+    public function testcheckGamestop21Dealer()
+    {
+        // Create a stub for the Player class.
+        $player = $this->createMock(Player::class);
+        $dealer = $this->createMock(Player::class);
+
+        // Configure the stub.
+        $player->method('scores')
+            ->willReturn(30);
+        $dealer->method('scores')
+            ->willReturn(21);
+
+        $game21 = new BlackJack();
+        $game21->player = (clone $player);
+        $game21->dealer = clone $dealer;
+
+        $res = $game21->gameStop();
+        $this->assertEquals('dealer got Black Jack, Dealer won!', $res);
+    }
+
 }

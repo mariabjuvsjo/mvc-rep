@@ -1,0 +1,76 @@
+## Kodkvalitet
+
+#### Introduktion
+
+I denna rapport så ska jag försöka analysera mina kursmoment utifrån de 4 C:na.
+Coverage, Complexity, Cohesion och Coupling.
+Dessa fyra C:n är verktyg för att lättare förstå min kod och som hjälper mig att förbättra eller 
+snarare förenkla min kod för andra utvecklare och mig själv att titta på kanske i framtiden när jag kommer tillbaka till ett projekt.\
+\
+Om vi börjar med Coverage så är det allt så hur hög täckning man har för sina tester på sin kod. 
+Tillexepel om jag testar en method som countCards i min deck klass, så vill jag se att den faktiskt returnerar 52 värden i en array.
+Då kan jag ta assertionEquals(count(cards), 52) blir detta grönt så funkar min kod och mitt test.\
+\
+När det kommer till Complexity handlar det om att man inte undvika att ha för komplex kod. ju fler if satser i varandra så ökar komplexiteten ju längre in man går och ju fler if satser man har.
+Det kan också vara att man har många beslutspunkter i sin kod. Som jag i min method gameStop i black jack klassen. Där har jag 9 st olika returns beroende på utfall. min blackjack klass får då en Complexity på 21.\
+\
+Tittar vi på Cohesion så betyder det ju sammanhållning. 
+Det handlar alltså om hur och vilken sammanhållning mina olika methoder i klassen har till varandra.
+Man vill att alla metoder i samma klass ska uppnå samma mål. 
+till exepel att jag har två olika klasser för card och hand. 
+card klassen ska ju skapa ett kort medan handklassen är byggd för att hålla korten, 
+det är två olika "jobb", alltså två olika klasser. Medan min blackjack klass, där vill jag ha allt som har med spelet att göra i samma klass.\
+\
+Coupling är hur klasser hänger ihop med varandra. Det finns olika mättal här, AC som är hur den berörda klassen påverkar andra klasser. 
+Och EC som visar hur många klasser den berörda klassen använder sig av.
+Så för exempel min Deck klass har en rätt hög AC 5. Den är ju också en klass som är väsänlig i många delar, eftersom utan kortlek blir det inte så mycket spel.
+Min blackjack klass har EC 2 eftersom den använder sig av både deck klassen och player klassen.
+
+#### Phpmetrics
+PHP METRIC är ett verktyg som man installerar i sitt lokala repo, i mitt fall i min report katalog. Jag genererar en rapprt och öppnar den som en html sida så mätvärderna
+blir lättare att titta på.\
+\
+Jag börjar med att titta på  mina violations och ser att jag har 1 error, det gäller Complexity. En av mina methoder i Cardcontrollerna, har ganska djupa if satser och foreach loop i en else sats och så vidare.
+Allt funkar ju som det ska i /deal/player routen, men det är något jag kan titta på. En anna sak i complexity är black Jack klassen. Där har jag många beslutspunker att fatta i en och samma klass.
+Då utslagen när korten ska kollas kan vara ganska många beroende på spelarens kort. Den tror jag inte jag kommer att röra i denna omgång.
+Det finns inte direkt något att säga om Coupling, de är på ganska låga värden. Samma gäller med Cohesion. Mina modell klasser känns bra och låga,
+det är igen här att det är iså fall Controllers som behöver ses över.
+
+
+#### Scrutinizer
+
+Scrutinizer är ett verktyg som också mäter kodkvalitet. När kopplar man upp sitt git hub repo för att få det "bedömt" av Scrutinizer.
+
+Vi kan hoppa in direkt och kolla på det första C:et Coverage. Här står det 27 % codecoerage. Men det är ju jätte dåligt!!!
+Dock väljer jag här utifrån de uppgifter vi fått tidigare att enbart titta på mina modell klasser. Här blir siffran lite annorlunda och visar
+78% kodtäckning på card mappen. Den klassen som är svårast och testa är blackjack klassen som ju också var den med högst komplexitet.
+Eftersom kortleken i blackjack klassen shufflas i konstruktor, så betyder det att jag aldrig kan veta utfallet på korten och där med inte testa
+metoden vem som vunnit. Dock ska jag kika på hur det skulle gå att mocka en player och en dealer hand. 
+
+När det kommer till Complexity så är siffrorna för Controllers även här högst. Det man kan se är att komplexiteten går ner för varje kontroll jag skapat,
+i och med nyy kursmoment. VIlket ju är positivt, ju säkrare man blir på att koda Controllers, ju längre blir Complexity.
+
+Det finns inte så mycket nytt och säga om cohesion och coupling, de ligger även här på låga nivåer.
+
+Ett intressant mätvärde att finna i Scrutinizer är hur många rader kod varje klass är. Här kan man se att mina modell klasser har relativt låga nivåer av rader kod. Vilket jag är nöjd med.
+Medan man i Controllers kan titta på om man ska göra flera olika kontrollers. Ibland kan det dock bli svårt då jag gärna har en kontroller till hela black jack spelet.
+
+
+#### Förbättringar
+
+tre saker jag ska försöka förbättra är, kodtäckningen på black jack test, genom mockning. Complexiteten på en av metoderna i Card controllen.
+Och ifall jag kan dela upp Controller i mindre Controllers och namnge dem där efter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

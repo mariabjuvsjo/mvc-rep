@@ -101,7 +101,7 @@ p {
     line-height: 1.4em;
     font-family: "Roboto", sans-serif;
     font-weight: lighter;
-    text-align: center;
+
 }
 
 a {
@@ -675,4 +675,10 @@ PROJECT STYLE SHEET
 .footer-proj {
     height: 60px;
     box-shadow: -3px 0 5px 5px white;
+}
+
+.metrics-wrapp {
+    width: 50%;
+    margin: 0 auto;
+    text-align: start;
 }

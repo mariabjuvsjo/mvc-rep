@@ -28,7 +28,6 @@ class CcompareHandsTest extends TestCase
         $this->game = new Cgame();
         $this->compare = new CcompareHands($this->game);
 
-        var_dump($this->compare);
     }
 
         /**
