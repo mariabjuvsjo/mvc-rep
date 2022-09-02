@@ -352,3 +352,12 @@ PLAY SIDA
 .links:hover {
     color: #0884a5;
 }
+
+.clean-wrapp {
+    width: 70%;
+    margin: 20px auto;
+    background-color: whitesmoke;
+    color: #252525;
+    padding: 30px;
+    border: 5px dotted hotpink;
+}

@@ -1,0 +1,21 @@
+{# templates/project/cleancode.html.twig #}
+
+{% extends "project/basepro.html.twig" %}
+
+{% block title %}
+	Clean Code
+{% endblock %}
+
+{% block content %}
+	<div class="clean-wrapp">
+
+		{% apply markdown_to_html %}
+
+
+		{% endapply %}
+
+		{{ include('project/cleancode.markdown.twig')|markdown_to_html}}
+
+	</div>
+
+{% endblock %}

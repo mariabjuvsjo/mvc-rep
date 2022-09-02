@@ -1,0 +1,75 @@
+## SKA DET KALLAS SNYGG KOD?
+
+
+Ibland kan jag undra, finns det verkligen något som är snygg kod? Jag menar det som är snyggt för mig behöver kanske inte nödvändigt vis vara snyggt för dig?\
+I samhället finns det ju så många olika personligheter och smaker. 
+Jag tycker att ett par trasiga, slitna jeans är mycket snyggare än ett par kostymbyxor, jag köper hellre än tavla där färgen flyter åt alla håll och inte förställer något än ett stilleben där allt är i proposition till varandra.\
+Är det inte samma i programmerare världen?\
+Kan inte det som är yvigt och slarvig vara snyggare än något stilrent och prydligt? Kanske...\
+\
+Jag träffade en kille som jobbade på ett företag, han jobbade med kodning, php och han jobbade ensam. Jag kikade på hans kod på datorn “Wow vilka lösningar och vilken gedigen kod, jag fattar ingenting men jag är också nybörjare inom detta område”, sa jag lite generat. Men då sa han 
+“Du, det är ingen förutom jag som förstår denna kod. Jag är självlärd och har aldrig lärt mig objekt orienterad kodning. Jag kan lösa vilket problem som helst men skulle aldrig kunna jobba tillsammans med någon annan. Och det är lite tråkigt”\
+\
+Och där har vi det. Vår kod kanske inte behöver vara snygg men det underlättar om så många som möjligt kan förstå vår kod.\
+\
+Jag tycker dessutom uttrycket "snygg kod" är fel att använda. Jag menar det är ju faktiskt olika språk vi snackar om. Är grammatiken i tyskan snygg eller ful? Nej varken eller, 
+men den är strukturerad och prydlig så att så många människor som möjligt ska förstå vad man pratar om. 
+Så istället för att använda snygg kod kanske man hellre bör säga strukturerad kod eller enkel kod.\
+\
+Vi vill ju självklart att vår kod ska leva vidare efter oss. 
+Snart inom några generationer kommer kanske kodspråket vara lika viktigt att kunna som engelskan. 
+Och vi som i alla fall tillhör den första delen av jordens befolkning som kan ett eller flera kodspråk måste ju då se till att den blir lätt att förstå och återanvändbar.\
+\
+Hur gör vi det då?\
+\
+Något som jag älskar att utnyttja är extensions från texteditorn. I dessa tider behöver vi inte vara bäst i klassen i svenska för att skriva en grammatiskt rätt och välformulerad text. Vi har auto korrigering som hjälper oss 
+och det vore väl konstigt om inte vi som programmerare inte utnyttjade en likadan tjänst i vårat språk. 
+Att veta var en måsvinge ska vara eller hur många tabbar in en ny kodrad ska vara, det tycker jag man helt kan överlåta till auto-korregeringen, utan att behöva reflektera så mycket över det. 
+Som sagt det finns säkert många extensions man kan installera och vi har använt oss av skriptet phpcbf för att fixa våra små kod misstag. Då kan vi helt ängna oss åt att skriva bra kod istället.\
+\
+Men det finns ju många andra minor man kan gå på när man skriver kod.\
+Som att inte skriva tester för sin kod, COVERAGE, att ha allt för djupa och invecklade if-satser, COMPLEXITY.\
+Eller skriva klasser som har massa olika uppgifter att utföra, COHESION.\
+Och tillsist vill vi ju inte ha för många och komplicerad relationer och beroenden mellan våra olika klasser, COUPLING.\
+\
+Om vi har dessa 4 C:na i våra bakhuvuden när vi kodar, så kommer vår kod bli mer strukturerad och lättläst.\
+\
+Vi börjar med coverage. Det är dock ett C jag tycker är lite missvisade. Det får oss kanske att tro att man ska uppnå en så hög test täckning som möjligt.\
+Och ja absolut det ska vi, men då får vi inte lura oss själva och tro att vi har skrivit bra tester bara för vi har 100% kodtäckning.
+Jag hade hellre sätt att detta C byttes ut till ett E. För EDGECASES. 
+När man skriver ett test för en bit kod är det viktig att kolla allt som kan gå snett lika väl som det enkla och se till att kod testar det.
+\
+COMPLEXITY är för mig precis som ordet låter väldigt komplext.\  
+Jag vill inte nödvändigt vis påstå att ens kod är svårt och oförståelig bara för att den har hög komplexitet.\
+Har man däremot en hög komplexitet tillsammans med en låg kodtäckning, då ska man kanske börja fundera på var man kan göra om och göra enklare.\
+\
+COHESION är kanske den mest självklara av de 4 C:na. Här kan man verkligen göra det enkelt för sig själv och andra genom att rikta varje klass kring ett och samma område.\
+Det är ungefär som när man har ett fysiskt sällskapsspel. Vi har en box som håller spelet, i kodvärlden, Spelklassen. Och även om tärningarna ligger i boxen så har de sin egen funktionalitet, de blir då i en egen Tärningklass. I boxen ligger också ett papper med alla regler, den är också för sig själv fast den ligger i boxen och tillhör spelet, ja precis de blir då en egen Regelklass. Då har vi alltså 3 olika klasser i från ett och samma spel. 
+Vilket gör det mycket enklare för utvecklare som senare vill gå in och ändra en liten regel.\
+\
+COUPLING är svårare tycker jag. Vi har ju pratat mycket om dependecy injection, men det har ibland varit svårt att uppnå när man samtidigt vill ha en tunn Controller, som också är något som ingår i vår väg till enkel och lättläst kod.
+Samtidigt blir det svårt med enhetstestning när våra klasser är beroende av varandra. 
+Det viktiga tycker jag är att vi i alla fall kodar åt rätt håll, något jag lärt mig under kursmomentens gång. 
+Vi gör en kortklass den ska kunna leva i vilken kortlek som helst. 
+När vi sedan gör en Deck klass så vill vi att den ska kunna leva i vilket spel som helst och så vidare. 
+Tills vi kommer till toppen som kanske är själva spelet då kan vi använda alla våra mindre klasser. 
+Alltså det går att radera spelet utan att förstöra korten det gör inte så mycket. Vi är i rätt ände. 
+Jobbigare om vi hade ett kort som bara kan användas i 1 spel.
+Men ett problem blir som sagt att ju tajtare koppling en klass har till en annan ju svårare blir enhets testandet.\
+\
+Förutom dessa Cn hit och dit, så får vi inte glömma hur stor del kommentarer gör för vår kod. 
+Det ska ju faktiskt vara som en bruksanvisning. 
+Enligt DOCBLOCKS dokumentation så ska det först komma en summering sedan en beskrivning. 
+Då hjälper vi oss själva ännu mer till att visa vår kod för andra. 
+Läser en annan utvecklare en beskrivning av vår metod genom kommentarer är det ungefär som att läsa en bruksanvisning för en mikro.
+Vi förstod kanske inte vad koden gjorde innan men när vi läser kommentarer om koden blir allt mycket klarare.\
+\
+Vad betyder då dessa automatiserade tester som PhpMetrics och Scrutinizer för vår clean code?
+De är absolut en indikation och vägvisare för hur lättläst och “clean” vår kod egentligen är.\
+MEN…\
+Jag tycker personligen att man ska ta dessa tester med en nypa salt och framförallt om man gör testerna på ett redan färdigkodat projekt.
+Ska man utnyttja dessa tester till fullo ska man nog använda de alldeles från början och testa varje klass efter den är skriven och 
+fortsätta till kontrollen och till test katalogen och så vidare. Då kan man nog dra stor nytta av dem och i slutet av projektet lyser 
+förhoppningsvis allting grönt och gör det inte det så har man i alla fall förvissat sig om vad som kan vara en rödflagg men kanske valt i att strunta i det och det kan vara helt okej.\
+\
+För jag tycker dessa autotester, har faktiskt inte alltid rätt även om de alltid har rätt!

@@ -58,9 +58,39 @@ Medan man i Controllers kan titta på om man ska göra flera olika kontrollers. 
 
 #### Förbättringar
 
-tre saker jag ska försöka förbättra är, kodtäckningen på black jack test, genom mockning. Complexiteten på en av metoderna i Card controllen.
+tre saker jag ska försöka förbättra är, kodtäckningen på black jack test, genom mockning. 
+Complexiteten på en av metoderna i Card controllen.
 Och ifall jag kan dela upp Controller i mindre Controllers och namnge dem där efter.
 
+Anlednignen att jag vill förbättra codecoverage på black jack är att den metoden har som sagt hög complexitet. Ibland behöver 
+hög komplexitet inte vara dåligt, men då kan en hög code coverage för den metoden försäkra om att alla beslutspunkter ger rätt utslag.
+
+Card controllens komplexitet kan också vara bra att förbättra, här är mitt huvudsyfte att få en mer clean code och att den ska vara mer lätt läslig.
+Att dela upp kontrollen i mindre kontrollers gör att man slipper skrolla så mycket och det blir lättarte att navigera mellan de olika routsen.
+
+
+
+Jag har nu försökt att implementera förbättringarna i min kod och kommit fram till följande. Eftersom detta varit en lärande process så har min kod förbättras
+över tid. Och skulle jag gjort samma kursmoment om igen, hade jag med all säkerhet gjort koden mycket mer clean, återanvänt och haft mer förståelse för de 4 C från början.
+
+Att försöka börja förbättra kod som är gjort i utbildnings syft är för mig därför ganska orelevant och tidskrävande.
+Eftersom koden inte var perfekt från början är det väldigt svårt att börja pilla i den. Enkel och DRY kod hade varit mycket enklare.
+
+Jag tar därför istället med mig lärdomarna från detta och andra kursmoment för att nästa gång skriva bättre kod med högre kodkvalitet.
+
+Det jag gick till var i alla fall högre kodtäckning på Black Jack test klassen, med hjälp av mockning. Vilket har gett mig bättre förståelse för det.
+
+#### Diskussion
+
+Jag tycker absolut att man kan jobba aktivt med kodkvalitet på detta vis. Ett ännu smartare sätt tro jag är att sätta sig in i dokumentationen för vad som är bra kodkvalitet innan man börjar ett projekt.
+Då kan man alltid ha det i åtanke samtidigt som man skriver koden. Och under projektets gång testa. Jag tror inte riktigt på att avsluta ett projekt med att köra automatiserade tester.
+Det ger nog bara utvecklaren dåliga tankar och svårt att som sagt hoppa in i helt färdigskriven kod och börja ändra.
+
+Men absolut användbara verktyg under kod utvecklingens gång. Speciellt Code Covergae, men det är också mer komplext än att bara titta på en siffra.
+Jag har sett några som skrivit tester med 100 % kod täckning men där testerna egentligen inte testar annat än om det man retunerar är en inte eller sträng. 
+
+Det jag tar med mig mest från denna rapport är att ta automatiserade tester med en nypa salt men skriv bra edgecase test fall, 
+så ska man inte behöva vara orolig för complexity, cohesion och coupling. Så för mig är Code coverage det absolut starkaste av de 4 C:na.
 
 
 
