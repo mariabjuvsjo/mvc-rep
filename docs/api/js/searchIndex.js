@@ -296,41 +296,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-CardController.html#method_shuffle"
         },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003Adraw\u0028\u0029",
-            "name": "draw",
-            "summary": "",
-            "url": "classes/App-Controller-CardController.html#method_draw"
-        },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003AsessionProcess\u0028\u0029",
-            "name": "sessionProcess",
-            "summary": "",
-            "url": "classes/App-Controller-CardController.html#method_sessionProcess"
-        },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003AdrawNumber\u0028\u0029",
-            "name": "drawNumber",
-            "summary": "",
-            "url": "classes/App-Controller-CardController.html#method_drawNumber"
-        },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003AdrawNumberProcess\u0028\u0029",
-            "name": "drawNumberProcess",
-            "summary": "",
-            "url": "classes/App-Controller-CardController.html#method_drawNumberProcess"
-        },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003Adeal\u0028\u0029",
-            "name": "deal",
-            "summary": "",
-            "url": "classes/App-Controller-CardController.html#method_deal"
-        },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003AdealProcess\u0028\u0029",
-            "name": "dealProcess",
-            "summary": "",
-            "url": "classes/App-Controller-CardController.html#method_dealProcess"
-        },                {
-            "fqsen": "\\App\\Controller\\CardController\u003A\u003Adeck2\u0028\u0029",
-            "name": "deck2",
-            "summary": "",
-            "url": "classes/App-Controller-CardController.html#method_deck2"
-        },                {
             "fqsen": "\\App\\Controller\\GameController",
             "name": "GameController",
             "summary": "",
@@ -395,6 +360,11 @@ Search.appendIndex(
             "name": "about",
             "summary": "",
             "url": "classes/App-Controller-ReportController.html#method_about"
+        },                {
+            "fqsen": "\\App\\Controller\\ReportController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-ReportController.html#method_metrics"
         },                {
             "fqsen": "\\App\\Controller\\ReportController\u003A\u003Areport\u0028\u0029",
             "name": "report",
@@ -511,70 +481,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ProjectController.html#method_projectAbout"
         },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojectCleanCode\u0028\u0029",
+            "name": "projectCleanCode",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_projectCleanCode"
+        },                {
             "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AtexasPokerStart\u0028\u0029",
             "name": "texasPokerStart",
             "summary": "",
             "url": "classes/App-Controller-ProjectController.html#method_texasPokerStart"
         },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AtexasPokerProcess\u0028\u0029",
-            "name": "texasPokerProcess",
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AresetDatabase\u0028\u0029",
+            "name": "resetDatabase",
             "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_texasPokerProcess"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AtexasStart\u0028\u0029",
-            "name": "texasStart",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_texasStart"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AtexasOption\u0028\u0029",
-            "name": "texasOption",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_texasOption"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003Aflop\u0028\u0029",
-            "name": "flop",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_flop"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AturnProcess\u0028\u0029",
-            "name": "turnProcess",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_turnProcess"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AturnGet\u0028\u0029",
-            "name": "turnGet",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_turnGet"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AriverProcess\u0028\u0029",
-            "name": "riverProcess",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_riverProcess"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AriverGet\u0028\u0029",
-            "name": "riverGet",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_riverGet"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AlastbetProcess\u0028\u0029",
-            "name": "lastbetProcess",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_lastbetProcess"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AlastbetGet\u0028\u0029",
-            "name": "lastbetGet",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_lastbetGet"
+            "url": "classes/App-Controller-ProjectController.html#method_resetDatabase"
         },                {
             "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AnewgameProcess\u0028\u0029",
             "name": "newgameProcess",
             "summary": "",
             "url": "classes/App-Controller-ProjectController.html#method_newgameProcess"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AresetDatabase\u0028\u0029",
-            "name": "resetDatabase",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_resetDatabase"
         },                {
             "fqsen": "\\App\\Controller\\RegistrationController",
             "name": "RegistrationController",
@@ -896,6 +821,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Project-CcompareHands.html#property_dealerHand"
         },                {
+            "fqsen": "\\App\\Project\\CcompareHands\u003A\u003A\u0024game",
+            "name": "game",
+            "summary": "",
+            "url": "classes/App-Project-CcompareHands.html#property_game"
+        },                {
             "fqsen": "\\App\\Project\\Cdeck",
             "name": "Cdeck",
             "summary": "Class\u0020Cdeck.\u0020Represent\u0020a\u0020deck\u0020of\u002052\u0020cards.",
@@ -1046,6 +976,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Project-Cgame.html#property_thePot"
         },                {
+            "fqsen": "\\App\\Project\\Cgame\u003A\u003A\u0024playerHand",
+            "name": "playerHand",
+            "summary": "",
+            "url": "classes/App-Project-Cgame.html#property_playerHand"
+        },                {
+            "fqsen": "\\App\\Project\\Cgame\u003A\u003A\u0024dealarHand",
+            "name": "dealarHand",
+            "summary": "",
+            "url": "classes/App-Project-Cgame.html#property_dealarHand"
+        },                {
             "fqsen": "\\App\\Project\\Chand",
             "name": "Chand",
             "summary": "Class\u0020Chand.\u0020Represent\u0020a\u0020hand\u0020in\u0020texas\u0020holdem",
@@ -1100,6 +1040,11 @@ Search.appendIndex(
             "name": "setPositiveRes",
             "summary": "",
             "url": "classes/App-Project-CplayerBal.html#method_setPositiveRes"
+        },                {
+            "fqsen": "\\App\\Project\\CplayerBal\u003A\u003A\u0024balance",
+            "name": "balance",
+            "summary": "",
+            "url": "classes/App-Project-CplayerBal.html#property_balance"
         },                {
             "fqsen": "\\App\\Project\\Crules",
             "name": "Crules",
@@ -1275,6 +1220,111 @@ Search.appendIndex(
             "name": "urlGenerator",
             "summary": "",
             "url": "classes/App-Security-LoginFormAuthenticator.html#property_urlGenerator"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController",
+            "name": "DrawController",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController\u003A\u003AaddFlashPlayer\u0028\u0029",
+            "name": "addFlashPlayer",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html#method_addFlashPlayer"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController\u003A\u003AsetSessionDraw\u0028\u0029",
+            "name": "setSessionDraw",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html#method_setSessionDraw"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController\u003A\u003Adraw\u0028\u0029",
+            "name": "draw",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html#method_draw"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController\u003A\u003AsessionProcess\u0028\u0029",
+            "name": "sessionProcess",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html#method_sessionProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController\u003A\u003AdrawNumber\u0028\u0029",
+            "name": "drawNumber",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html#method_drawNumber"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController\u003A\u003AdrawNumberProcess\u0028\u0029",
+            "name": "drawNumberProcess",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html#method_drawNumberProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController\u003A\u003Adeal\u0028\u0029",
+            "name": "deal",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html#method_deal"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController\u003A\u003AdealProcess\u0028\u0029",
+            "name": "dealProcess",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html#method_dealProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\DrawController\u003A\u003Adeck2\u0028\u0029",
+            "name": "deck2",
+            "summary": "",
+            "url": "classes/App-Controller-DrawController.html#method_deck2"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController",
+            "name": "TexasController",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AtexasPokerProcess\u0028\u0029",
+            "name": "texasPokerProcess",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_texasPokerProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AtexasStart\u0028\u0029",
+            "name": "texasStart",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_texasStart"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AtexasOption\u0028\u0029",
+            "name": "texasOption",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_texasOption"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003Aflop\u0028\u0029",
+            "name": "flop",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_flop"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AturnProcess\u0028\u0029",
+            "name": "turnProcess",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_turnProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AturnGet\u0028\u0029",
+            "name": "turnGet",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_turnGet"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AriverProcess\u0028\u0029",
+            "name": "riverProcess",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_riverProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AriverGet\u0028\u0029",
+            "name": "riverGet",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_riverGet"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AlastbetProcess\u0028\u0029",
+            "name": "lastbetProcess",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_lastbetProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AlastbetGet\u0028\u0029",
+            "name": "lastbetGet",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_lastbetGet"
         },                {
             "fqsen": "\\",
             "name": "\\",
