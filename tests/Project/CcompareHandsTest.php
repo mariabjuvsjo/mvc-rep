@@ -9,6 +9,8 @@ use App\Project\Ccards;
 use App\Project\Cdeck;
 
 use App\Project\Chand;
+
+use App\Project\CcompareHands;
 /**
  * Test Cases for CcompareHands class
  */
@@ -41,5 +43,9 @@ class CcompareHandsTest extends TestCase
 
         $this->assertIsObject($this->compare);
     }
+
+
+
+ 
 
 }

@@ -11,10 +11,26 @@
 
 	<h2>
 		Profil of
-		{{profil.firstname}}
+		{{profil.username}}
 	</h2>
 	<div class="about-wrapp2">
-		<img class="profil" src="{{ user.image ?? asset("img/avatar-g6a9fb116d_1280.png")}}">
+		<div>
+			<h3>Here is your previous result:</h3>
+			<table>
+
+				<th>Won</th>
+				<th></th>
+				<th>Draw</th>
+				<th>Lose</th>
+			</table>
+			{% for o in outcome %}
+
+				<p>{{o.result}}</p>
+
+
+			{% endfor %}
+		</div>
+		<img class="profil" src="{{ profil.image ?? asset("img/avatar-g6a9fb116d_1280.png")}}">
 		<p>Here is your profil:</p>
 		<p>User Name:{{profil.username}}
 		</p>
@@ -24,8 +40,10 @@
 		</p>
 		<p>Balance:{{profil.balance}}
 		</p>
+
 		<p style="margin: 30px;">Add more money to your account or update bio?</p>
 		<a class="btn" href="{{path("profil_update_by_id", {"id": profil.id})}}">Update</a>
 
 	</div>
+
 {% endblock %}

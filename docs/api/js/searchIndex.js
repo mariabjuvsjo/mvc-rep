@@ -606,6 +606,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-User.html"
         },                {
+            "fqsen": "\\App\\Entity\\User\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Entity-User.html#method___construct"
+        },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
             "summary": "",
@@ -691,6 +696,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-User.html#method_setBalance"
         },                {
+            "fqsen": "\\App\\Entity\\User\u003A\u003AgetOutcome\u0028\u0029",
+            "name": "getOutcome",
+            "summary": "",
+            "url": "classes/App-Entity-User.html#method_getOutcome"
+        },                {
+            "fqsen": "\\App\\Entity\\User\u003A\u003AaddOutcome\u0028\u0029",
+            "name": "addOutcome",
+            "summary": "",
+            "url": "classes/App-Entity-User.html#method_addOutcome"
+        },                {
+            "fqsen": "\\App\\Entity\\User\u003A\u003AremoveOutcome\u0028\u0029",
+            "name": "removeOutcome",
+            "summary": "",
+            "url": "classes/App-Entity-User.html#method_removeOutcome"
+        },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -730,6 +750,11 @@ Search.appendIndex(
             "name": "balance",
             "summary": "",
             "url": "classes/App-Entity-User.html#property_balance"
+        },                {
+            "fqsen": "\\App\\Entity\\User\u003A\u003A\u0024outcome",
+            "name": "outcome",
+            "summary": "",
+            "url": "classes/App-Entity-User.html#property_outcome"
         },                {
             "fqsen": "\\App\\Form\\RegistrationFormType",
             "name": "RegistrationFormType",
@@ -1186,6 +1211,11 @@ Search.appendIndex(
             "summary": "Used\u0020to\u0020upgrade\u0020\u0028rehash\u0029\u0020the\u0020user\u0027s\u0020password\u0020automatically\u0020over\u0020time.",
             "url": "classes/App-Repository-UserRepository.html#method_upgradePassword"
         },                {
+            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003AfindOneByIdJoinedToOutcome\u0028\u0029",
+            "name": "findOneByIdJoinedToOutcome",
+            "summary": "",
+            "url": "classes/App-Repository-UserRepository.html#method_findOneByIdJoinedToOutcome"
+        },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator",
             "name": "LoginFormAuthenticator",
             "summary": "",
@@ -1321,10 +1351,80 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-TexasController.html#method_lastbetProcess"
         },                {
-            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AlastbetGet\u0028\u0029",
-            "name": "lastbetGet",
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AGameOverProcess\u0028\u0029",
+            "name": "GameOverProcess",
             "summary": "",
-            "url": "classes/App-Controller-TexasController.html#method_lastbetGet"
+            "url": "classes/App-Controller-TexasController.html#method_GameOverProcess"
+        },                {
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AtexasEndGame\u0028\u0029",
+            "name": "texasEndGame",
+            "summary": "",
+            "url": "classes/App-Controller-TexasController.html#method_texasEndGame"
+        },                {
+            "fqsen": "\\App\\Entity\\Outcome",
+            "name": "Outcome",
+            "summary": "",
+            "url": "classes/App-Entity-Outcome.html"
+        },                {
+            "fqsen": "\\App\\Entity\\Outcome\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/App-Entity-Outcome.html#method_getId"
+        },                {
+            "fqsen": "\\App\\Entity\\Outcome\u003A\u003AgetResult\u0028\u0029",
+            "name": "getResult",
+            "summary": "",
+            "url": "classes/App-Entity-Outcome.html#method_getResult"
+        },                {
+            "fqsen": "\\App\\Entity\\Outcome\u003A\u003AsetResult\u0028\u0029",
+            "name": "setResult",
+            "summary": "",
+            "url": "classes/App-Entity-Outcome.html#method_setResult"
+        },                {
+            "fqsen": "\\App\\Entity\\Outcome\u003A\u003AgetUser\u0028\u0029",
+            "name": "getUser",
+            "summary": "",
+            "url": "classes/App-Entity-Outcome.html#method_getUser"
+        },                {
+            "fqsen": "\\App\\Entity\\Outcome\u003A\u003AsetUser\u0028\u0029",
+            "name": "setUser",
+            "summary": "",
+            "url": "classes/App-Entity-Outcome.html#method_setUser"
+        },                {
+            "fqsen": "\\App\\Entity\\Outcome\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/App-Entity-Outcome.html#property_id"
+        },                {
+            "fqsen": "\\App\\Entity\\Outcome\u003A\u003A\u0024result",
+            "name": "result",
+            "summary": "",
+            "url": "classes/App-Entity-Outcome.html#property_result"
+        },                {
+            "fqsen": "\\App\\Entity\\Outcome\u003A\u003A\u0024user",
+            "name": "user",
+            "summary": "",
+            "url": "classes/App-Entity-Outcome.html#property_user"
+        },                {
+            "fqsen": "\\App\\Repository\\OutcomeRepository",
+            "name": "OutcomeRepository",
+            "summary": "",
+            "url": "classes/App-Repository-OutcomeRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\OutcomeRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-OutcomeRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\OutcomeRepository\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "",
+            "url": "classes/App-Repository-OutcomeRepository.html#method_add"
+        },                {
+            "fqsen": "\\App\\Repository\\OutcomeRepository\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "",
+            "url": "classes/App-Repository-OutcomeRepository.html#method_remove"
         },                {
             "fqsen": "\\",
             "name": "\\",

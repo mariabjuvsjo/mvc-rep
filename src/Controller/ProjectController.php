@@ -38,7 +38,7 @@ class ProjectController extends AbstractController
         return $this->render('project/cleancode.html.twig');
     }
 
-    
+
 
 
     /**

@@ -141,7 +141,7 @@ class Cgame
     {
 
         $this->dealerHand = array_merge($this->community, $this->getDealerCard());
-
+        //var_dump($this->dealerHand);
         return $this->dealerHand;
     }
 

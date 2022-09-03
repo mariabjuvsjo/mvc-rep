@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -38,6 +40,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'integer')]
     private $balance = 1000;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Outcome::class)]
+    private $outcome;
+
+    public function __construct()
+    {
+        $this->outcome = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -154,6 +164,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setBalance(?int $balance): self
     {
         $this->balance = $balance;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Outcome>
+     */
+    public function getOutcome(): Collection
+    {
+        return $this->outcome;
+    }
+
+    public function addOutcome(Outcome $outcome): self
+    {
+        if (!$this->outcome->contains($outcome)) {
+            $this->outcome[] = $outcome;
+            $outcome->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOutcome(Outcome $outcome): self
+    {
+        if ($this->outcome->removeElement($outcome)) {
+            // set the owning side to null (unless already changed)
+            if ($outcome->getUser() === $this) {
+                $outcome->setUser(null);
+            }
+        }
 
         return $this;
     }

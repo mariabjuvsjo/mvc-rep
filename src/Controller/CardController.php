@@ -79,7 +79,4 @@ class CardController extends AbstractController
 
         return $this->render('card/shuffle.html.twig', $data);
     }
-
-
-
 }

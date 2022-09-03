@@ -33,7 +33,7 @@ class ReportController extends AbstractController
         return $this->render('metrics.html.twig');
     }
 
-   
+
 
     /**
      * @Route("/report", name="report")

@@ -80,4 +80,18 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    public function findOneByIdJoinedToOutcome(int $userId): ?User
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT u, o
+            FROM App\Entity\User u
+            INNER JOIN u.outcome o
+            WHERE u.id = :id'
+        )->setParameter('id', $userId);
+
+        return $query->getOneOrNullResult();
+    }
 }

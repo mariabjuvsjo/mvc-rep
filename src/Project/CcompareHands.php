@@ -30,9 +30,8 @@ class CcompareHands
     {
 
         $this->game = $game;
-        $this->playerHand = $game->playerFullHand();
-        $this->dealerHand = $game->dealerFullHand();
-        //$this->dealer = $this->checkDealer();
+        $this->playerRule = new Crules($game->playerFullHand());
+        $this->dealerRule = new Crules($game->dealerFullHand());
     }
 
     /**
@@ -43,7 +42,7 @@ class CcompareHands
 
     public function checkPlayer(): array
     {
-        $rule = new Crules($this->playerHand);
+        $rule = $this->playerRule;
 
         if ($rule->royalFlush()) {
             return [10, "Royal Flush"];
@@ -75,7 +74,7 @@ class CcompareHands
 
     public function checkDealer(): array
     {
-        $rule = new Crules($this->dealerHand);
+        $rule = $this->dealerRule;
 
 
         if ($rule->royalFlush()) {

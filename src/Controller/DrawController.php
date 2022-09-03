@@ -15,15 +15,15 @@ use App\Cards\DeckWith2Joker;
 
 class DrawController extends AbstractController
 {
-
-    private function addFlashPlayer($x, $y, $z){
+    private function addFlashPlayer($x, $y, $z)
+    {
         if (($x * $y) > $z) {
             $this->addFlash("info", "To many Cards or Players Choose a lower number");
-        } 
-
+        }
     }
 
-    private function setSessionDraw(){
+    private function setSessionDraw()
+    {
         $myCards = $session->get("mycard") ?? [];
         $drawn = $deck->draw();
         $left = $deck->countCards();
@@ -31,7 +31,6 @@ class DrawController extends AbstractController
         $session->set('deck', $deck);
         $session->set('left', $left);
         $session->set('mycard', $myCards);
-
     }
 
 
@@ -132,7 +131,6 @@ class DrawController extends AbstractController
 
 
         if ($draw) {
-        
             $myCards = $session->get("mycard") ?? [];
             $drawn = $deck->draw($number);
             $left = $deck->countCards();
@@ -140,7 +138,7 @@ class DrawController extends AbstractController
             $session->set('deck', $deck);
             $session->set('left', $left);
             $session->set('mycard', $myCards);
-        } 
+        }
         if ($clear) {
             $session->clear();
 
@@ -201,13 +199,13 @@ class DrawController extends AbstractController
                     $card = $deck1->draw();
                     $onePlayer->addCardTHand($card);
                 }
-                
+
                 $left = $deck->countCards();
                 $session->set('deck', $deck);
                 $session->set('left', $left);
                 $session->set('manyplayers', $manyPlayers);
             }
-        } 
+        }
         if ($clear) {
             $session->clear();
         }

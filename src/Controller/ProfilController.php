@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\User;
+use App\Entity\Outcome;
 use App\Repository\UserRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -15,6 +16,7 @@ class ProfilController extends AbstractController
     #[Route(path: '/proj/profil/{id}', name: 'app_profil')]
     public function profil(
         UserRepository $userRepository,
+        ManagerRegistry $doctrine,
         int $id
     ): Response {
         // if ($this->getUser()) {
@@ -25,11 +27,30 @@ class ProfilController extends AbstractController
         //$error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         //$lastUsername = $authenticationUtils->getLastUsername();
-        $user = $userRepository
-        ->find($id);
+        //$user = $userRepository
+        //->find($id);
+
+        $user = $doctrine->getRepository(User::class)->findOneByIdJoinedToOutcome($id);
+
+        if ($user) {
+            $outcomes = $user->getOutcome();
+        } else {
+            $user = $userRepository
+            ->find($id);
+            $outcomes = "no previous games";
+        }
+
+
+
+
+        //var_dump($user);
+
+        //var_dump($outcomes);
 
         $data = [
-            "profil" => $user
+            "profil" => $user,
+            "outcome" => $outcomes
+
         ];
         return $this->render('project/security/profil.html.twig', $data);
     }

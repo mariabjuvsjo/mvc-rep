@@ -8,8 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Entity\User;
+use App\Entity\Outcome;
 use App\Project\Cgame;
 use App\Project\CplayerBal;
+use App\Project\CcompareHands;
 use App\Repository\UserRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -26,8 +28,14 @@ class TexasController extends AbstractController
 
         //$totalBlind = $bet * 2;
 
+        $user = $this->getUser();
+
+        $balance = $user->getBalance();
+
+
+
         $texas = $session->get("texas") ?? new Cgame();
-        $playerBal = $session->get("balance") ?? new CplayerBal();
+        $playerBal = $session->get("balance") ?? $balance;
         //$blinds = $session->get("blinds") ?? $totalBlind;
 
         if ($play) {
@@ -54,7 +62,7 @@ class TexasController extends AbstractController
         'dealer' => $texas ->getDealerCard(),
         //'playerBlind' => $texas ->getPot() / 2,
         'thePot' => $texas->getPot(),
-        'playermoney' => $playerBal->getBalance()
+        'playermoney' => $playerBal
 
         ];
 
@@ -75,13 +83,13 @@ class TexasController extends AbstractController
         $texas = $session->get('texas');
 
         $playerBal = $session->get('balance');
-
+        var_dump($amount);
 
         if ($fold) {
             return $this->redirectToRoute('texas-poker');
         }
         if ($raise) {
-            $playerBal->setnegativeRes($amount);
+            $playerBal = $playerBal - $amount;
             $texas->setPot($amount * 2);
             $texas->theFlop();
             $session->set("balance", $playerBal);
@@ -107,7 +115,7 @@ class TexasController extends AbstractController
            'dealer' => $texas ->getDealerCard(),
            //'playerBlind' => $texas ->getPot() / 2,
            'thePot' => $texas->getPot(),
-           'playermoney' => $playerBal->getBalance(),
+           'playermoney' => $playerBal,
            'community' => $texas->getCommunityCards()
 
            ];
@@ -137,7 +145,7 @@ class TexasController extends AbstractController
             return $this->redirectToRoute('texas-poker');
         }
         if ($raise) {
-            $playerBal->setnegativeRes($amount);
+            $playerBal = $playerBal - $amount;
             $texas->setPot($amount * 2);
             $texas->turn();
             $session->set("balance", $playerBal);
@@ -168,7 +176,7 @@ class TexasController extends AbstractController
             'dealer' => $texas ->getDealerCard(),
             //'playerBlind' => $texas ->getPot() / 2,
             'thePot' => $texas->getPot(),
-            'playermoney' => $playerBal->getBalance(),
+            'playermoney' => $playerBal,
             'community' => $texas->getCommunityCards()
 
             ];
@@ -199,7 +207,7 @@ class TexasController extends AbstractController
             return $this->redirectToRoute('texas-poker');
         }
         if ($raise) {
-            $playerBal->setnegativeRes($amount);
+            $playerBal = $playerBal - $amount;
             $texas->setPot($amount * 2);
             $texas->river();
             $session->set("balance", $playerBal);
@@ -230,7 +238,7 @@ class TexasController extends AbstractController
             'dealer' => $texas ->getDealerCard(),
             //'playerBlind' => $texas ->getPot() / 2,
             'thePot' => $texas->getPot(),
-            'playermoney' => $playerBal->getBalance(),
+            'playermoney' => $playerBal,
             'community' => $texas->getCommunityCards()
 
             ];
@@ -260,7 +268,7 @@ class TexasController extends AbstractController
             return $this->redirectToRoute('texas-poker');
         }
         if ($raise) {
-            $playerBal->setnegativeRes($amount);
+            $playerBal = $playerBal - $amount;
             $texas->setPot($amount * 2);
             // KOLLA VEM SOM HAR DEN STARKASTE HANDEN
             // OM DATORN GE INTE POTEN TILL PLAYER
@@ -280,40 +288,78 @@ class TexasController extends AbstractController
         return $this->redirectToRoute('texas-go');
     }
 
-              /**
-     * @Route("/proj/texas/gameover", name="texas-last-bet", methods={"GET", "HEAD"})
+    /**
+     * @Route("/proj/texas/gameover/", name="texas-last-bet", methods={"POST"})
      */
+    public function gameOverProcess(
+        SessionInterface $session,
+        ManagerRegistry $doctrine,
+        UserRepository $userRepository
+    ): Response {
 
-    public function lastbetGet(SessionInterface $session): Response
-    {
+        $entityManager = $doctrine->getManager();
+
+        $user = $this->getUser();
+        $outcome = new Outcome();
 
         $texas = $session->get('texas');
+
 
         $totalPot = $texas->getPot();
         $playerBal = $session->get('balance');
 
-        $compare = new \App\Project\CcompareHands($texas);
+        $compare = new CcompareHands($texas);
 
-        $winner = $compare->compareHand();
+        $winner = $session->get('winner') ?? $compare->compareHand();
 
         if (str_contains($winner, "You won")) {
-            $playerBal->setPositiveRes($totalPot);
+            $user->setBalance($playerBal + $totalPot);
             $session->set("balance", $playerBal);
+            $session->set('winner', $winner);
+            $outcome->setResult("won");
         }
         if (str_contains($winner, "Draw")) {
             $newPot = $totalPot / 2;
-            $playerBal->setPositiveRes($newPot);
+            $user->setBalance($playerBal + $newPot);
             $session->set("balance", $playerBal);
+            $session->set('winner', $winner);
+            $outcome->setResult("draw");
+        }
+        if (str_contains($winner, "You lost")) {
+            $user->setBalance($playerBal);
+            $session->set('winner', $winner);
+            $outcome->setResult("lose");
         }
 
+
+
+        $user->addOutcome($outcome);
+        $outcome->setUser($user);
+        $entityManager->persist($outcome);
+        $entityManager->persist($user);
+        $entityManager->flush();
+
         $texas->resetPot();
+
+        return $this->redirectToRoute('texas-end');
+    }
+
+     /**
+     * @Route("/proj/texas/end/", name="texas-end", methods={"GET"})
+     */
+    public function texasEndGame(SessionInterface $session): Response
+    {
+        $texas = $session->get('texas');
+        $winner = $session->get('winner');
+        $playerBal = $session->get('balance');
+
 
         $data = [
             'player' => $texas ->getPlayerCard(),
             'dealer' => $texas ->getDealerCard(),
             //'playerBlind' => $texas ->getPot() / 2,
             'thePot' => $texas->getPot(),
-            'playermoney' => $playerBal->getBalance(),
+            'playermoney' => $playerBal,
             'community' => $texas->getCommunityCards(),
             //'blabla' => var_dump($compare->checkPlayer()),
             //'bla'=> var_dump($compare->checkDealer()),
