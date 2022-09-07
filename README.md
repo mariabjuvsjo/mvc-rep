@@ -1,5 +1,11 @@
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/mariabjuvsjo/mvc-rep/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
 
+[![Build Status](https://scrutinizer-ci.com/g/mariabjuvsjo/mvc-rep/badges/build.png?b=main)](https://scrutinizer-ci.com/g/mariabjuvsjo/mvc-rep/build-status/main)
+
+[![Code Coverage](https://scrutinizer-ci.com/g/mariabjuvsjo/mvc-rep/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/mariabjuvsjo/mvc-rep/?branch=main)
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mariabjuvsjo/mvc-rep/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/mariabjuvsjo/mvc-rep/?branch=main)
+
 Project in course MVC at BTH.
 
 Second part of this repo is a project made in the course MVC objectoriented php.
