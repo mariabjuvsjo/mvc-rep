@@ -1,0 +1,57 @@
+# KMOM 10 Projektet
+
+## KRAV 1,2,3:
+
+### PROJEKTFOKUS
+Jag valde att koda ett casino spel. Och efter mycket funderingar fram och tillbaka för att det inte skulle bli för invecklat, föll valet tillslut på Texas Holdem. Som jag nämnt innan på min about sida om projektet så har jag gjort några småsaker simplifierade. Till exempel så har datorn ingen egen “vilja”. För att det skulle bli lite mindre att ta hänsyn till så gjorde jag så att datorn bara följer vad användaren gör. Dessutom så kan man aldrig vinna om användaren och datorn får samma hand. Även om man kanske har ett bättre par än den andra. 
+
+### STRUKTUR
+Jag började med att snickra på modell klasserna. Jag visste att jag ville ha så mycket som möjligt av funktionaliteten i modell klasserna. Och genom att försöka dela upp klasserna så mycket som möjligt började jag längst mer med kort klassen och arbetade mig upp vad jag trodde jag ville ha för klasser. CompareHands blev sista klassen som efter spelets slut jämför spelaren och datorns händer. 
+
+När klasserna var färdiga gick jag över till Kontrollen, då blev ett spelobjekt skapat genom session->get och en ny route skapat efter varje nytt kort är draget. Här var utmaningen att vara noggrann med postformulären så rätt sak hände när spelaren trycker på en viss knapp.
+
+### DATABAS
+Databasen är den som visar innehållet av en användare. Den håller även lösenord och vilken roll användaren har. I min reset droppar jag tabellen, skapar en ny och sen lägger till doe och admin där admin är den enda som har rollen ROLE_ADMIN. När denne loggar in finns tillgång till länken Admin där admin saker som ta bort användare och lägga till finns.
+
+### UTSEENDE
+Jag har valt ett dark theme och helt andra typsnitt än de övriga kursmoment sidorna. Jag har försökt att få det att se ut som att korten ligger på ett casino bord och att man enkelt kan se spelaren och datorns kort. Jag älskar CSS och om jag hade haft mer tid hade jag fortsatt snickra på utseendet ännu mer. Men so far är jag väldigt nöjd med utseendet och använder vänligheten.
+
+### KODSTIL
+När det kommer till linters så finns det en hel del varningar som jag har ignorerat. Det mesta handlar om saker som är kopplade till doctrine. Som till exempel för korta variabelnamn osv.
+Det jag tycker är lite konstigt är att Symfony och doctrine inte alltid är sammanlänkade med linters. När linters klagar på symfonys olika interface, undrar man vilka som egentligen har rätt Lint eller Symfony.
+
+### ENHETSTESTER
+Mina enhetstester är jag till största del nöjd med. Jag har tack vare testerna också upptäckt lite fel i koden och lyckas åtgärda dem. Då talar jag om modell klasserna, den enda klassen som inte har 100 % täckning är CompareHands klassen. Denna kommer jag arbeta vidare med genom att försöka skapa en array med reglerna och en for loop istället för som nu när jag har en if eller else if sats för att kolla varje regel. Men för nu får detta va och allt funkar bra ändå trots hög komplexitet, något jag uppdagat i phpstan men som jag som sagt får åtgärda vid senare tillfälle.
+
+### METRICS OCH SCRUTINIZER
+I slutet av projektet genomförde jag metrics och Scrutinizer testerna och har med hjälp av med försökt förbättra koden. Men en lärdom jag tar med till nästa gång är att börja mycket tidigare in i projektet med de automatiserade testerna.
+
+### GITHUB
+Jag har även lagt till en README i GitHub och publicerat allt till GitHub. Och blivit mycket bättre under denna kursens gång att alltid göra git Add och git kommit efter att jag är färdig med en del eller efter men dag.
+
+
+## KRAV 4:
+
+### SNYGG KOD
+Jag valde att skriva en artikel om clean code, det finns inte så mycket att säga om den mer än att den finns som länk i about sidan och är en artikel med mina tankar om begreppet snygg kod.
+
+## KRAV 5:
+
+### INLOGG
+När det kommer till inloggningen så valde jag att försöka ge mig på symfonys dokumentation och lära mig om deras make:user och make:auth. Jag tyckte att det var ett väldigt smidigt sätt och funkar väldigt bra. Det enda är att jag inte för mitt liv kan få det att fungera på studentservern. Jag vet inte om det är för att studentservern inte är en säker webbplats eller vad det kan va. Jag har försökt att leta och felsöka i flera dagar nu. Jag hoppas ni kan som Marie nämnde i Discord, ladda ner repor och köra lokalt på er datorn, eftersom både min databas och krav5 och 6 är helt avhängda av att inlägget ska fungera.
+ Det har varit väldigt intressant att jobba med Symfony på detta sätt och enkelt.
+
+## KRAV 6:
+
+### ORM
+Jag har valt att göra en OneToMany relation mellan klasserna User och Outcome. Jag gör en join på dessa genom Doctrines querylang i Userrepository klassen med en metod. Jag tycker doctrine hade en väldigt bra dokumentation för detta och det är ett väldigt smart sätt att jobba om man vill slippa SQL joins och så vidare.
+
+
+## PROJEKTET
+Jag tyckte att projektet var väldigt svårt men också väldigt lärorikt. Det är väldigt många olika delar man ska väva in med allt ifrån modellklasser, controllers, session, routes, test och linters osv. För mig var det svårt att hålla det på en lagom nivå. Det finns ju så många utgångar ett texas holder spel kan ta. Men jag gillar hur jag har löst de flesta problemen och är mest nöjd med upplägget på mina modellklasser, då nästan all funktionalitet finns i dem. Jag är också supernöjd med mina enhetstester men vill gärna lära mig mer om mocking och sådana saker, för jag tycker verkligen att tester hjälpt mig. 
+
+Mina förbättrings möjligheter med detta projekt är många. Allt funkar fint som det är nu. Men det finns många saker att addera, som en till klass för att få datorn att välja vad den ska göra vid varje drag. Fixa iordning compare hand klassen för att minska if och else if satserna. Jag känner dock att jag gjort en bra grund så att det är enkelt att bygga vidare.
+ Till nästa nytt projekt har jag lärt mig att vara mer noga att utveckla varje liten del för sig. Till exempel, göra en game klass och samtidigt göra tester till den klassen och köra den genom autotesterna och linters, för att sedan gå vidare och göra nästa del och testa den. Men jag antar att det har mycket med rutin att göra och ju mer erfaren man blir kommer det kanske mer naturligt. 
+
+## KURSEN
+Jag tycker kursen i stort har varit super kul och lärorik, roliga uppgifter och bra med optionella krav. Det jag kanske tycker skulle vara bra är om man gick igenom innehållet i denna kurs och webtec kursen och tittade på var man ska lära sig rätt saker. Jag tycker till exempel att vi inte fick lära oss om symfony särskilt mycket. Om man ska använda sig av ett ramverk känns det rätt viktigt att verkligen få lära sig ramverkets kvaliteter. Man kanske hellre kunde ha jobbat mer med session i webtec kursen, men mindre med controllers. Och tvärtom här, mer fokus på kontroller och symfony. Känner också att enhetstestning är så pass viktigt att vi gärna kunde ha fått en genomgång i mockning och stubs också. De testerna som visades på genomgången var väldigt simpla. Men som sagt väldigt roliga uppdrag och info så jag ger kursen 8 av 10!
