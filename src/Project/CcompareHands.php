@@ -13,26 +13,8 @@ use App\Project\CplayerBal;
  */
 class CcompareHands
 {
-    private array $playerHand;
+    public object $rule;
 
-    private array $dealerHand;
-
-    public object $game;
-
-
-    /**
-     * Constructor to create the game object
-     *
-     *
-     */
-
-    public function __construct(Cgame $game)
-    {
-
-        $this->game = $game;
-        $this->playerRule = new Crules($game->playerFullHand());
-        $this->dealerRule = new Crules($game->dealerFullHand());
-    }
 
     /**
      * method to check what kind of hand the player has
@@ -40,10 +22,11 @@ class CcompareHands
      * @return array with a number and a string with the right rule name
      */
 
-    public function checkPlayer(): array
+    public function checkPlayer(Crules $rule): array
     {
-        $rule = $this->playerRule;
+        //$rule = $this->playerRule;
 
+       
         if ($rule->royalFlush()) {
             return [10, "Royal Flush"];
         } elseif ($rule->straightFlush()) {
@@ -72,9 +55,9 @@ class CcompareHands
      * @return array with a number and a string with the right rule name
      */
 
-    public function checkDealer(): array
+    public function checkDealer(Crules $rule): array
     {
-        $rule = $this->dealerRule;
+        //$rule = $this->dealerRule;
 
 
         if ($rule->royalFlush()) {
@@ -106,11 +89,8 @@ class CcompareHands
      *
      */
 
-    public function compareHand()
+    public function compareHand(array $player, array $dealer)
     {
-
-        $dealer = $this->checkDealer();
-        $player = $this->checkPlayer();
         if ($dealer[0] > $player[0]) {
             return "You lost with " . $player[1] . " Dealer have " . $dealer[1];
         }

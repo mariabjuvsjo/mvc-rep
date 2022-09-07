@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Entity\User;
 use App\Entity\Outcome;
 use App\Project\Cgame;
-use App\Project\CplayerBal;
+use App\Project\Crules;
 use App\Project\CcompareHands;
 use App\Repository\UserRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -308,9 +308,15 @@ class TexasController extends AbstractController
         $totalPot = $texas->getPot();
         $playerBal = $session->get('balance');
 
-        $compare = new CcompareHands($texas);
+        $playerRule = new Crules($texas->playerFullHand());
+        $dealerRule = new Crules($texas->dealerFullHand());
 
-        $winner = $session->get('winner') ?? $compare->compareHand();
+        $compare = new CcompareHands();
+
+        $playerH = $compare->checkPlayer($playerRule);
+        $dealerH = $compare->checkDealer($dealerRule);
+
+        $winner = $session->get('winner') ?? $compare->compareHand($playerH, $dealerH);
 
         if (str_contains($winner, "You won")) {
             $user->setBalance($playerBal + $totalPot);
