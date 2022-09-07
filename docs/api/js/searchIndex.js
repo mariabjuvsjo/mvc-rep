@@ -816,11 +816,6 @@ Search.appendIndex(
             "summary": "Class\u0020CcompareHands.\u0020class\u0020to\u0020see\u0020who\u0020have\u0020strongest\u0020hand.",
             "url": "classes/App-Project-CcompareHands.html"
         },                {
-            "fqsen": "\\App\\Project\\CcompareHands\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor\u0020to\u0020create\u0020the\u0020game\u0020object",
-            "url": "classes/App-Project-CcompareHands.html#method___construct"
-        },                {
             "fqsen": "\\App\\Project\\CcompareHands\u003A\u003AcheckPlayer\u0028\u0029",
             "name": "checkPlayer",
             "summary": "method\u0020to\u0020check\u0020what\u0020kind\u0020of\u0020hand\u0020the\u0020player\u0020has",
@@ -836,20 +831,10 @@ Search.appendIndex(
             "summary": "method\u0020to\u0020campare\u0020the\u00202\u0020diffrent\u0020arrays\u0020from\u0020check\u0020player\u0020and\u0020check\u0020dealer",
             "url": "classes/App-Project-CcompareHands.html#method_compareHand"
         },                {
-            "fqsen": "\\App\\Project\\CcompareHands\u003A\u003A\u0024playerHand",
-            "name": "playerHand",
+            "fqsen": "\\App\\Project\\CcompareHands\u003A\u003A\u0024rule",
+            "name": "rule",
             "summary": "",
-            "url": "classes/App-Project-CcompareHands.html#property_playerHand"
-        },                {
-            "fqsen": "\\App\\Project\\CcompareHands\u003A\u003A\u0024dealerHand",
-            "name": "dealerHand",
-            "summary": "",
-            "url": "classes/App-Project-CcompareHands.html#property_dealerHand"
-        },                {
-            "fqsen": "\\App\\Project\\CcompareHands\u003A\u003A\u0024game",
-            "name": "game",
-            "summary": "",
-            "url": "classes/App-Project-CcompareHands.html#property_game"
+            "url": "classes/App-Project-CcompareHands.html#property_rule"
         },                {
             "fqsen": "\\App\\Project\\Cdeck",
             "name": "Cdeck",
@@ -1351,10 +1336,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-TexasController.html#method_lastbetProcess"
         },                {
-            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AGameOverProcess\u0028\u0029",
-            "name": "GameOverProcess",
+            "fqsen": "\\App\\Controller\\TexasController\u003A\u003AgameOverProcess\u0028\u0029",
+            "name": "gameOverProcess",
             "summary": "",
-            "url": "classes/App-Controller-TexasController.html#method_GameOverProcess"
+            "url": "classes/App-Controller-TexasController.html#method_gameOverProcess"
         },                {
             "fqsen": "\\App\\Controller\\TexasController\u003A\u003AtexasEndGame\u0028\u0029",
             "name": "texasEndGame",

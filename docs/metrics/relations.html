@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2022-09-03 17:59:47        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2022-09-07 12:04:36        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -598,11 +598,20 @@
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Repository\\UserRepository",
             "\\App\\Entity\\Outcome",
+            "\\App\\Project\\Crules",
             "\\App\\Project\\CcompareHands"
         ]
     },
     {
         "name": "\\App\\Project\\Cgame",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\Cdeck",
+            "\\App\\Project\\Chand"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\Crules",
         "size": 3000,
         "relations": []
     },
@@ -610,7 +619,6 @@
         "name": "\\App\\Project\\CcompareHands",
         "size": 3000,
         "relations": [
-            "\\App\\Project\\Cgame",
             "\\App\\Project\\Crules"
         ]
     },
@@ -695,11 +703,6 @@
         "relations": [
             "\\Exception"
         ]
-    },
-    {
-        "name": "\\App\\Project\\Crules",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\App\\Project\\Chand",
